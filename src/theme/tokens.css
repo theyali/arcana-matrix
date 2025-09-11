@@ -1,0 +1,42 @@
+:root, .theme-mindful-03 {
+  --bg-start: #0F2D4D;
+  --bg-mid:   #174871;
+  --bg-end:   #0F2D4D;
+  --text:     #FFFFFF;
+  --muted:    rgba(255,255,255,0.15);
+  --primary:  #A77693; /* mauve */
+  --accent:   #DED1C6; /* warm beige */
+}
+
+/* lighter variant */
+.theme-mindful-01 {
+  --bg-start: #F2F3F4;
+  --bg-mid:   #DED1C6;
+  --bg-end:   #F2F3F4;
+  --text:     #10131a;
+  --muted:    rgba(16,19,26,0.15);
+  --primary:  #174871; /* deep teal-blue */
+  --accent:   #A77693; /* mauve */
+}
+
+/* gradient 04 (pinkish to deep blue) */
+.theme-mindful-04 {
+  --bg-start: #DED1C6;
+  --bg-mid:   #A77693;
+  --bg-end:   #174871;
+  --text:     #FFFFFF;
+  --muted:    rgba(255,255,255,0.15);
+  --primary:  #174871;
+  --accent:   #A77693;
+}
+
+/* deep night */
+.theme-mindful-05 {
+  --bg-start: #174871;
+  --bg-mid:   #0F2D4D;
+  --bg-end:   #0B1E33;
+  --text:     #EAF2FF;
+  --muted:    rgba(234,242,255,0.18);
+  --primary:  #A77693;
+  --accent:   #DED1C6;
+}

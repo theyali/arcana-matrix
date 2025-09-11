@@ -1,0 +1,25 @@
+# docker-compose.yml
+services:
+  web:                 # PROD (Nginx + собранный фронт)
+    build:
+      context: .
+    environment:
+      DEFAULT_THEME: theme-mindful-04   # меняй тему без ребилда
+      API_URL: http://localhost:8000
+    ports:
+      - "8081:80"
+    restart: unless-stopped
+    profiles: ["prod"]
+
+  webdev:              # DEV (Vite + HMR)
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm i && npm run dev -- --host"
+    environment:
+      VITE_API_URL: http://localhost:8000
+    volumes:
+      - .:/app
+      - /app/node_modules     # чтобы не затирать node_modules хостом
+    ports:
+      - "5173:5173"
+    profiles: ["dev"]

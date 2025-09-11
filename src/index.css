@@ -1,0 +1,206 @@
+@import './theme/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Base layout */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial; }
+:root { --panel: color-mix(in srgb, var(--bg-end) 85%, #fff 15%); }
+
+/* App background and text via CSS variables from tokens.css */
+.app-bg {
+  position: relative;          /* ← важно: создаём контекст для абсолютного канваса */
+  isolation: isolate;          /* аккуратный стек слоёв */
+  min-height: 100svh;          /* надёжнее на мобилках, можно 100vh */
+  overflow: hidden;            /* канвас не будет давать прокрутку */
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-mid), var(--bg-end));
+}
+.border-muted { border-color: var(--muted); }
+.bg-glass { background: color-mix(in srgb, var(--text) 6%, transparent); }
+.text-muted { color: color-mix(in srgb, var(--text) 70%, transparent); }
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  color: #fff;
+  box-shadow: 0 10px 25px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.btn-primary:hover { opacity: .95; }
+.btn-primary:active { transform: scale(.99); }
+
+.btn-ghost {
+  border: 1px solid var(--muted);
+  background: color-mix(in srgb, var(--text) 6%, transparent);
+  color: var(--text);
+}
+.btn-ghost:hover {
+  background: color-mix(in srgb, var(--text) 10%, transparent);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- базовые поверхности под темы --- */
+.theme-mindful-01 { --panel: color-mix(in srgb, #fff 92%, var(--bg-end) 8%); } /* светлая тема */
+
+/* --- Navbar --- */
+.navbar {
+  backdrop-filter: blur(10px);
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--bg-end) 30%, transparent),
+      color-mix(in srgb, var(--bg-end) 12%, transparent)
+    );
+  border-bottom: 1px solid var(--muted);
+}
+.nav-link {
+  color: var(--text);
+  opacity: .9;
+  white-space: nowrap;         /* не переносить “ИИ-Таро” */
+}
+.nav-link:hover { opacity: 1; }
+
+
+
+
+
+
+/* ---- Только для auth-страниц ---- */
+.auth-shell{
+  min-height: calc(100dvh - var(--nav-h) - var(--footer-h));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+.auth-panel{
+  width: min(720px, 92vw);
+  background: var(--panel);
+  border: 1px solid var(--muted);
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.28);
+  padding: 24px;
+}
+@media (min-width: 768px){ .auth-panel{ padding: 32px; } }
+
+.auth-title{
+  color: var(--text);
+  font-weight: 800;
+  font-size: 1.5rem; /* 24px */
+  margin: 0 0 16px;
+}
+
+/* поле на мягком фоне */
+.field-surface { background: color-mix(in srgb, var(--text) 8%, transparent); border: 1px solid var(--muted); color: var(--text); }
+
+/* текстовые ссылки */
+.text-link { color: var(--text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.text-link:hover { opacity: .9; }
+
+/* подсказываем браузеру палитру для нативных контролов */
+:root, .theme-mindful-03, .theme-mindful-04, .theme-mindful-05 { color-scheme: dark; }
+.theme-mindful-01 { color-scheme: light; }
+
+/* реальная прозрачность поля */
+.field-surface input {
+  background: transparent !important;
+  color: var(--text);
+  caret-color: var(--text);
+}
+
+/* убираем автозаполнение webkit (желтый/голубой фон) */
+.field-surface input:-webkit-autofill,
+.field-surface input:-webkit-autofill:hover,
+.field-surface input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--text) !important;
+  background-clip: padding-box;
+  transition: background-color 9999s ease-out 0s; /* хак, чтобы не мигало */
+}
+
+/* на фокусе не меняем фон, оставляем вашу оболочку .field-surface */
+.field-surface input:focus { outline: none; }
+
+/* опционально: стейт disabled выглядит чуть бледнее */
+.field-surface input:disabled { opacity: .75; }
+
+
+
+/* шапка поверх всего */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;                 /* выше карточек/блоков */
+  pointer-events: auto;
+}
+
+/* фоновые подложки страниц не должны перехватывать клики */
+.page-center,
+.panel-card {
+  position: relative;
+  z-index: 0;
+}
+.bg-decor, .page-mask, .whatever-backdrop {
+  pointer-events: none;         /* если где-то есть декоративные оверлеи */
+}
+
+/* dropdown menu */
+.menu-popover{
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 220px;
+  background: var(--panel, color-mix(in srgb, var(--bg-end) 85%, #fff 15%));
+  border: 1px solid var(--muted);
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0,0,0,.35);
+  padding: 6px;
+  z-index: 50;
+}
+.menu-item{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--text);
+  text-decoration: none;
+  background: transparent;
+}
+.menu-item:hover{
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+}
+.menu-item:active{
+  background: color-mix(in srgb, var(--text) 14%, transparent);
+}
+
+/* где-нибудь в твоём index.css */
+.btn-primary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;          /* расстояние между иконкой и текстом */
+  line-height: 1;      /* аккуратнее вертикально */
+}
+
+.btn-primary svg,
+.btn-ghost svg {
+  flex-shrink: 0;      /* чтобы иконка не ужималась */
+}
+.page{
+      min-height: 100svh;
+}
