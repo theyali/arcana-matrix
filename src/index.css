@@ -204,3 +204,48 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
 .page{
       min-height: 100svh;
 }
+
+/* --- Лёгкий переход между страницами (fade + лёгкий подъём) --- */
+.page-transition { position: relative; }
+.page-enter {
+  animation: amx-page-fade 260ms cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes amx-page-fade {
+  from { opacity: 0; transform: translateY(8px) scale(.995); filter: saturate(.92); }
+  60%  { opacity: 1; }
+  to   { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1); }
+}
+
+/* Мистическая вуаль на входе (прозрачная, быстрая) */
+.page-enter::after {
+  content: "";
+  position: absolute;
+  left: -8%; right: -8%; top: -10%;
+  height: 180px;
+  pointer-events: none;
+  filter: blur(22px);
+  opacity: 0;
+  background:
+    radial-gradient(60% 80% at 15% 40%, color-mix(in srgb, var(--accent) 35%, transparent) 0%, transparent 70%),
+    radial-gradient(60% 80% at 85% 40%, color-mix(in srgb, var(--primary) 35%, transparent) 0%, transparent 70%);
+  animation: amx-page-veil 420ms ease-out 40ms both;
+}
+@keyframes amx-page-veil {
+  from { opacity: 0; }
+  20%  { opacity: .16; }
+  to   { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter { animation: none !important; }
+  .page-enter::after { display: none !important; }
+}
+
+/* --- Мягкий fade для смены вкладок на странице гороскопов --- */
+.horoscope-fade { transition: opacity 160ms ease; }
+.horoscope-fade.is-fading { opacity: .2; }
+
+.btn-primary:disabled{
+    background: #898989;
+    opacity: 0.5;
+}
