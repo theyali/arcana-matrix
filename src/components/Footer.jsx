@@ -1,15 +1,83 @@
-import React from 'react'
-export default function Footer(){
+import React from "react";
+import { Link } from "react-router-dom";
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className='border-t border-muted'>
-      <div className='container mx-auto px-4 max-w-7xl py-10 text-sm flex flex-col md:flex-row items-center justify-between gap-4'>
-        <div style={{color:'var(--text)', opacity:.7}}>© {new Date().getFullYear()} Tarion. Все права защищены.</div>
-        <div className='flex items-center gap-3' style={{color:'var(--text)', opacity:.7}}>
-          <a href='#'>Условия</a>
-          <a href='#'>Конфиденциальность</a>
-          <a href='#'>Поддержка</a>
+    <footer className="border-t border-muted">
+      <div className="container mx-auto px-4 max-w-7xl py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+        
+        {/* Левая часть */}
+        <div>
+          <h3 className="font-semibold mb-3" style={{ color: "var(--text)" }}>
+            © {year} Tarion
+          </h3>
+          <p className="opacity-70 text-xs leading-relaxed">
+            Все права защищены. Использование материалов сайта разрешено только 
+            с письменного согласия администрации.
+          </p>
+        </div>
+
+        {/* Центр — ссылки */}
+        <div className="flex flex-col gap-2 text-center md:text-left">
+          <Link to="/terms" className="hover:underline opacity-80">
+            Условия
+          </Link>
+          <Link to="/privacy" className="hover:underline opacity-80">
+            Конфиденциальность
+          </Link>
+          <Link to="/support" className="hover:underline opacity-80">
+            Поддержка
+          </Link>
+        </div>
+
+        {/* Правая часть — кнопки скачивания */}
+        <div className="flex flex-col items-center md:items-end gap-3">
+          <span className="font-medium opacity-80 mb-1">Скачайте наше приложение</span>
+          <div className="flex gap-3">
+            {/* App Store */}
+            <a
+              href="https://apple.com/app-store"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 bg-black text-white rounded-xl px-4 py-2 hover:bg-gray-900 transition"
+            >
+              <img src="/img/app-store.svg" alt="Apple" className="h-6" />
+              <div className="flex flex-col leading-tight text-left">
+                <span className="text-[10px] opacity-70">Download on the</span>
+                <span className="text-sm font-semibold">App Store</span>
+              </div>
+            </a>
+
+            {/* Google Play */}
+            <a
+              href="https://play.google.com"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 bg-black text-white rounded-xl px-4 py-2 hover:bg-gray-900 transition"
+            >
+              <img src="/img/google-play.svg" alt="Google Play" className="h-6" />
+              <div className="flex flex-col leading-tight text-left">
+                <span className="text-[10px] opacity-70">Get it on</span>
+                <span className="text-sm font-semibold">Google Play</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Низ — иконки оплат */}
+      <div className="border-t border-white/10 mt-8 pt-6 pb-4">
+        <div className="container mx-auto px-4 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4">
+          <span className="opacity-70 text-xs">Принимаем к оплате:</span>
+          <div className="flex items-center gap-5">
+            <img src="/img//visa.svg" alt="Visa" className="h-6" />
+            <img src="/img/mastercard.svg" alt="Mastercard" className="h-6" />
+            <img src="/img/mir.svg" alt="Мир" className="h-6" />
+          </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

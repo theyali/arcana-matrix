@@ -6,7 +6,7 @@ export const PERIOD_UI2API = {
   daily: "day",
   weekly: "week",
   monthly: "month",
-  // при желании добавишь "yearly": "year"
+  // yearly: "year",
 };
 
 function qs(params = {}) {
@@ -19,12 +19,9 @@ function qs(params = {}) {
   return s ? `?${s}` : "";
 }
 
-// Базовый GET (публичные эндпоинты; авторизация тут обычно не нужна)
+// Базовый GET — ОБЯЗАТЕЛЬНО через authFetch, чтобы прилетал Authorization: Bearer <token>
 async function GET(path) {
-  const res = await fetch(`${api.BASE_URL}${path}`, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
+  const res = await api.authFetch(path, { method: "GET" });
   if (!res.ok) {
     let err = { detail: "Ошибка запроса" };
     try { err = await res.json(); } catch {}
@@ -57,7 +54,6 @@ export async function getLatest({ sign, period = "day", date, category = "genera
   return GET(`/api/horoscopes/latest/${qs({ sign, period, date, category, lang, source })}`);
 }
 
-// На будущее (если понадобится список с пагинацией):
 export async function listForecasts(params = {}) {
   return GET(`/api/horoscopes/${qs(params)}`);
 }

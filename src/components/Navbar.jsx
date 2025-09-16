@@ -1,24 +1,37 @@
 // src/components/Navbar.jsx
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { Sparkles, LogIn, UserPlus, User, Settings as SettingsIcon, LogOut, ChevronDown } from "lucide-react";
-import { THEMES, applyTheme } from "../theme/themes";
+import { THEMES, THEME_LABELS, applyTheme } from "../theme/themes";
 import { api } from "../api/client";
 import { useAuthStatus } from "../auth/useAuthStatus";
 import { getAvatarUrl } from "../api/profile";
 
 export default function Navbar() {
-  const { isAuthed, profile } = useAuthStatus(); // ⚡ только локальный статус/кэш
+  const { isAuthed, profile } = useAuthStatus();
   const [theme, setTheme] = React.useState(
-    localStorage.getItem("arcana_theme") || (import.meta.env.VITE_DEFAULT_THEME || "theme-mindful-03")
+    localStorage.getItem("arcana_theme") || (import.meta.env.VITE_DEFAULT_THEME || "theme-mindful-05")
   );
   const [menuOpen, setMenuOpen] = React.useState(false);
+
+  // отдельные стейты для двух дропдаунов
   const [predOpen, setPredOpen] = React.useState(false);
+  const [analysisOpen, setAnalysisOpen] = React.useState(false);
+
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // рефы для аккаунт-меню
   const btnRef = React.useRef(null);
   const menuRef = React.useRef(null);
+
+  // рефы для "Предсказания"
   const predBtnRef = React.useRef(null);
   const predMenuRef = React.useRef(null);
+
+  // рефы для "Анализ"
+  const analysisBtnRef = React.useRef(null);
+  const analysisMenuRef = React.useRef(null);
 
   React.useEffect(() => {
     applyTheme(theme);
@@ -28,30 +41,47 @@ export default function Navbar() {
   React.useEffect(() => {
     const onDoc = (e) => {
       if (menuOpen) {
-        if (menuRef.current && !menuRef.current.contains(e.target) &&
-            btnRef.current && !btnRef.current.contains(e.target)) setMenuOpen(false);
+        if (
+          menuRef.current && !menuRef.current.contains(e.target) &&
+          btnRef.current && !btnRef.current.contains(e.target)
+        ) setMenuOpen(false);
       }
       if (predOpen) {
-        if (predMenuRef.current && !predMenuRef.current.contains(e.target) &&
-            predBtnRef.current && !predBtnRef.current.contains(e.target)) setPredOpen(false);
+        if (
+          predMenuRef.current && !predMenuRef.current.contains(e.target) &&
+          predBtnRef.current && !predBtnRef.current.contains(e.target)
+        ) setPredOpen(false);
+      }
+      if (analysisOpen) {
+        if (
+          analysisMenuRef.current && !analysisMenuRef.current.contains(e.target) &&
+          analysisBtnRef.current && !analysisBtnRef.current.contains(e.target)
+        ) setAnalysisOpen(false);
       }
     };
-    const onEsc = (e) => { if (e.key === "Escape") { setMenuOpen(false); setPredOpen(false); } };
+    const onEsc = (e) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        setPredOpen(false);
+        setAnalysisOpen(false);
+      }
+    };
     document.addEventListener("click", onDoc);
     document.addEventListener("keydown", onEsc);
     return () => {
       document.removeEventListener("click", onDoc);
       document.removeEventListener("keydown", onEsc);
     };
-  }, [menuOpen, predOpen]);
+  }, [menuOpen, predOpen, analysisOpen]);
 
   const doLogout = () => {
-    api.logout(); // шлёт amx:auth-logout и чистит кэш
+    api.logout();
     setMenuOpen(false);
     navigate("/");
   };
 
   const closePred = () => setPredOpen(false);
+  const closeAnalysis = () => setAnalysisOpen(false);
 
   const displayName =
     profile?.username ||
@@ -59,25 +89,61 @@ export default function Navbar() {
     "Аккаунт";
   const avatarUrl = getAvatarUrl(profile?.profile?.avatar) || profile?.profile?.avatarUrl;
 
+  // ---- Подсветка активных групп ----
+  const predRoutes = [
+    "/predictions/tarot",
+    "/predictions/matrix",
+    "/predictions/palm",
+    "/predictions/coffee",
+    "/predictions/horoscope",
+  ];
+  const analysisRoutes = [
+    "/analysis/face",
+    "/analysis/handwriting",
+    "/analysis/dreams",
+  ];
+  const isGroupActive = (routes) => routes.some((p) => location.pathname.startsWith(p));
+  const predGroupActive = isGroupActive(predRoutes);
+  const analysisGroupActive = isGroupActive(analysisRoutes);
+
+  // классы для обычных ссылок и пунктов меню
+  const navLinkClass = ({ isActive }) => `nav-link ${isActive ? "active" : ""}`;
+  const menuItemClass = ({ isActive }) => `menu-item ${isActive ? "active" : ""}`;
+
   return (
     <header className="sticky top-0 z-40 navbar">
       <div className="container mx-auto px-4 max-w-7xl h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 font-bold text-lg" style={{ color: "var(--text)" }}>
-          <div
-            className="h-8 w-8 rounded-xl grid place-items-center shadow-lg"
-            style={{ background: "linear-gradient(135deg, var(--accent), var(--primary))" }}
-          >
-            <Sparkles className="h-5 w-5 text-white" />
-          </div>
-          Tarion
-        </Link>
+      <Link
+        to="/"
+        className="flex items-center gap-3 font-bold text-lg"
+        style={{ color: "var(--text)" }}
+      >
+        <div
+          className="h-8 w-8 rounded-xl grid place-items-center shadow-lg"
+          style={{ background: "linear-gradient(135deg, var(--accent), var(--primary))" }}
+        >
+          <img
+            src="/img/logo.svg"
+            alt="Tarion"
+            className="h-5 w-5 object-contain"
+          />
+        </div>
+        Tarion
+      </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm">
+          {/* --- Предсказания --- */}
           <div className="relative">
             <button
               ref={predBtnRef}
-              onClick={() => setPredOpen((o) => !o)}
-              className="nav-link inline-flex items-center gap-1"
+              onClick={() => {
+                setPredOpen((o) => {
+                  const next = !o;
+                  if (next) setAnalysisOpen(false);
+                  return next;
+                });
+              }}
+              className={`nav-link inline-flex items-center gap-1 ${predGroupActive ? "active" : ""}`}
               aria-haspopup="menu"
               aria-expanded={predOpen}
             >
@@ -86,28 +152,64 @@ export default function Navbar() {
 
             {predOpen && (
               <div ref={predMenuRef} role="menu" className="menu-popover min-w-[240px]">
-                <Link to="/predictions/tarot" role="menuitem" className="menu-item" onClick={closePred}>
+                <NavLink to="/predictions/tarot" role="menuitem" className={menuItemClass} onClick={closePred}>
                   Таро (ИИ)
-                </Link>
-                <Link to="/predictions/matrix" role="menuitem" className="menu-item" onClick={closePred}>
+                </NavLink>
+                <NavLink to="/predictions/matrix" role="menuitem" className={menuItemClass} onClick={closePred}>
                   Матрица
-                </Link>
-                <Link to="/predictions/palm" role="menuitem" className="menu-item" onClick={closePred}>
+                </NavLink>
+                <NavLink to="/predictions/palm" role="menuitem" className={menuItemClass} onClick={closePred}>
                   Предсказания по ладони (ИИ)
-                </Link>
-                <Link to="/predictions/coffee" role="menuitem" className="menu-item" onClick={closePred}>
+                </NavLink>
+                <NavLink to="/predictions/coffee" role="menuitem" className={menuItemClass} onClick={closePred}>
                   Предсказания по кофе (ИИ)
-                </Link>
-                <Link to="/predictions/horoscope" role="menuitem" className="menu-item" onClick={closePred}>
+                </NavLink>
+                <NavLink to="/predictions/horoscope" role="menuitem" className={menuItemClass} onClick={closePred}>
                   Гороскопы (ИИ)
-                </Link>
+                </NavLink>
               </div>
             )}
           </div>
 
-          <Link to="/experts" className="nav-link">Специалисты</Link>
-          <Link to="/forum" className="nav-link">Форум</Link>
-          <Link to="/pricing" className="nav-link">Подписка</Link>
+          {/* --- Анализ --- */}
+          <div className="relative">
+            <button
+              ref={analysisBtnRef}
+              onClick={() => {
+                setAnalysisOpen((o) => {
+                  const next = !o;
+                  if (next) setPredOpen(false);
+                  return next;
+                });
+              }}
+              className={`nav-link inline-flex items-center gap-1 ${analysisGroupActive ? "active" : ""}`}
+              aria-haspopup="menu"
+              aria-expanded={analysisOpen}
+            >
+              Анализ <ChevronDown size={14} className="opacity-70" />
+            </button>
+
+            {analysisOpen && (
+              <div ref={analysisMenuRef} role="menu" className="menu-popover min-w-[240px]">
+                <NavLink to="/analysis/face" role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
+                  Облик (анализ лица)
+                </NavLink>
+                <NavLink to="/analysis/handwriting" role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
+                  Почерк (анализ письма)
+                </NavLink>
+                <NavLink to="/analysis/dreams" role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
+                  ИИ-толкование сна
+                </NavLink>
+                <NavLink to="/analysis/compatibility" role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
+                  Анализ совместимости (ИИ)
+                </NavLink>
+              </div>
+            )}
+          </div>
+
+          <NavLink to="/experts" className={navLinkClass}>Специалисты</NavLink>
+          <NavLink to="/forum" className={navLinkClass}>Форум</NavLink>
+          <NavLink to="/pricing" className={navLinkClass}>Подписка</NavLink>
           <a href="#pricing" className="nav-link">Тесты</a>
         </nav>
 
@@ -119,25 +221,29 @@ export default function Navbar() {
           >
             {THEMES.map((t) => (
               <option key={t} value={t}>
-                {t.replace("theme-", "")}
+                {THEME_LABELS[t] || t}
               </option>
             ))}
           </select>
 
           {!isAuthed ? (
             <>
-              <Link
+              <NavLink
                 to="/login"
-                className="btn-ghost inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold"
+                className={({ isActive }) =>
+                  `btn-ghost inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold ${isActive ? "active" : ""}`
+                }
               >
                 <LogIn size={18} /> Войти
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/register"
-                className="btn-primary inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold"
+                className={({ isActive }) =>
+                  `btn-primary inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold ${isActive ? "active" : ""}`
+                }
               >
                 <UserPlus size={18} /> Регистрация
-              </Link>
+              </NavLink>
             </>
           ) : (
             <div className="relative">
@@ -164,12 +270,12 @@ export default function Navbar() {
 
               {menuOpen && (
                 <div ref={menuRef} role="menu" className="menu-popover">
-                  <Link to="/cabinet" role="menuitem" className="menu-item" onClick={() => setMenuOpen(false)}>
+                  <NavLink to="/cabinet" role="menuitem" className={menuItemClass} onClick={() => setMenuOpen(false)}>
                     <User size={16} /> Личный кабинет
-                  </Link>
-                  <Link to="/settings" role="menuitem" className="menu-item" onClick={() => setMenuOpen(false)}>
+                  </NavLink>
+                  <NavLink to="/settings" role="menuitem" className={menuItemClass} onClick={() => setMenuOpen(false)}>
                     <SettingsIcon size={16} /> Настройки
-                  </Link>
+                  </NavLink>
                   <button role="menuitem" className="menu-item" onClick={doLogout}>
                     <LogOut size={16} /> Выход
                   </button>

@@ -166,13 +166,16 @@ export default function Hero(){
                 className='aspect-[8/14] rounded-2xl border border-muted overflow-hidden'
                 style={{background:'color-mix(in srgb, var(--text) 4%, transparent)'}}
               >
-                <img
-                  src={`/cards/card-light-${i+1}.png`}
-                  alt={`Карточка ${i+1}`}
-                  className='w-full h-full object-cover'
-                  loading='lazy'
-                  decoding='async'
-                />
+                <picture>
+                  <source srcSet={`/cards/card-light-${i+1}.webp`} type='image/webp' />
+                  <img
+                    src={`/cards/card-light-${i+1}.png`}
+                    alt={`Карточка ${i+1}`}
+                    className='w-full h-full object-cover'
+                    loading='lazy'
+                    decoding='async'
+                  />
+                </picture>
               </div>
             ))}
           </div>

@@ -1,7 +1,7 @@
 // src/pages/Cabinet.jsx
 import React from "react";
 import { useAuth } from "../context/AuthContext";
-import { LayoutDashboard, Star, CalendarDays, Crown, Settings as SettingsIcon, HelpCircle, Menu } from "lucide-react";
+import { LayoutDashboard, Star, CalendarDays, Crown, Settings as SettingsIcon, HelpCircle, Menu, History as HistoryIcon } from "lucide-react";
 import AccountSidebar from "../components/AccountSidebar";
 import { getProfile, getPlanName, getAvatarUrl, buildDisplayName } from "../api/profile";
 
@@ -13,6 +13,7 @@ import {
   SubscriptionTab,
   SettingsTab,
   SupportTab,
+  HistoryTab,
 } from "./cabinet/index.js";
 
 
@@ -52,6 +53,7 @@ export default function Cabinet(){
     { key:"dashboard",    label:"Обзор",            icon: LayoutDashboard },
     { key:"spreads",      label:"Мои расклады",     icon: Star },
     { key:"appointments", label:"Встречи",          icon: CalendarDays },
+    { key:"history",      label:"История",          icon: HistoryIcon },
     { key:"subscription", label:"Подписка",         icon: Crown },
     { key:"settings",     label:"Настройки",        icon: SettingsIcon },
     { key:"support",      label:"Поддержка",        icon: HelpCircle },
@@ -71,6 +73,8 @@ export default function Cabinet(){
         return <SubscriptionTab sub={sub} />;
       case "settings":
         return <SettingsTab profile={u} onUpdated={setProfile} />;
+      case "history":
+        return <HistoryTab />;
       case "support":
         return <SupportTab contacts={contacts} />;
       default:
