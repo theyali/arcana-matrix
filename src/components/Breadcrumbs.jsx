@@ -34,6 +34,8 @@ export default function Breadcrumbs(){
       if (acc === '/forum') label = 'Форум';
       if (acc === '/login') label = 'Авторизация';
       if (acc === '/register') label = 'Регистрация';
+      if (acc === '/analysis') label = 'Анализ';
+      if (acc === '/analysis/handwriting') label = 'Анализ почерка';
 
       // Динамический знак: /predictions/horoscope/:sign
       const prev = parts[idx - 1];

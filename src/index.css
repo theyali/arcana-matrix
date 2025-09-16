@@ -204,3 +204,279 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
 .page{
       min-height: 100svh;
 }
+
+/* --- Лёгкий переход между страницами (fade + лёгкий подъём) --- */
+.page-transition { position: relative; }
+.page-enter {
+  animation: amx-page-fade 260ms cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes amx-page-fade {
+  from { opacity: 0; transform: translateY(8px) scale(.995); filter: saturate(.92); }
+  60%  { opacity: 1; }
+  to   { opacity: 1; transform: translateY(0) scale(1); filter: saturate(1); }
+}
+
+/* Мистическая вуаль на входе (прозрачная, быстрая) */
+.page-enter::after {
+  content: "";
+  position: absolute;
+  left: -8%; right: -8%; top: -10%;
+  height: 180px;
+  pointer-events: none;
+  filter: blur(22px);
+  opacity: 0;
+  background:
+    radial-gradient(60% 80% at 15% 40%, color-mix(in srgb, var(--accent) 35%, transparent) 0%, transparent 70%),
+    radial-gradient(60% 80% at 85% 40%, color-mix(in srgb, var(--primary) 35%, transparent) 0%, transparent 70%);
+  animation: amx-page-veil 420ms ease-out 40ms both;
+}
+@keyframes amx-page-veil {
+  from { opacity: 0; }
+  20%  { opacity: .16; }
+  to   { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter { animation: none !important; }
+  .page-enter::after { display: none !important; }
+}
+
+/* --- Мягкий fade для смены вкладок на странице гороскопов --- */
+.horoscope-fade { transition: opacity 160ms ease; }
+.horoscope-fade.is-fading { opacity: .2; }
+
+.btn-primary:disabled{
+    background: #898989;
+    opacity: 0.5;
+}
+
+.nav-link.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.menu-item.active {
+  background: rgba(0,0,0,0.06);
+  outline: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+}
+footer{
+      backdrop-filter: blur(10px);
+    background: linear-gradient(to bottom,
+ color-mix(in srgb, var(--bg-end) 30%, transparent),
+ color-mix(in srgb, var(--bg-end) 12%, transparent));
+}
+
+.matrix-diagram {
+    position: relative;
+    font-size: 4px;
+    max-width: 872px;
+    margin: 0 auto;
+}
+
+.matrix-diagram__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 5;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background-color: #cacace;
+    color: #a3a3a6;
+    font-weight: 500;
+    line-height: 1;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+
+.matrix-diagram__circle.-size-sm {
+    width: 4.572%;
+    height: 4.572%;
+    font-size: 2em;
+}
+
+.matrix-diagram__circle.-size-md {
+    width: 6.4%;
+    height: 6.4%;
+    font-size: 3em;
+}
+
+.matrix-diagram__circle.-size-lg {
+    width: 9.143%;
+    height: 9.143%;
+    font-size: 5em;
+}
+.matrix-diagram__circle.-cyan.-active {
+    background-color: #45cfe1;
+    border-color: #45cfe1;
+}
+
+.matrix-diagram__circle.-position-b1 {
+    top: 19.5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.matrix-diagram__circle.-position-b3 {
+    top: 32.5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.matrix-diagram__circle.-position-c {
+    top: 50.1%;
+    right: 4%;
+    transform: translate(0, -50%);
+}
+.matrix-diagram__circle.-position-c2 {
+    top: 50.1%;
+    right: 13.1%;
+    transform: translate(0, -50%);
+}
+.matrix-diagram__circle.-position-c1 {
+    top: 50.1%;
+    right: 19.5%;
+    transform: translate(0, -50%);
+}
+.matrix-diagram__circle.-position-d {
+    bottom: 3.9%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.matrix-diagram__circle.-position-d2 {
+    bottom: 13.1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.matrix-diagram__circle.-position-d1 {
+    bottom: 19.5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.matrix-diagram__circle.-position-e {
+    top: 50%;
+    left: 49.9%;
+    transform: translate(-50%, -50%);
+}
+.matrix-diagram__circle.-position-e1 {
+    top: 50%;
+    right: 39.2%;
+    transform: translate(0, -50%);
+}
+.matrix-diagram__circle.-position-e2 {
+    top: 50%;
+    right: 34.7%;
+    transform: translate(0, -50%);
+}
+
+.matrix-diagram__circle.-white.-active {
+    background-color: #fff;
+    border-color: #222831;
+    color: #222831;
+}
+.matrix-diagram__circle.-position-f {
+    top: 16%;
+    left: 16.2%;
+}
+
+.matrix-diagram__circle.-position-a {
+    top: 50%;
+    left: 3.9%;
+    transform: translate(0, -50%);
+}
+.matrix-diagram__circle.-position-g {
+    top: 16.1%;
+    right: 16.1%;
+}
+
+.matrix-diagram__circle.-position-y {
+    bottom: 15.9%;
+    right: 16.3%;
+}
+.matrix-diagram__circle.-position-p1 {
+    top: 27.8%;
+    right: 27.8%;
+}
+.matrix-diagram__circle.-position-p2 {
+    top: 23%;
+    right: 23%;
+}
+.matrix-diagram__circle.-position-p3 {
+    bottom: 27.8%;
+    left: 27.8%;
+}
+.matrix-diagram__circle.-position-p4 {
+    bottom: 23%;
+    left: 23%;
+}
+.matrix-diagram__circle.-position-k {
+    bottom: 16.1%;
+    left: 16%;
+}
+.matrix-diagram__circle.-position-s1 {
+    top: 27.8%;
+    left: 27.8%;
+}
+.matrix-diagram__circle.-position-s2 {
+    top: 23%;
+    left: 23%;
+}
+
+.matrix-diagram__circle.-position-s3 {
+    bottom: 23%;
+    right: 23%;
+}
+.matrix-diagram__circle.-position-s4 {
+    bottom: 27.8%;
+    right: 27.8%;
+}
+.matrix-diagram__circle.-position-x {
+    bottom: 33.7%;
+    right: 33.7%;
+}
+.matrix-diagram__circle.-position-x1 {
+    bottom: 26.6%;
+    right: 40.7%;
+}
+.matrix-diagram__circle.-position-x2 {
+    bottom: 40.6%;
+    right: 26.6%;
+}
+.matrix-diagram__circle.-position-a2 {
+    top: 50%;
+    left: 13%;
+    transform: translate(0, -50%);
+}
+
+
+.matrix-diagram__circle.-position-a1 {
+    top: 50%;
+    left: 19.4%;
+    transform: translate(0, -50%);
+}
+.matrix-diagram__circle.-position-a3 {
+    top: 50%;
+    left: 32.4%;
+    transform: translate(0, -50%);
+}
+.matrix-diagram__circle.-purple.-active {
+    background-color: #8a46a3;
+    border-color: #8a46a3;
+}
+.matrix-diagram__circle.-active {
+    color: #fff;
+}
+
+.matrix-diagram__circle.-position-b {
+    top: 3.9%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.matrix-diagram__circle.-blue.-active {
+    background-color: #526dfa;
+    border-color: #526dfa;
+}
+
+.matrix-diagram__circle.-position-b2 {
+    top: 13.1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

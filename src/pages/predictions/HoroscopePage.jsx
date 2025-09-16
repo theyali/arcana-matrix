@@ -51,6 +51,8 @@ export default function HoroscopePage(){
   const [date, setDate] = React.useState(sp.get('date') || todayISO());
   const [period, setPeriod] = React.useState(sp.get('period') || 'daily');
   const [q, setQ] = React.useState(sp.get('q') || '');
+  const [tabFading, setTabFading] = React.useState(false);
+  const fadeTimerRef = React.useRef(null);
 
   // синхроним query-параметры
   React.useEffect(() => {
@@ -76,7 +78,13 @@ export default function HoroscopePage(){
       // ведём в авторизацию, куда вернёмся уже с выбранным периодом
       return goLoginNext(buildListUrl(pkey, date));
     }
-    setPeriod(pkey);
+    // Небольшой fade-out контента при смене таба
+    if (fadeTimerRef.current) { clearTimeout(fadeTimerRef.current); }
+    setTabFading(true);
+    fadeTimerRef.current = setTimeout(() => {
+      setPeriod(pkey);
+      setTabFading(false);
+    }, 160);
   };
 
   const onChangeDate = (val) => {
@@ -215,7 +223,7 @@ export default function HoroscopePage(){
           title="Войдите, чтобы смотреть этот период/дату"
           description="Гостям доступны только дневные гороскопы за сегодня и вчера."
         >
-          <div className="grid gap-4 sm:gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+          <div className={`grid gap-4 sm:gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 horoscope-fade ${tabFading ? 'is-fading' : ''}`}>
             {filtered.map(sign => (
               <Link
                 key={sign.slug}

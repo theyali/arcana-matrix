@@ -1,4 +1,3 @@
-// src/pages/PricingPage.jsx
 import React from 'react';
 import { Check, Sparkles, Shield, Zap, Crown, Phone, Mail, MessageCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
@@ -6,73 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import { getPlans } from '../api/pricing';
 import { getSiteContacts } from '../api/contacts';
 
-function Price({ value, period }) {
-  const isFree = !value;
-  return (
-    <div className="flex items-end gap-1">
-      <span className="text-3xl font-extrabold" style={{color:'var(--text)'}}>
-        {isFree ? '0' : value.toLocaleString('ru-RU')}
-      </span>
-      <span className="opacity-70 text-sm mb-1">{isFree ? '₽' : '₽'}/ {period==='monthly' ? 'мес' : 'год'}</span>
-    </div>
-  );
-}
+// вынесенные компоненты
+import PlanCard from '../components/pricing/PlanCard.jsx';
 
-function PlanCard({ plan, billing='monthly', onSelect }) {
-  const price = billing === 'monthly' ? plan.monthly : plan.yearly;
-  const yearlyFull = plan.monthly * 12;
-  const save = billing === 'yearly' && price > 0 ? Math.max(0, Math.round((1 - price / yearlyFull) * 100)) : 0;
+import WhatIncluded from '../components/pricing/WhatIncluded.jsx';
 
-  return (
-    <article className={`rounded-3xl p-6 border bg-white/5 hover:bg-white/10 transition relative
-      ${plan.highlighted ? 'border-[var(--primary)] ring-2 ring-[var(--primary)]/30' : 'border-white/10'}`}>
-      {/* бейдж */}
-      <div className="absolute -top-3 left-6">
-        <span className="rounded-xl px-3 py-1 text-xs font-semibold"
-          style={{background:'linear-gradient(135deg, var(--accent), var(--primary))', color:'#fff'}}>
-          {plan.badge}
-        </span>
-      </div>
 
-      <div className="flex items-center gap-3 mb-2">
-        <div className="h-10 w-10 rounded-2xl grid place-items-center text-white shadow-lg"
-             style={{background:'linear-gradient(135deg, var(--accent), var(--primary))'}}>
-          {plan.slug === 'free' ? <Sparkles size={18}/> : plan.slug === 'pro' ? <Shield size={18}/> : <Crown size={18}/>}
-        </div>
-        <h3 className="text-xl font-bold" style={{color:'var(--text)'}}>{plan.name}</h3>
-      </div>
-
-      <p className="opacity-80 text-sm mb-4">{plan.description}</p>
-
-      <div className="flex items-center justify-between mb-2">
-        <Price value={price} period={billing} />
-        {save > 0 && (
-          <span className="text-xs font-semibold rounded-lg px-2 py-1 bg-white/10">
-            Экономия {save}%
-          </span>
-        )}
-      </div>
-
-      <ul className="mt-4 space-y-2 text-sm">
-        {plan.features.map((f, i) => (
-          <li key={i} className="flex items-start gap-2">
-            <Check size={16} className="mt-0.5" style={{color:'var(--primary)'}}/>
-            <span className="opacity-90">{f}</span>
-          </li>
-        ))}
-      </ul>
-
-      <button
-        onClick={onSelect}
-        className={`mt-6 w-full rounded-2xl px-4 py-3 font-semibold ${plan.highlighted ? 'btn-primary' : 'btn-ghost'}`}
-      >
-        {plan.cta}
-      </button>
-    </article>
-  );
-}
-
-export default function PricingPage(){
+export default function PricingPage() {
   const [billing, setBilling] = React.useState('monthly'); // 'monthly' | 'yearly'
   const [plans, setPlans] = React.useState(null);
   const [contacts, setContacts] = React.useState(null);
@@ -82,28 +21,38 @@ export default function PricingPage(){
 
   React.useEffect(() => {
     let cancelled = false;
-    (async ()=>{
+    (async () => {
       try {
-       const data = await getPlans();
-       if (!cancelled) setPlans(Array.isArray(data) ? data : (data.results || data));
+        const data = await getPlans();
+        if (!cancelled) setPlans(Array.isArray(data) ? data : (data.results || data));
       } catch (e) {
-       console.error('getPlans failed:', e);
-       if (!cancelled) setPlans([]);
+        console.error('getPlans failed:', e);
+        if (!cancelled) setPlans([]);
       }
       try {
-       const c = await getSiteContacts();
-       if (!cancelled) setContacts(c);
+        const c = await getSiteContacts();
+        if (!cancelled) setContacts(c);
       } catch (e) {
-       console.error('getSiteContacts failed:', e);
-       if (!cancelled) setContacts(null);
+        console.error('getSiteContacts failed:', e);
+        if (!cancelled) setContacts(null);
       }
       if (!cancelled) setLoading(false);
     })();
-    return ()=>{ cancelled = true; };
+    return () => { cancelled = true; };
   }, []);
 
+  // извлекаем активный тариф из user (покрываем разные возможные поля)
+  const activePlanSlug =
+    user?.subscription?.plan?.slug ||
+    user?.subscription?.plan ||
+    user?.plan?.slug ||
+    user?.plan_slug ||
+    null;
+
+  const hasActiveSubscription =
+    !!(user?.subscription?.active || user?.is_paid || (activePlanSlug && activePlanSlug !== 'free'));
+
   const onSelect = (slug) => {
-    // Позже — оформление через бэкенд. Пока: ведём к регистрации/кабинету.
     if (!user) navigate('/register?plan=' + slug);
     else navigate('/cabinet?upgrade=' + slug);
   };
@@ -121,14 +70,14 @@ export default function PricingPage(){
         <div className="flex items-center justify-between gap-4 mb-6 flex-wrap">
           <div className="rounded-2xl p-1 bg-white/5 border border-white/10 flex">
             {[
-              {k:'monthly', label:'Месяц'},
-              {k:'yearly', label:'Год (выгодно)'},
-            ].map(x=>(
+              { k: 'monthly', label: 'Месяц' },
+              { k: 'yearly', label: 'Год (выгодно)' },
+            ].map(x => (
               <button
                 key={x.k}
-                onClick={()=>setBilling(x.k)}
+                onClick={() => setBilling(x.k)}
                 className={`px-3 py-2 rounded-xl text-sm font-semibold transition ${
-                  billing===x.k ? 'bg-[var(--primary)] text-white' : 'text-[var(--text)]/80 hover:bg-white/10'
+                  billing === x.k ? 'bg-[var(--primary)] text-white' : 'text-[var(--text)]/80 hover:bg-white/10'
                 }`}
               >
                 {x.label}
@@ -144,26 +93,28 @@ export default function PricingPage(){
         {/* Тарифы */}
         {loading ? (
           <div className="grid gap-5 md:grid-cols-3">
-            {[0,1,2].map(i=>(
-              <div key={i} className="rounded-3xl p-6 border border-white/10 bg-white/5 animate-pulse h-[360px]"/>
+            {[0, 1, 2].map(i => (
+              <div key={i} className="rounded-3xl p-6 border border-white/10 bg-white/5 animate-pulse h-[360px]" />
             ))}
           </div>
         ) : (
           <section className="grid gap-5 md:grid-cols-3">
-            {plans.map(p=>(
-              <PlanCard key={p.slug} plan={p} billing={billing} onSelect={()=>onSelect(p.slug)} />
+            {plans.map(p => (
+              <PlanCard
+                key={p.slug}
+                plan={p}
+                billing={billing}
+                onSelect={() => onSelect(p.slug)}
+                isActive={activePlanSlug === p.slug}
+                hasActive={hasActiveSubscription}
+              />
             ))}
           </section>
         )}
 
         {/* FAQ/примечания */}
         <section className="mt-10 grid lg:grid-cols-3 gap-6">
-          <div className="rounded-2xl p-6 border border-white/10 bg-white/5">
-            <h3 className="font-semibold mb-2">Что входит?</h3>
-            <p className="opacity-80 text-sm">
-              Доступ к ИИ-Таро, Матрице, анализу кофе/ладони, гороскопам и форуму. Лимиты зависят от тарифа.
-            </p>
-          </div>
+          <WhatIncluded />
           <div className="rounded-2xl p-6 border border-white/10 bg-white/5">
             <h3 className="font-semibold mb-2">Можно ли изменить тариф?</h3>
             <p className="opacity-80 text-sm">
@@ -178,38 +129,54 @@ export default function PricingPage(){
           </div>
         </section>
 
-        {/* Контакты (из DRF позже) */}
+        {/* Контакты */}
         <section className="mt-12">
-          <h2 className="text-xl font-bold mb-4" style={{color:'var(--text)'}}>Контакты</h2>
+          <h2 className="text-xl font-bold mb-4" style={{ color: 'var(--text)' }}>Контакты</h2>
           {!contacts ? (
             <div className="rounded-2xl p-6 border border-white/10 bg-white/5 animate-pulse h-[120px]" />
           ) : (
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <a href={`tel:${contacts.phone.replace(/\s+/g,'')}`} className="rounded-2xl p-5 border border-white/10 bg-white/5 hover:bg-white/10 transition flex items-start gap-3">
-                <div className="h-10 w-10 rounded-xl grid place-items-center text-white"
-                     style={{background:'linear-gradient(135deg, var(--accent), var(--primary))'}}>
-                  <Phone size={18}/>
+              <a
+                href={`tel:${contacts.phone?.replace?.(/\s+/g, '') ?? ''}`}
+                className="rounded-2xl p-5 border border-white/10 bg-white/5 hover:bg-white/10 transition flex items-start gap-3"
+              >
+                <div
+                  className="h-10 w-10 rounded-xl grid place-items-center text-white"
+                  style={{ background: 'linear-gradient(135deg, var(--accent), var(--primary))' }}
+                >
+                  <Phone size={18} />
                 </div>
                 <div className="text-sm">
                   <div className="font-semibold">Телефон</div>
                   <div className="opacity-80">{contacts.phone}</div>
                 </div>
               </a>
-              <a href={`mailto:${contacts.email}`} className="rounded-2xl p-5 border border-white/10 bg-white/5 hover:bg-white/10 transition flex items-start gap-3">
-                <div className="h-10 w-10 rounded-xl grid place-items-center text-white"
-                     style={{background:'linear-gradient(135deg, var(--accent), var(--primary))'}}>
-                  <Mail size={18}/>
+              <a
+                href={`mailto:${contacts.email}`}
+                className="rounded-2xl p-5 border border-white/10 bg-white/5 hover:bg-white/10 transition flex items-start gap-3"
+              >
+                <div
+                  className="h-10 w-10 rounded-xl grid place-items-center text-white"
+                  style={{ background: 'linear-gradient(135deg, var(--accent), var(--primary))' }}
+                >
+                  <Mail size={18} />
                 </div>
                 <div className="text-sm">
                   <div className="font-semibold">E-mail</div>
                   <div className="opacity-80">{contacts.email}</div>
                 </div>
               </a>
-              <a href={`https://t.me/${contacts.telegram.replace('@','')}`} target="_blank" rel="noreferrer"
-                 className="rounded-2xl p-5 border border-white/10 bg-white/5 hover:bg-white/10 transition flex items-start gap-3">
-                <div className="h-10 w-10 rounded-xl grid place-items-center text-white"
-                     style={{background:'linear-gradient(135deg, var(--accent), var(--primary))'}}>
-                  <MessageCircle size={18}/>
+              <a
+                href={`https://t.me/${contacts.telegram?.replace?.('@', '') ?? ''}`}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl p-5 border border-white/10 bg-white/5 hover:bg-white/10 transition flex items-start gap-3"
+              >
+                <div
+                  className="h-10 w-10 rounded-xl grid place-items-center text-white"
+                  style={{ background: 'linear-gradient(135deg, var(--accent), var(--primary))' }}
+                >
+                  <MessageCircle size={18} />
                 </div>
                 <div className="text-sm">
                   <div className="font-semibold">Telegram</div>
@@ -217,9 +184,11 @@ export default function PricingPage(){
                 </div>
               </a>
               <div className="rounded-2xl p-5 border border-white/10 bg-white/5 flex items-start gap-3">
-                <div className="h-10 w-10 rounded-xl grid place-items-center text-white"
-                     style={{background:'linear-gradient(135deg, var(--accent), var(--primary))'}}>
-                  <Zap size={18}/>
+                <div
+                  className="h-10 w-10 rounded-xl grid place-items-center text-white"
+                  style={{ background: 'linear-gradient(135deg, var(--accent), var(--primary))' }}
+                >
+                  <Zap size={18} />
                 </div>
                 <div className="text-sm">
                   <div className="font-semibold">График</div>

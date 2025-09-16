@@ -3,32 +3,41 @@ import { Settings as SettingsIcon, Loader2, Image as ImageIcon } from "lucide-re
 import { updateProfile, getAvatarUrl } from "../../api/profile";
 
 export default function SettingsTab({ profile, onUpdated }) {
-  const initial = {
+  const base = React.useMemo(() => ({
     first_name: profile?.first_name || "",
     last_name: profile?.last_name || "",
     bio: profile?.profile?.bio || "",
-  };
-  const [form, setForm] = React.useState(initial);
+    avatarUrl: profile?.profile?.avatarUrl || getAvatarUrl(profile?.profile?.avatar) || "",
+  }), [profile]);
+  const [form, setForm] = React.useState({
+    first_name: base.first_name,
+    last_name: base.last_name,
+    bio: base.bio,
+  });
   const [avatarFile, setAvatarFile] = React.useState(null);
-  const [avatarPreview, setAvatarPreview] = React.useState(
-    profile?.profile?.avatarUrl || getAvatarUrl(profile?.profile?.avatar) || ""
-  );
+  const [avatarPreview, setAvatarPreview] = React.useState(base.avatarUrl);
   const [saving, setSaving] = React.useState(false);
   const [error, setError] = React.useState("");
   const [errors, setErrors] = React.useState({});
+  const [saved, setSaved] = React.useState(false);
 
   React.useEffect(() => {
     // sync when profile prop changes
-    setForm({
-      first_name: profile?.first_name || "",
-      last_name: profile?.last_name || "",
-      bio: profile?.profile?.bio || "",
-    });
-    setAvatarPreview(profile?.profile?.avatarUrl || getAvatarUrl(profile?.profile?.avatar) || "");
+    setForm({ first_name: base.first_name, last_name: base.last_name, bio: base.bio });
+    setAvatarPreview(base.avatarUrl);
     setAvatarFile(null);
     setError("");
     setErrors({});
-  }, [profile]);
+  }, [base]);
+
+  const isDirty = React.useMemo(() => {
+    return (
+      form.first_name !== base.first_name ||
+      form.last_name !== base.last_name ||
+      form.bio !== base.bio ||
+      !!avatarFile
+    );
+  }, [form, base, avatarFile]);
 
   const onPickAvatar = (e) => {
     const file = e.target.files?.[0];
@@ -46,6 +55,8 @@ export default function SettingsTab({ profile, onUpdated }) {
       if (avatarFile) payload.avatar = avatarFile;
       const updated = await updateProfile(payload);
       onUpdated?.(updated);
+      setSaved(true);
+      setTimeout(() => setSaved(false), 1800);
     } catch (err) {
       setError(err?.detail || "Не удалось сохранить профиль");
       setErrors(err?.fields || {});
@@ -111,13 +122,15 @@ export default function SettingsTab({ profile, onUpdated }) {
         )}
 
         {error && <div className="sm:col-span-2 text-sm" style={{color:"#ff8a8a"}}>{error}</div>}
+        {saved && !error && (
+          <div className="sm:col-span-2 text-sm" style={{color:"#6ee7b7"}}>Сохранено</div>
+        )}
 
         <div className="sm:col-span-2 flex gap-2 items-center">
-          <button className="btn-primary rounded-2xl px-4 py-2 relative" type="submit" disabled={saving}>
+          <button className="btn-primary rounded-2xl px-4 py-2 relative" type="submit" disabled={saving || !isDirty}>
             <span style={{ visibility: saving ? 'hidden' : 'visible' }}>Сохранить</span>
             {saving && <span className="absolute inset-0 grid place-items-center"><Loader2 className="animate-spin" size={18}/></span>}
           </button>
-          <button type="button" className="btn-ghost rounded-2xl px-4 py-2" disabled={saving} onClick={()=>setForm(initial)}>Отмена</button>
         </div>
       </form>
     </div>
