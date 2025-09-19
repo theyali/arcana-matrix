@@ -189,7 +189,9 @@ export default function MatrixSection() {
           {mode === "tarot22" ? (
             <Tarot22Tab dob={dob} setDob={setDob} onResult={setServerData} />
           ) : (
-            <PythagorTab dob={dob} setDob={setDob} onResult={setServerData} />
+            <div className="grid lg:grid-cols-2 gap-8">
+              <PythagorTab dob={dob} setDob={setDob} onResult={setServerData} />
+            </div>
           )}
         </div>
       </div>

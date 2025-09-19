@@ -1,3 +1,4 @@
+//theme/themes.js
 // Оставляем только 2 темы: 05 (дефолт) и 04
 export const THEMES = ['theme-mindful-05','theme-mindful-04'];
 
@@ -15,6 +16,8 @@ export function applyTheme(name) {
   THEMES.forEach(t => root.classList.remove(t));
   root.classList.add(target);
   localStorage.setItem('arcana_theme', target);
+
+  window.dispatchEvent(new CustomEvent('arcana:theme', { detail: { theme: target } }));
 }
 
 export function initTheme() {

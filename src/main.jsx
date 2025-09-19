@@ -3,11 +3,17 @@ import React, { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-import Root from './app/Root.jsx'; // каркас
+import Root from './app/Root.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { initTheme } from './theme/themes';
 import './index.css';
+import './i18n';
 import { Sparkles, Loader2 } from 'lucide-react';
+import LangGate from './app/LangGate.jsx';
+import EnGate from './app/EnGate.jsx';
+
+// ⬇️ новый импорт
+import RouteErrorBoundary from './components/RouteErrorBoundary.jsx';
 
 // --- красивый полноэкранный лоадер ---
 function FullScreenLoader() {
@@ -35,41 +41,6 @@ function FullScreenLoader() {
       </div>
     </div>
   );
-}
-
-// --- простая ErrorBoundary, чтобы вместо «чёрного экрана» показать UI и дать повторить ---
-class RouteErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false, err: null };
-  }
-  static getDerivedStateFromError(err) { return { hasError: true, err }; }
-  componentDidCatch(err, info) { console.error('Route error:', err, info); }
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="min-h-[100svh] grid place-items-center p-8 text-center" style={{ color: 'var(--text)' }}>
-          <div className="max-w-md">
-            <div
-              className="mx-auto mb-4 h-12 w-12 rounded-2xl grid place-items-center shadow"
-              style={{ background: 'linear-gradient(135deg, var(--accent), var(--primary))' }}
-            >
-              <Sparkles className="h-6 w-6 text-white" />
-            </div>
-            <h1 className="text-lg font-semibold mb-2">Не удалось загрузить страницу</h1>
-            <p className="opacity-75 mb-4">Попробуйте обновить страницу. Если ошибка повторяется, проверьте сеть.</p>
-            <button
-              className="btn-primary px-5 py-3 rounded-2xl font-semibold"
-              onClick={() => window.location.reload()}
-            >
-              Обновить
-            </button>
-          </div>
-        </div>
-      );
-    }
-    return this.props.children;
-  }
 }
 
 // --- ленивые страницы ---
@@ -115,64 +86,132 @@ createRoot(document.getElementById('root')).render(
       <RouteErrorBoundary>
         <Suspense fallback={<FullScreenLoader />}>
           <Routes>
-            <Route element={<Root />}>
-              <Route index element={<Home />} />
+            {/* --- Английская ветка БЕЗ префикса (EnGate принудительно включает EN) --- */}
+            <Route element={<EnGate />}>
+              <Route element={<Root />}>
+                <Route index element={<Home />} />
 
-              {/* ANALYSIS */}
-              <Route path="/analysis/face" element={<Face />} />
-              <Route path="/analysis/handwriting" element={<Handwriting />} />
-              <Route path="/analysis/dreams" element={<Dreams />} />
-              <Route path="/analysis/compatibility" element={<Compatibility />} />
-              <Route path="/analysis" element={<Navigate to="/analysis/face" replace />} />
+                {/* ANALYSIS */}
+                <Route path="analysis/face" element={<Face />} />
+                <Route path="analysis/handwriting" element={<Handwriting />} />
+                <Route path="analysis/dreams" element={<Dreams />} />
+                <Route path="analysis/compatibility" element={<Compatibility />} />
+                <Route path="analysis" element={<Navigate to="analysis/face" replace />} />
 
-              {/* PREDICTIONS */}
-              <Route path="/predictions/tarot" element={<TarotPage />} />
-              <Route path="/predictions/matrix" element={<MatrixPage />} />
-              <Route path="/predictions/palm" element={<PalmAIPage />} />
-              <Route path="/predictions/coffee" element={<CoffeePage />} />
-              <Route path="/predictions/horoscope" element={<HoroscopePage />} />
-              <Route path="/predictions/horoscope/:sign" element={<HoroscopeDetailPage />} />
-              <Route path="/predictions" element={<Navigate to="/predictions/tarot" replace />} />
+                {/* PREDICTIONS */}
+                <Route path="predictions/tarot" element={<TarotPage />} />
+                <Route path="predictions/matrix" element={<MatrixPage />} />
+                <Route path="predictions/palm" element={<PalmAIPage />} />
+                <Route path="predictions/coffee" element={<CoffeePage />} />
+                <Route path="predictions/horoscope" element={<HoroscopePage />} />
+                <Route path="predictions/horoscope/:sign" element={<HoroscopeDetailPage />} />
+                <Route path="predictions" element={<Navigate to="predictions/tarot" replace />} />
 
-              {/* PRICING */}
-              <Route path="/pricing" element={<PricingPage />} />
+                {/* PRICING */}
+                <Route path="pricing" element={<PricingPage />} />
 
-              {/* FORUM & EXPERTS */}
-              <Route path="/forum" element={<ForumPage />} />
-              <Route path="/forum/:slug" element={<ForumThreadPage />} />
-              <Route
-                path="/forum/new"
-                element={
-                  <RequireAuth>
-                    <ForumCreatePage />
-                  </RequireAuth>
-                }
-              />
-              <Route path="/experts" element={<ExpertsPage />} />
+                {/* FORUM & EXPERTS */}
+                <Route path="forum" element={<ForumPage />} />
+                <Route path="forum/:slug" element={<ForumThreadPage />} />
+                <Route
+                  path="forum/new"
+                  element={
+                    <RequireAuth>
+                      <ForumCreatePage />
+                    </RequireAuth>
+                  }
+                />
+                <Route path="experts" element={<ExpertsPage />} />
 
-              {/* AUTH */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/forgot" element={<Forgot />} />
+                {/* AUTH */}
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
+                <Route path="forgot" element={<Forgot />} />
 
-              {/* PROTECTED */}
-              <Route
-                path="/cabinet"
-                element={
-                  <RequireAuth>
-                    <Cabinet />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/settings"
-                element={
-                  <RequireAuth>
-                    <Settings />
-                  </RequireAuth>
-                }
-              />
+                {/* PROTECTED */}
+                <Route
+                  path="cabinet"
+                  element={
+                    <RequireAuth>
+                      <Cabinet />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="settings"
+                  element={
+                    <RequireAuth>
+                      <Settings />
+                    </RequireAuth>
+                  }
+                />
+              </Route>
             </Route>
+
+            {/* --- RU/UK ветки С префиксом --- */}
+            <Route path="/:lng" element={<LangGate />}>
+              <Route element={<Root />}>
+                <Route index element={<Home />} />
+
+                {/* ANALYSIS */}
+                <Route path="analysis/face" element={<Face />} />
+                <Route path="analysis/handwriting" element={<Handwriting />} />
+                <Route path="analysis/dreams" element={<Dreams />} />
+                <Route path="analysis/compatibility" element={<Compatibility />} />
+                <Route path="analysis" element={<Navigate to="analysis/face" replace />} />
+
+                {/* PREDICTIONS */}
+                <Route path="predictions/tarot" element={<TarotPage />} />
+                <Route path="predictions/matrix" element={<MatrixPage />} />
+                <Route path="predictions/palm" element={<PalmAIPage />} />
+                <Route path="predictions/coffee" element={<CoffeePage />} />
+                <Route path="predictions/horoscope" element={<HoroscopePage />} />
+                <Route path="predictions/horoscope/:sign" element={<HoroscopeDetailPage />} />
+                <Route path="predictions" element={<Navigate to="predictions/tarot" replace />} />
+
+                {/* PRICING */}
+                <Route path="pricing" element={<PricingPage />} />
+
+                {/* FORUM & EXPERTS */}
+                <Route path="forum" element={<ForumPage />} />
+                <Route path="forum/:slug" element={<ForumThreadPage />} />
+                <Route
+                  path="forum/new"
+                  element={
+                    <RequireAuth>
+                      <ForumCreatePage />
+                    </RequireAuth>
+                  }
+                />
+                <Route path="experts" element={<ExpertsPage />} />
+
+                {/* AUTH */}
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
+                <Route path="forgot" element={<Forgot />} />
+
+                {/* PROTECTED */}
+                <Route
+                  path="cabinet"
+                  element={
+                    <RequireAuth>
+                      <Cabinet />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="settings"
+                  element={
+                    <RequireAuth>
+                      <Settings />
+                    </RequireAuth>
+                  }
+                />
+              </Route>
+            </Route>
+
+            {/* Фоллбек — на корень (EN) */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
       </RouteErrorBoundary>

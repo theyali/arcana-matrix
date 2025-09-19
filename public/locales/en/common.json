@@ -1,0 +1,173 @@
+{
+  "brand": "Tarion",
+  "nav": {
+    "home": "Home",
+    "tarot": "AI Tarot",
+    "matrix": "Destiny Matrix",
+    "experts": "Experts",
+    "forum": "Forum",
+    "pricing": "Pricing",
+    "login": "Log in",
+    "register": "Sign up",
+    "logout": "Log out",
+    "cabinet": "Cabinet",
+    "settings": "Settings",
+    "tests": "Tests",
+    "predictions": "Predictions",
+    "tarot_ai": "Tarot AI",
+    "matrix_ai": "Matrix AI",
+    "horoscopes_ai": "Horoscope AI",
+    "coffee_ai": "Coffee AI",
+    "palm_ai": "Palm AI",
+    "analysis": "Analysis",
+    "face": "Face Analysis AI",
+    "handwriting": "Handwriting Analysis AI",
+    "dreams": "Dreams Analysis AI",
+    "compatibility": "Compatibility AI"
+  },
+  "hero": {
+    "title.1": "Your ",
+    "title.2": "intuition",
+    "title.3": " + our AI",
+    "subtitle": "Tarion blends AI Tarot spreads, the destiny matrix, and a practitioners’ community. Experts and algorithms — side by side to highlight your next step.",
+    "pill.ai": "AI spreads",
+    "pill.matrix": "Destiny matrix",
+    "pill.forum": "Forum & calls",
+    "cta.try": "Try AI spread",
+    "steps": {
+      "one": {
+        "title": "Step 1",
+        "body": "Formulate a question or pick a spread template."
+      },
+      "two": {
+        "title": "Step 2",
+        "body": "AI draws cards and connects meanings to your situation."
+      },
+      "three": {
+        "title": "Step 3",
+        "body": "Add your interpretation and ask follow-up questions."
+      }
+    },
+    "badges": {
+      "privacy": "Data privacy",
+      "offline": "Offline inference in preview",
+      "demo": "Demo spread is free",
+      "trained": "Trained AI spread"
+    },
+    "community": {
+      "title": "Tarion Community",
+      "text": "1,200+ members try spreads and share feedback"
+    },
+    "counters": {
+      "experts": "Experts",
+      "templates": "Templates",
+      "privacy": "Privacy"
+    },
+    "rating": {
+      "score": "4.9/5",
+      "reviews": "300+ reviews"
+    },
+    "gallery": {
+      "alt": "Card {{n}}"
+    },
+    "deck": {
+      "note": "Demo deck and offline inference for preview"
+    }
+  },
+  "forum_page": {
+    "forum": "Forum",
+    "subtitle": "Discussions about AI-Tarot, Matrix, coffee, palmistry and horoscopes.",
+    "new_thread": "+ Create thread",
+    "pending_banner": "The thread has been sent for moderation. It will appear after approval.",
+    "search_placeholder": "Search threads…",
+    "cat.Все": "All",
+    "cat.Общее": "General",
+    "cat.ИИ-Таро": "AI-Tarot",
+    "cat.Матрица": "Matrix",
+    "cat.По кофе (ИИ)": "Coffee (AI)",
+    "cat.По ладони (ИИ)": "Palm (AI)",
+    "cat.Гороскопы": "Horoscopes",
+    "loading": "Loading…",
+    "author": "Author",
+    "guest": "Guest",
+    "replies": "replies",
+    "updated": "updated",
+    "nothing_found": "Nothing found.",
+    "api_hint": "(only approved threads are shown in the list)"
+  },
+  "palm": {
+    "title": "Palm Predictions (AI)",
+    "lead_html": "Upload <b>2–{{max}} photos</b>: <b>left</b> and <b>right</b> palm, optionally — <b>a close-up of lines</b>. We will highlight the main lines and prepare interpretations.",
+    "upload": {
+      "only_images": "Please select images (JPG/PNG).",
+      "too_big": "File \"{{name}}\" is larger than {{size}} MB.",
+      "drag_here": "Drag photos here",
+      "or": "or",
+      "choose_files": "Choose files",
+      "choose_other": "Choose other photos",
+      "hint": "JPG/PNG · up to {{maxSize}} MB each · {{minFiles}}–{{maxFiles}} photos",
+      "selected": "Selected:",
+      "send": "Send for analysis",
+      "min_req": "Minimum — {{min}} photos (left and right palm). We recommend adding a close-up of the main lines."
+    },
+    "state": {
+      "analyzing": "Analyzing…",
+      "usually_seconds": "This usually takes a few seconds."
+    },
+    "result": {
+      "title": "Analysis result",
+      "photo_alt": "Photo {{id}}",
+      "short": "Summary:",
+      "new_analysis": "New analysis"
+    }
+  },
+  "actions": {
+    "ok": "OK",
+    "clear": "Clear",
+    "retry": "Retry",
+    "remove_photo": "Remove photo"
+  },
+  "errors": {
+    "analyze_failed": "Analysis failed.",
+    "request_failed_title": "Request failed"
+  },
+  "pricing": {
+    "open": "View pricing"
+  },
+  "auth": {
+    "required_title": "Log in to upload photos",
+    "required_palm_desc": "Palm analysis is available only to authorized users."
+  },
+  "photo_tips": {
+    "how": {
+      "title": "How to take proper photos",
+      "1": "Shoot in diffused daylight, no flash or strong glare.",
+      "2": "Wash and dry your hands, remove rings/bracelets.",
+      "3": "Take photos of the <b>left</b> and <b>right</b> palm, fingers relaxed and slightly open.",
+      "4": "Hold the camera perpendicular; add a 3rd photo — a <b>close-up of the lines</b>.",
+      "5": "JPG/PNG, width ≥ 1000 px, size up to {{max}} MB."
+    },
+    "good": {
+      "title": "Good examples",
+      "left": { "label": "Left", "hint": "full palm in frame" },
+      "right": { "label": "Right", "hint": "even lighting" },
+      "zoom": { "label": "Close-up", "hint": "main lines" }
+    },
+    "bad": {
+      "title": "What to avoid",
+      "flash": { "title": "Flash", "hint": "harsh glare" },
+      "blurry": { "title": "Blurry", "hint": "no sharpness" },
+      "far": { "title": "Too far", "hint": "few details" }
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved. Use of materials is allowed only with <b>written permission</b>.",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "support": "Support",
+    "download_app": "Download our app",
+    "appstore": { "small": "Download on the", "big": "App Store" },
+    "gplay": { "small": "Get it on", "big": "Google Play" },
+    "payments": "We accept payments:"
+  }
+}

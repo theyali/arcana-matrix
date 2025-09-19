@@ -4,8 +4,12 @@ import AuthGate from "../../components/auth/AuthGate";
 import { predictionsApi } from "../../api/palmai";
 import PhotoTips from "../../components/predictions/PhotoTips";
 import PalmAspectsLegend from "../../features/palm/PalmAspectsLegend";
+import { useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
 
 export default function PalmAIPage() {
+  const { t } = useTranslation("common");
+
   const [files, setFiles] = React.useState([]);         // File[]
   const [previews, setPreviews] = React.useState([]);   // {name, url, size}
   const [error, setError] = React.useState("");
@@ -43,7 +47,7 @@ export default function PalmAIPage() {
 
     const images = arr.filter((f) => f.type.startsWith("image/"));
     if (!images.length) {
-      setError("Пожалуйста, выберите изображения (JPG/PNG).");
+      setError(t("palm.upload.only_images"));
       setErrStatus(400);
       return;
     }
@@ -58,7 +62,7 @@ export default function PalmAIPage() {
 
     const big = unique.find((f) => f.size > MAX_SIZE_MB * 1024 * 1024);
     if (big) {
-      setError(`Файл «${big.name}» больше ${MAX_SIZE_MB} МБ.`);
+      setError(t("palm.upload.too_big", { name: big.name, size: MAX_SIZE_MB }));
       setErrStatus(400);
       return;
     }
@@ -119,7 +123,7 @@ export default function PalmAIPage() {
       setResult(data);
       setStage("done");
     } catch (e) {
-      setError(e?.message || "Не удалось выполнить анализ.");
+      setError(e?.message || t("errors.analyze_failed"));
       setErrStatus(e?.status ?? null);
       setStage("error");
     } finally {
@@ -139,7 +143,7 @@ export default function PalmAIPage() {
         role="alert"
         className="mt-4 rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm"
       >
-        <div className="font-semibold mb-1">Не удалось выполнить запрос</div>
+        <div className="font-semibold mb-1">{t("errors.request_failed_title")}</div>
         <div className="opacity-90">{error}</div>
 
         <div className="mt-3 flex flex-wrap gap-2">
@@ -150,14 +154,14 @@ export default function PalmAIPage() {
                 onClick={() => setError("")}
                 className="rounded-lg px-3 py-1.5 text-sm bg-white/10 hover:bg-white/20"
               >
-                Понял
+                {t("actions.ok")}
               </button>
               <button
                 type="button"
                 onClick={openPicker}
                 className="rounded-lg px-3 py-1.5 text-sm bg-white/10 hover:bg-white/20"
               >
-                Выбрать другие фото
+                {t("palm.upload.choose_other")}
               </button>
             </>
           )}
@@ -166,7 +170,7 @@ export default function PalmAIPage() {
               href="/pricing"
               className="rounded-lg px-3 py-1.5 text-sm bg-white/10 hover:bg-white/20"
             >
-              Открыть тарифы
+              {t("pricing.open")}
             </a>
           )}
           {netIssue && (
@@ -175,7 +179,7 @@ export default function PalmAIPage() {
               onClick={handleUpload}
               className="rounded-lg px-3 py-1.5 text-sm bg-white/10 hover:bg-white/20"
             >
-              Повторить
+              {t("actions.retry")}
             </button>
           )}
         </div>
@@ -183,18 +187,22 @@ export default function PalmAIPage() {
     );
   };
 
+  // ---------- FIX: при stage === "done" не включаем p-8/sm:p-12 и бордеры вообще ----------
+  const baseBox = "relative rounded-3xl transition text-center";
+  const visibleBox =
+    `${isDragging ? "border-[var(--primary)] bg-white/10"
+      : errStatus ? "border-red-400/60 bg-red-500/5"
+      : "border-white/15 bg-white/5 hover:bg-white/10"} ` +
+    "border-2 border-dashed p-8 sm:p-12 opacity-100 duration-300";
+  const hiddenBox =
+    "opacity-0 -translate-y-2 scale-[0.98] pointer-events-none h-0 p-0 sm:p-0 border-0 overflow-hidden duration-500";
+
   const UploadBlock = (
     <section
       onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
       onDragLeave={() => setIsDragging(false)}
       onDrop={onDrop}
-      className={`relative rounded-3xl border-2 border-dashed transition p-8 sm:p-12 text-center ${
-        isDragging ? "border-[var(--primary)] bg-white/10"
-                   : errStatus ? "border-red-400/60 bg-red-500/5"
-                               : "border-white/15 bg-white/5 hover:bg-white/10"
-      } ${stage === "done"
-          ? "opacity-0 -translate-y-2 scale-[0.98] pointer-events-none h-0 p-0 sm:p-0 border-0 overflow-hidden duration-500"
-          : "opacity-100 duration-300"}`}
+      className={`${baseBox} ${stage === "done" ? hiddenBox : visibleBox}`}
       style={{ backdropFilter: uploading ? "blur(2px)" : "none" }}
       aria-hidden={stage === "done"}
     >
@@ -203,8 +211,8 @@ export default function PalmAIPage() {
         <div className="absolute inset-0 z-10 grid place-items-center bg-black/40 backdrop-blur-sm rounded-3xl">
           <div className="rounded-2xl p-6 border border-white/10 bg-white/10 text-center">
             <div className="mx-auto mb-3 h-10 w-10 rounded-full border-4 border-white/30 border-t-white animate-spin" />
-            <div className="font-semibold">Идёт анализ…</div>
-            <div className="opacity-80 text-sm mt-1">Обычно это занимает несколько секунд.</div>
+            <div className="font-semibold">{t("palm.state.analyzing")}</div>
+            <div className="opacity-80 text-sm mt-1">{t("palm.state.usually_seconds")}</div>
           </div>
         </div>
       )}
@@ -220,9 +228,9 @@ export default function PalmAIPage() {
           </div>
 
           <h2 className="text-xl font-semibold mb-2" style={{ color: "var(--text)" }}>
-            Перетащите фото сюда
+            {t("palm.upload.drag_here")}
           </h2>
-          <p className="opacity-80 mb-5">или</p>
+          <p className="opacity-80 mb-5">{t("palm.upload.or")}</p>
 
           <input
             ref={inputRef}
@@ -235,21 +243,21 @@ export default function PalmAIPage() {
           />
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <button onClick={openPicker} className="btn-primary rounded-2xl px-5 py-3 font-semibold">
-              Выбрать файлы
+              {t("palm.upload.choose_files")}
             </button>
             <span className="text-sm opacity-80">
-              JPG/PNG · до {MAX_SIZE_MB} МБ каждый · {MIN_FILES}–{MAX_FILES} фото
+              {t("palm.upload.hint", { maxSize: MAX_SIZE_MB, minFiles: MIN_FILES, maxFiles: MAX_FILES })}
             </span>
           </div>
 
           <div className="mt-4 text-sm">
-            <span className="opacity-80">Выбрано: </span>
+            <span className="opacity-80">{t("palm.upload.selected")} </span>
             <b>{files.length}</b> / {MAX_FILES}
             {files.length > 0 && (
               <>
                 <span className="mx-2 opacity-30">•</span>
                 <button onClick={hardReset} className="btn-ghost rounded-xl px-3 py-1 text-sm">
-                  Очистить
+                  {t("actions.clear")}
                 </button>
               </>
             )}
@@ -271,7 +279,7 @@ export default function PalmAIPage() {
                   type="button"
                   onClick={() => removeAt(p.name, p.size)}
                   className="absolute top-2 right-2 rounded-lg px-2 py-1 text-xs bg-black/50 hover:bg-black/70"
-                  aria-label="Удалить фото"
+                  aria-label={t("actions.remove_photo")}
                 >
                   ✕
                 </button>
@@ -289,10 +297,10 @@ export default function PalmAIPage() {
               canUpload ? "btn-primary" : "btn-ghost opacity-60 cursor-not-allowed"
             }`}
           >
-            Отправить на анализ
+            {t("palm.upload.send")}
           </button>
           <div className="text-xs opacity-70 mt-2">
-            Минимум — {MIN_FILES} фото (левая и правая ладонь). Рекомендуем добавить крупный план основных линий.
+            {t("palm.upload.min_req", { min: MIN_FILES })}
           </div>
         </div>
       </div>
@@ -302,17 +310,21 @@ export default function PalmAIPage() {
   return (
     <main className="page relative">
       <div className="container mx-auto px-4 max-w-7xl py-10">
-        <h1 className="h1 mb-2">Предсказания по ладони (ИИ)</h1>
+        <h1 className="h1 mb-2">{t("palm.title")}</h1>
         <p className="text-base opacity-80 mb-8">
-          Загрузите <b>2–3 фото</b>: <b>левую</b> и <b>правую</b> ладонь, при желании — <b>крупный план линий</b>.
-          Мы выделим основные линии и подготовим трактовки.
+          <Trans
+            i18nKey="palm.lead_html"
+            values={{ max: 3 }}
+            components={{ b: <b /> }}
+          />
         </p>
 
         <AuthGate
           className=""
           overlayClassName=""
-          title="Войдите, чтобы загрузить фото"
-          description="Функция анализа ладоней доступна только авторизованным пользователям.">
+          title={t("auth.required_title")}
+          description={t("auth.required_palm_desc")}
+        >
           {UploadBlock}
 
           {/* Результат — показываем после успешного ответа */}
@@ -322,7 +334,7 @@ export default function PalmAIPage() {
                 ref={resultRef}
                 className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6 transition-opacity duration-500"
               >
-                <h3 className="text-xl font-semibold mb-3">Результат анализа</h3>
+                <h3 className="text-xl font-semibold mb-3">{t("palm.result.title")}</h3>
 
                 {result.images?.length > 0 && (
                   <div className="mb-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -334,7 +346,7 @@ export default function PalmAIPage() {
                         rel="noreferrer"
                         className="block rounded-xl overflow-hidden border border-white/10"
                       >
-                        <img src={img.file} alt={`Фото ${img.id}`} className="w-full h-40 object-cover" />
+                        <img src={img.file} alt={t("palm.result.photo_alt", { id: img.id })} className="w-full h-40 object-cover" />
                       </a>
                     ))}
                   </div>
@@ -342,7 +354,7 @@ export default function PalmAIPage() {
 
                 {result.summary && (
                   <p className="mb-3 text-base">
-                    <b>Кратко:</b> {result.summary}
+                    <b>{t("palm.result.short")} </b>{result.summary}
                   </p>
                 )}
 
@@ -354,7 +366,7 @@ export default function PalmAIPage() {
 
                 <div className="mt-6 flex gap-3">
                   <button onClick={resetForNew} className="btn-ghost rounded-2xl px-5 py-3 font-semibold">
-                    Новый анализ
+                    {t("palm.result.new_analysis")}
                   </button>
                 </div>
               </section>

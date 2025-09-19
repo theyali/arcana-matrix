@@ -2,40 +2,59 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home as HomeIcon } from 'lucide-react';
-import { getZodiac } from '../features/horoscope/zodiac'; // есть из предыдущей части
+import { getZodiac } from '../features/horoscope/zodiac';
+
+const LANGS = ['en', 'ru', 'uk'];
 
 export default function Breadcrumbs(){
   const location = useLocation();
   const { pathname, search } = location;
 
-  // не показываем на главной
-  if (pathname === '/' || pathname === '') return null;
+  const rawParts = pathname.split('/').filter(Boolean);
+  const lang = rawParts[0] && LANGS.includes(rawParts[0]) ? rawParts[0] : null;
 
-  const parts = pathname.split('/').filter(Boolean); // ['', 'predictions', ...] → ['predictions', ...]
-  let acc = '';
-  const keepSearch = (p) =>
-    p.startsWith('/predictions/horoscope') ? search : ''; // оставляем фильтры гороскопов
+  // Префикс языка для ссылок (у EN префикса нет)
+  const langPrefix = lang && lang !== 'en' ? `/${lang}` : '';
+
+  // Крошки строим по пути без языкового сегмента
+  const parts = lang ? rawParts.slice(1) : rawParts;
+
+  // --- Новая проверка: на главной (/, /ru, /uk) ничего не показываем ---
+  if (parts.length === 0) return null;
+
+  // Утилита: убрать язык из пути
+  const stripLang = (p) => p.replace(/^\/(en|ru|uk)(?=\/|$)/, '');
+
+  // Сохраняем параметры только на страницах гороскопов
+  const keepSearch = (p) => stripLang(p).startsWith('/predictions/horoscope') ? search : '';
+
+  // Ссылка "Главная": ведёт в корень текущего языка (или просто "/" для EN)
+  const homeHref = langPrefix || '/';
+
+  let acc = langPrefix; // начинаем с языкового префикса, чтобы ссылки были корректными
 
   const crumbs = [
-    { label: 'Главная', href: '/' },
+    { label: 'Главная', href: homeHref },
     ...parts.map((seg, idx) => {
-      acc += `/${seg}`;
+      acc += `/${seg}`;                     // накапливаем путь с префиксом
+      const accNoLang = stripLang(acc);     // нормализованный путь без префикса
       let label = seg;
 
-      // Человекочитаемые подписи
-      if (acc === '/predictions') label = 'Предсказания';
-      if (acc === '/predictions/tarot') label = 'ИИ-Таро';
-      if (acc === '/predictions/matrix') label = 'Матрица';
-      if (acc === '/predictions/palm') label = 'По ладони (ИИ)';
-      if (acc === '/predictions/coffee') label = 'По кофе (ИИ)';
-      if (acc === '/predictions/horoscope') label = 'Гороскопы';
-      if (acc === '/pricing') label = 'Подписка';
-      if (acc === '/cabinet') label = 'Личный кабинет';
-      if (acc === '/forum') label = 'Форум';
-      if (acc === '/login') label = 'Авторизация';
-      if (acc === '/register') label = 'Регистрация';
-      if (acc === '/analysis') label = 'Анализ';
-      if (acc === '/analysis/handwriting') label = 'Анализ почерка';
+      // Человекочитаемые подписи (сопоставляем по пути БЕЗ языка)
+      if (accNoLang === '/predictions') label = 'Предсказания';
+      if (accNoLang === '/predictions/tarot') label = 'ИИ-Таро';
+      if (accNoLang === '/predictions/matrix') label = 'Матрица';
+      if (accNoLang === '/predictions/palm') label = 'По ладони (ИИ)';
+      if (accNoLang === '/predictions/coffee') label = 'По кофе (ИИ)';
+      if (accNoLang === '/predictions/horoscope') label = 'Гороскопы';
+      if (accNoLang === '/pricing') label = 'Подписка';
+      if (accNoLang === '/cabinet') label = 'Личный кабинет';
+      if (accNoLang === '/forum') label = 'Форум';
+      if (accNoLang === '/login') label = 'Авторизация';
+      if (accNoLang === '/register') label = 'Регистрация';
+      if (accNoLang === '/analysis') label = 'Анализ';
+      if (accNoLang === '/analysis/handwriting') label = 'Анализ почерка';
+      if (accNoLang === '/analysis/face') label = 'ИИ анализ';
 
       // Динамический знак: /predictions/horoscope/:sign
       const prev = parts[idx - 1];
@@ -44,11 +63,13 @@ export default function Breadcrumbs(){
         label = z?.name || seg;
       }
 
-      // Последний крошке href не нужен
       const isLast = idx === parts.length - 1;
+
+      const isHub = accNoLang === '/predictions' || accNoLang === '/analysis';
+
       return {
         label,
-        href: isLast ? null : acc + keepSearch(acc),
+        href: (isLast || isHub) ? null : acc + keepSearch(acc),
       };
     }),
   ];
@@ -73,7 +94,16 @@ export default function Breadcrumbs(){
                   )}
                 </Link>
               ) : (
-                <span className="opacity-60">{c.label}</span>
+                <span className="opacity-60">
+                  {i === 0 ? (
+                    <span className="inline-flex items-center gap-1">
+                      <HomeIcon size={16} className="opacity-80" />
+                      {c.label}
+                    </span>
+                  ) : (
+                    c.label
+                  )}
+                </span>
               )}
             </li>
           ))}

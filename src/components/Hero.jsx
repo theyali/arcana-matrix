@@ -1,33 +1,41 @@
+// src/components/Hero.jsx
 import React from 'react'
 import Section from './Section'
 import Pill from './Pill'
 import { PrimaryButton, GhostButton } from './Buttons'
 import { Bot, Star, Users, CreditCard, ChevronRight, Shield, Shuffle, MessageSquare, Lock, Sparkles } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import CardsGrid from './CardsGrid';
+
+
 
 export default function Hero(){
+  const { t } = useTranslation();
+
   return (
     <Section id='hero' className='pt-20 md:pt-10'>
       <div className='grid lg:grid-cols-2 gap-10'>
         <div>
           <div className="first-block-hero">
             <h1 className='text-4xl md:text-6xl font-extrabold leading-tight' style={{color:'var(--text)'}}>
-              Ваша <span className='gradient-text'>интуиция</span> + наш ИИ
+              {t('hero.title.1')}
+              <span className='gradient-text'>{t('hero.title.2')}</span>
+              {t('hero.title.3')}
             </h1>
             <p className='mt-5 text-lg md:text-xl max-w-xl' style={{color:'var(--text)', opacity:.8}}>
-              Tarion объединяет ИИ‑расклады Таро, матрицу судьбы и сообщество практиков.
-              Эксперты и алгоритмы — бок о бок, чтобы подсветить ваш следующий шаг.
+              {t('hero.subtitle')}
             </p>
             <div className='mt-6 flex flex-wrap items-center gap-3'>
-              <Pill icon={Bot}>ИИ‑расклады</Pill>
-              <Pill icon={Star}>Матрица судьбы</Pill>
-              <Pill icon={Users}>Форум и созвоны</Pill>
+              <Pill icon={Bot}>{t('hero.pill.ai')}</Pill>
+              <Pill icon={Star}>{t('hero.pill.matrix')}</Pill>
+              <Pill icon={Users}>{t('hero.pill.forum')}</Pill>
             </div>
             <div className='mt-8 flex flex-wrap gap-3'>
               <PrimaryButton onClick={() => document.getElementById('ai')?.scrollIntoView({ behavior: 'smooth' })}>
-                Попробовать ИИ‑расклад <ChevronRight size={18} />
+                {t('hero.cta.try')} <ChevronRight size={18} />
               </PrimaryButton>
               <GhostButton onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
-                Тарифы <CreditCard size={18} />
+                {t('nav.pricing')} <CreditCard size={18} />
               </GhostButton>
             </div>
           </div>
@@ -41,30 +49,30 @@ export default function Hero(){
                 <div className="rounded-xl p-4 border border-muted/60">
                   <div className="flex items-center gap-2">
                     <Shuffle size={18} />
-                    <p className="font-semibold" style={{ color: 'var(--text)' }}>Шаг 1</p>
+                    <p className="font-semibold" style={{ color: 'var(--text)' }}>{t('hero.steps.one.title')}</p>
                   </div>
                   <p className="mt-2 text-sm" style={{ color: 'var(--text)', opacity: .8 }}>
-                    Сформулируйте запрос или выберите шаблон расклада.
+                    {t('hero.steps.one.body')}
                   </p>
                 </div>
 
                 <div className="rounded-xl p-4 border border-muted/60">
                   <div className="flex items-center gap-2">
                     <Bot size={18} />
-                    <p className="font-semibold" style={{ color: 'var(--text)' }}>Шаг 2</p>
+                    <p className="font-semibold" style={{ color: 'var(--text)' }}>{t('hero.steps.two.title')}</p>
                   </div>
                   <p className="mt-2 text-sm" style={{ color: 'var(--text)', opacity: .8 }}>
-                    ИИ тянет карты и связывает значения под вашу ситуацию.
+                    {t('hero.steps.two.body')}
                   </p>
                 </div>
 
                 <div className="rounded-xl p-4 border border-muted/60">
                   <div className="flex items-center gap-2">
                     <MessageSquare size={18} />
-                    <p className="font-semibold" style={{ color: 'var(--text)' }}>Шаг 3</p>
+                    <p className="font-semibold" style={{ color: 'var(--text)' }}>{t('hero.steps.three.title')}</p>
                   </div>
                   <p className="mt-2 text-sm" style={{ color: 'var(--text)', opacity: .8 }}>
-                    Добавьте свою интерпретацию и задайте уточняющие вопросы.
+                    {t('hero.steps.three.body')}
                   </p>
                 </div>
               </div>
@@ -72,16 +80,16 @@ export default function Hero(){
               {/* Гарантии и преимущества */}
               <div className="mt-4 flex flex-wrap items-center gap-3 text-sm" style={{ color: 'var(--text)', opacity: .8 }}>
                 <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 border border-muted">
-                  <Shield size={16}/> Приватность данных
+                  <Shield size={16}/> {t('hero.badges.privacy')}
                 </span>
                 <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 border border-muted">
-                  <Lock size={16}/> Офлайн-инференс в превью
+                  <Lock size={16}/> {t('hero.badges.offline')}
                 </span>
                 <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 border border-muted">
-                  <Sparkles size={16}/> Демо-расклад бесплатно
+                  <Sparkles size={16}/> {t('hero.badges.demo')}
                 </span>
                 <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 border border-muted">
-                  <Bot size={18} /> Обученный ИИ расклад
+                  <Bot size={18} /> {t('hero.badges.trained')}
                 </span>
               </div>
             </div>
@@ -93,7 +101,7 @@ export default function Hero(){
               style={{ background: 'color-mix(in srgb, var(--text) 4%, transparent)' }}
             >
               <p className="text-sm font-semibold tracking-wide" style={{ color: 'var(--text)' }}>
-                Сообщество Tarion
+                {t('hero.community.title')}
               </p>
 
               {/* Аватары + короткий копирайт */}
@@ -115,16 +123,16 @@ export default function Hero(){
                   ))}
                 </div>
                 <p className="text-sm max-w-[40ch]" style={{ color: 'var(--text)', opacity: .8 }}>
-                  1 200+ участников пробуют расклады и делятся обратной связью
+                  {t('hero.community.text')}
                 </p>
               </div>
 
               {/* Счётчики — отдельной строкой */}
               <div className="mt-5 grid grid-cols-3 gap-3">
                 {[
-                  { icon: Users, value: '20+', label: 'Эксперты' },
-                  { icon: Sparkles, value: '14+', label: 'Шаблоны' },
-                  { icon: Shield, value: '100%', label: 'Приватность' },
+                  { icon: Users, value: '20+', label: t('hero.counters.experts') },
+                  { icon: Sparkles, value: '14+', label: t('hero.counters.templates') },
+                  { icon: Shield, value: '100%', label: t('hero.counters.privacy') },
                 ].map(({ icon: Icon, value, label }, i) => (
                   <div
                     key={i}
@@ -144,8 +152,8 @@ export default function Hero(){
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={16} className="opacity-90" />
                 ))}
-                <span className="text-sm ml-1" style={{ color: 'var(--text)', opacity: .8 }}>4.9/5</span>
-                <span className="text-xs" style={{ color: 'var(--text)', opacity: .6 }}>· 300+ отзывов</span>
+                <span className="text-sm ml-1" style={{ color: 'var(--text)', opacity: .8 }}>{t('hero.rating.score')}</span>
+                <span className="text-xs" style={{ color: 'var(--text)', opacity: .6 }}>· {t('hero.rating.reviews')}</span>
               </div>
 
               {/* Декор */}
@@ -159,28 +167,9 @@ export default function Hero(){
 
         </div>
         <div className='rounded-3xl border border-muted p-6 shadow-soft' style={{background:'color-mix(in srgb, var(--text) 6%, transparent)'}}>
-          <div className='grid grid-cols-3 gap-3'>
-            {[...Array(9)].map((_, i) => (
-              <div
-                key={i}
-                className='aspect-[8/14] rounded-2xl border border-muted overflow-hidden'
-                style={{background:'color-mix(in srgb, var(--text) 4%, transparent)'}}
-              >
-                <picture>
-                  <source srcSet={`/cards/card-light-${i+1}.webp`} type='image/webp' />
-                  <img
-                    src={`/cards/card-light-${i+1}.png`}
-                    alt={`Карточка ${i+1}`}
-                    className='w-full h-full object-cover'
-                    loading='lazy'
-                    decoding='async'
-                  />
-                </picture>
-              </div>
-            ))}
-          </div>
+          <CardsGrid/>
           <div className='mt-4 flex items-center gap-3 text-sm' style={{color:'var(--text)', opacity:.7}}>
-            <Shield size={16}/> Демо-колода и офлайн-инференс для превью
+            <Shield size={16}/> {t('hero.deck.note')}
           </div>
         </div>
       </div>

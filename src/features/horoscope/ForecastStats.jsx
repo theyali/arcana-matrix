@@ -86,32 +86,54 @@ export default function ForecastStatsSidebar({
   const loginTo = `${loginPath}?next=${encodeURIComponent(window.location.pathname + window.location.search)}`;
 
   return (
-    <aside className="rounded-2xl p-5 border border-white/10 bg-white/5 lg:sticky lg:top-6 h-fit">
-      <h2 className="font-semibold mb-3">Метрики</h2>
+    <aside className="">
+      <div className="rounded-2xl p-5 border border-white/10 bg-white/5 lg:sticky lg:top-6 h-fit">
+        <h2 className="font-semibold mb-3">Метрики</h2>
 
-      {/* Итоговый балл — всегда доступен */}
-      <StatBar label="Итоговый балл" value={stats.total_score} />
+        {/* Итоговый балл — всегда доступен */}
+        <StatBar label="Итоговый балл" value={stats.total_score} />
 
-      {/* Остальные — блюр + замок для гостей */}
-      <div className="relative mt-3">
-        <div className={isGuest ? "pointer-events-none filter blur-[2px] select-none" : ""}>
-          <div className="grid grid-cols-2 gap-3">
-            <StatBar label="Финансы" value={stats.finances} />
-            <StatBar label="Карьера" value={stats.career} />
-            <StatBar label="Отношения" value={stats.relationship} />
-            <StatBar label="Здоровье" value={stats.health} />
-            <StatBar label="Семья" value={stats.family} />
-            <StatBar label="Друзья" value={stats.friends} />
-            <StatBar label="Путешествия" value={stats.travel} />
-            <StatBar label="Форма" value={stats.physique} />
-            <StatBar label="Статус" value={stats.status} />
+        {/* Остальные — блюр + замок для гостей */}
+        <div className="relative mt-3">
+          <div className={isGuest ? "pointer-events-none filter blur-[2px] select-none" : ""}>
+            <div className="grid grid-cols-2 gap-3">
+              <StatBar label="Финансы" value={stats.finances} />
+              <StatBar label="Карьера" value={stats.career} />
+              <StatBar label="Отношения" value={stats.relationship} />
+              <StatBar label="Здоровье" value={stats.health} />
+              <StatBar label="Семья" value={stats.family} />
+              <StatBar label="Друзья" value={stats.friends} />
+              <StatBar label="Путешествия" value={stats.travel} />
+              <StatBar label="Форма" value={stats.physique} />
+              <StatBar label="Статус" value={stats.status} />
+            </div>
           </div>
+          {isGuest && <LockOverlay to={loginTo} />}
         </div>
-        {isGuest && <LockOverlay to={loginTo} />}
+
+        {/* Счастливые: доступны всем */}
+        <LuckyRow stats={stats} />
       </div>
 
-      {/* Счастливые: доступны всем */}
-      <LuckyRow stats={stats} />
+      <div className="rounded-2xl p-5 border border-white/10 bg-white/5 lg:sticky lg:top-6 h-fit mt-6">
+        <h2 className="font-semibold mb-3">Что такое метрики?</h2>
+        {/* Пояснение к метрикам */}
+        <div className="mt-6 text-xs leading-relaxed opacity-80 space-y-2 mt-4">
+          <p><strong>Финансы</strong> — отражает уровень материальной стабильности и перспектив заработка.</p>
+          <p><strong>Карьера</strong> — динамика профессионального роста, успехи в работе и учебе.</p>
+          <p><strong>Отношения</strong> — качество взаимодействия с партнёром и окружением.</p>
+          <p><strong>Здоровье</strong> — физическое и эмоциональное состояние, ресурсность.</p>
+          <p><strong>Семья</strong> — гармония в семье и поддержка со стороны близких.</p>
+          <p><strong>Друзья</strong> — уровень доверия и общения с друзьями.</p>
+          <p><strong>Путешествия</strong> — возможности для поездок, перемещений, новых впечатлений.</p>
+          <p><strong>Форма</strong> — внутренний тонус, энергия, способность поддерживать активность.</p>
+          <p><strong>Статус</strong> — социальное признание, авторитет и влияние на других.</p>
+          <p className="mt-2">Чем выше показатель (ближе к 100), тем более сильная и благоприятная энергия в этой сфере. 
+            Баллы ниже 50 указывают на зоны, требующие внимания.</p>
+        </div>
+      </div>
+
+
     </aside>
   );
 }

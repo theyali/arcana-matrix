@@ -1,11 +1,14 @@
 // src/components/Navbar.jsx
 import React from "react";
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
-import { Sparkles, LogIn, UserPlus, User, Settings as SettingsIcon, LogOut, ChevronDown } from "lucide-react";
-import { THEMES, THEME_LABELS, applyTheme } from "../theme/themes";
+import { LogIn, UserPlus, User, Settings as SettingsIcon, LogOut, ChevronDown } from "lucide-react";
+import { applyTheme } from "../theme/themes";
 import { api } from "../api/client";
 import { useAuthStatus } from "../auth/useAuthStatus";
 import { getAvatarUrl } from "../api/profile";
+import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeSwitch from "../components/ThemeSwitch";
+import { useTranslation } from "react-i18next"; // ⟵ добавлено
 
 export default function Navbar() {
   const { isAuthed, profile } = useAuthStatus();
@@ -20,6 +23,14 @@ export default function Navbar() {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("common"); // ⟵ добавлено
+
+  // текущий язык из URL и префикс для ссылок
+  const LANGS = ["en", "ru", "uk"]; // ⟵ добавлено
+  const rawParts = location.pathname.split("/").filter(Boolean); // ⟵ добавлено
+  const currentLng = rawParts[0] && LANGS.includes(rawParts[0]) ? rawParts[0] : "en"; // ⟵ добавлено
+  const langPrefix = currentLng !== "en" ? `/${currentLng}` : ""; // ⟵ добавлено
+  const withLang = (path) => `${langPrefix}${path}`; // ⟵ добавлено
 
   // рефы для аккаунт-меню
   const btnRef = React.useRef(null);
@@ -77,7 +88,7 @@ export default function Navbar() {
   const doLogout = () => {
     api.logout();
     setMenuOpen(false);
-    navigate("/");
+    navigate(langPrefix || "/"); // ⟵ чтобы остаться в текущем языке
   };
 
   const closePred = () => setPredOpen(false);
@@ -86,7 +97,8 @@ export default function Navbar() {
   const displayName =
     profile?.username ||
     (profile?.email ? profile.email.split("@")[0] : null) ||
-    "Аккаунт";
+    t("nav.cabinet", "Кабинет"); // ⟵ безопасный дефолт
+
   const avatarUrl = getAvatarUrl(profile?.profile?.avatar) || profile?.profile?.avatarUrl;
 
   // ---- Подсветка активных групп ----
@@ -96,12 +108,14 @@ export default function Navbar() {
     "/predictions/palm",
     "/predictions/coffee",
     "/predictions/horoscope",
-  ];
+  ].map(withLang); // ⟵ учитывать префикс
+
   const analysisRoutes = [
     "/analysis/face",
     "/analysis/handwriting",
     "/analysis/dreams",
-  ];
+  ].map(withLang); // ⟵ учитывать префикс
+
   const isGroupActive = (routes) => routes.some((p) => location.pathname.startsWith(p));
   const predGroupActive = isGroupActive(predRoutes);
   const analysisGroupActive = isGroupActive(analysisRoutes);
@@ -112,24 +126,24 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 navbar">
-      <div className="container mx-auto px-4 max-w-7xl h-16 flex items-center justify-between">
-      <Link
-        to="/"
-        className="flex items-center gap-3 font-bold text-lg"
-        style={{ color: "var(--text)" }}
-      >
-        <div
-          className="h-8 w-8 rounded-xl grid place-items-center shadow-lg"
-          style={{ background: "linear-gradient(135deg, var(--accent), var(--primary))" }}
+      <div className="container mx-auto px-4 max-w-8xl h-16 flex items-center justify-between">
+        <Link
+          to={langPrefix || "/"} // ⟵ логотип ведёт на корень текущего языка
+          className="flex items-center gap-3 font-bold text-lg"
+          style={{ color: "var(--text)" }}
         >
-          <img
-            src="/img/logo.svg"
-            alt="Tarion"
-            className="h-5 w-5 object-contain"
-          />
-        </div>
-        Tarion
-      </Link>
+          <div
+            className="h-8 w-8 rounded-xl grid place-items-center shadow-lg"
+            style={{ background: "linear-gradient(135deg, var(--accent), var(--primary))" }}
+          >
+            <img
+              src="/img/logo.svg"
+              alt={t("brand", "Tarion")} // ⟵ перевод бренда (на случай отличий)
+              className="h-5 w-5 object-contain"
+            />
+          </div>
+          {t("brand", "Tarion")}
+        </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm">
           {/* --- Предсказания --- */}
@@ -147,25 +161,25 @@ export default function Navbar() {
               aria-haspopup="menu"
               aria-expanded={predOpen}
             >
-              Предсказания <ChevronDown size={14} className="opacity-70" />
+              {t("nav.predictions", "Предсказания")} <ChevronDown size={14} className="opacity-70" />
             </button>
 
             {predOpen && (
               <div ref={predMenuRef} role="menu" className="menu-popover min-w-[240px]">
-                <NavLink to="/predictions/tarot" role="menuitem" className={menuItemClass} onClick={closePred}>
-                  Таро (ИИ)
+                <NavLink to={withLang("/predictions/tarot")} role="menuitem" className={menuItemClass} onClick={closePred}>
+                  {t("nav.tarot_ai", "Таро")}
                 </NavLink>
-                <NavLink to="/predictions/matrix" role="menuitem" className={menuItemClass} onClick={closePred}>
-                  Матрица
+                <NavLink to={withLang("/predictions/matrix")} role="menuitem" className={menuItemClass} onClick={closePred}>
+                  {t("nav.matrix_ai", "Матрица")}
                 </NavLink>
-                <NavLink to="/predictions/palm" role="menuitem" className={menuItemClass} onClick={closePred}>
-                  Предсказания по ладони (ИИ)
+                <NavLink to={withLang("/predictions/palm")} role="menuitem" className={menuItemClass} onClick={closePred}>
+                  {t("nav.palm_ai", "Предсказания по ладони (ИИ)")}
                 </NavLink>
-                <NavLink to="/predictions/coffee" role="menuitem" className={menuItemClass} onClick={closePred}>
-                  Предсказания по кофе (ИИ)
+                <NavLink to={withLang("/predictions/coffee")} role="menuitem" className={menuItemClass} onClick={closePred}>
+                  {t("nav.coffee_ai", "Предсказания по кофе (ИИ)")}
                 </NavLink>
-                <NavLink to="/predictions/horoscope" role="menuitem" className={menuItemClass} onClick={closePred}>
-                  Гороскопы (ИИ)
+                <NavLink to={withLang("/predictions/horoscope")} role="menuitem" className={menuItemClass} onClick={closePred}>
+                  {t("nav.horoscopes_ai", "Гороскопы (ИИ)")}
                 </NavLink>
               </div>
             )}
@@ -186,63 +200,59 @@ export default function Navbar() {
               aria-haspopup="menu"
               aria-expanded={analysisOpen}
             >
-              Анализ <ChevronDown size={14} className="opacity-70" />
+              {t("nav.analysis", "Анализ")} <ChevronDown size={14} className="opacity-70" />
             </button>
 
             {analysisOpen && (
               <div ref={analysisMenuRef} role="menu" className="menu-popover min-w-[240px]">
-                <NavLink to="/analysis/face" role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
-                  Облик (анализ лица)
+                <NavLink to={withLang("/analysis/face")} role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
+                  {t("nav.face", "Облик (анализ лица)")}
                 </NavLink>
-                <NavLink to="/analysis/handwriting" role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
-                  Почерк (анализ письма)
+                <NavLink to={withLang("/analysis/handwriting")} role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
+                  {t("nav.handwriting", "Почерк (анализ письма)")}
                 </NavLink>
-                <NavLink to="/analysis/dreams" role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
-                  ИИ-толкование сна
+                <NavLink to={withLang("/analysis/dreams")} role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
+                  {t("nav.dreams", "ИИ-толкование сна")}
                 </NavLink>
-                <NavLink to="/analysis/compatibility" role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
-                  Анализ совместимости (ИИ)
+                <NavLink to={withLang("/analysis/compatibility")} role="menuitem" className={menuItemClass} onClick={closeAnalysis}>
+                  {t("nav.compatibility", "Анализ совместимости (ИИ)")}
                 </NavLink>
               </div>
             )}
           </div>
 
-          <NavLink to="/experts" className={navLinkClass}>Специалисты</NavLink>
-          <NavLink to="/forum" className={navLinkClass}>Форум</NavLink>
-          <NavLink to="/pricing" className={navLinkClass}>Подписка</NavLink>
-          <a href="#pricing" className="nav-link">Тесты</a>
+          <NavLink to={withLang("/experts")} className={navLinkClass}>
+            {t("nav.experts", "Эксперты")}
+          </NavLink>
+          <NavLink to={withLang("/forum")} className={navLinkClass}>
+            {t("nav.forum", "Форум")}
+          </NavLink>
+          <NavLink to={withLang("/pricing")} className={navLinkClass}>
+            {t("nav.pricing", "Тарифы")}
+          </NavLink>
+          <a href="#pricing" className="nav-link">{t("nav.tests", "Тесты")}</a>
         </nav>
 
         <div className="flex items-center gap-3">
-          <select
-            value={theme}
-            onChange={(e) => setTheme(e.target.value)}
-            className="btn-ghost rounded-2xl px-3 py-2 text-sm"
-          >
-            {THEMES.map((t) => (
-              <option key={t} value={t}>
-                {THEME_LABELS[t] || t}
-              </option>
-            ))}
-          </select>
+          <ThemeSwitch className="ml-2" />
 
           {!isAuthed ? (
             <>
               <NavLink
-                to="/login"
+                to={withLang("/login")}
                 className={({ isActive }) =>
                   `btn-ghost inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold ${isActive ? "active" : ""}`
                 }
               >
-                <LogIn size={18} /> Войти
+                <LogIn size={18} /> {t("nav.login", "Войти")}
               </NavLink>
               <NavLink
-                to="/register"
+                to={withLang("/register")}
                 className={({ isActive }) =>
                   `btn-primary inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold ${isActive ? "active" : ""}`
                 }
               >
-                <UserPlus size={18} /> Регистрация
+                <UserPlus size={18} /> {t("nav.register", "Регистрация")}
               </NavLink>
             </>
           ) : (
@@ -270,19 +280,21 @@ export default function Navbar() {
 
               {menuOpen && (
                 <div ref={menuRef} role="menu" className="menu-popover">
-                  <NavLink to="/cabinet" role="menuitem" className={menuItemClass} onClick={() => setMenuOpen(false)}>
-                    <User size={16} /> Личный кабинет
+                  <NavLink to={withLang("/cabinet")} role="menuitem" className={menuItemClass} onClick={() => setMenuOpen(false)}>
+                    <User size={16} /> {t("nav.cabinet", "Кабинет")}
                   </NavLink>
-                  <NavLink to="/settings" role="menuitem" className={menuItemClass} onClick={() => setMenuOpen(false)}>
-                    <SettingsIcon size={16} /> Настройки
+                  <NavLink to={withLang("/settings")} role="menuitem" className={menuItemClass} onClick={() => setMenuOpen(false)}>
+                    <SettingsIcon size={16} /> {t("nav.settings", "Настройки")}
                   </NavLink>
                   <button role="menuitem" className="menu-item" onClick={doLogout}>
-                    <LogOut size={16} /> Выход
+                    <LogOut size={16} /> {t("nav.logout", "Выйти")}
                   </button>
                 </div>
               )}
+
             </div>
           )}
+          <LanguageSwitcher />
         </div>
       </div>
     </header>

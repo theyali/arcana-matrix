@@ -1,9 +1,13 @@
+// src/pages/ForumPage.jsx
 import React from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { listThreads } from '../api/forum';
 import { useAuth } from '../context/AuthContext';
+import { useTranslation } from "react-i18next";
 
-const categories = ['Все','Общее','ИИ-Таро','Матрица','По кофе (ИИ)','По ладони (ИИ)','Гороскопы'];
+const categories = [
+  'Все','Общее','ИИ-Таро','Матрица','По кофе (ИИ)','По ладони (ИИ)','Гороскопы'
+];
 const PAGE_SIZE = 10;
 
 function Pagination({ page, pages, onPage }){
@@ -25,16 +29,19 @@ function Pagination({ page, pages, onPage }){
   return <div className="flex flex-wrap gap-2">{arr}</div>;
 }
 
-const fmtDate = (iso) => {
+const fmtDate = (iso, lng) => {
   if (!iso) return '—';
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return '—';
-  return d.toLocaleString('ru-RU', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
+  return d.toLocaleString(lng === 'ru' ? 'ru-RU' : lng === 'uk' ? 'uk-UA' : 'en-US', {
+    day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit'
+  });
 };
 
 export default function ForumPage(){
   const { user } = useAuth();
   const [params, setParams] = useSearchParams();
+  const { t, i18n } = useTranslation("common");
 
   const [q, setQ] = React.useState(params.get('search') || '');
   const [cat, setCat] = React.useState(params.get('category') || 'Все');
@@ -42,10 +49,8 @@ export default function ForumPage(){
   const [data, setData] = React.useState({ results:[], count:0 });
   const [loading, setLoading] = React.useState(true);
 
-  // баннер после создания темы (модерация)
   const pendingBanner = params.get('pending') === '1';
 
-  // загрузка списка
   React.useEffect(()=>{
     let off=false;
     setLoading(true);
@@ -56,7 +61,6 @@ export default function ForumPage(){
     return ()=>{ off=true };
   }, [page, q, cat]);
 
-  // синхронизация с URL
   React.useEffect(()=>{
     const next = new URLSearchParams();
     if (q) next.set('search', q);
@@ -74,19 +78,25 @@ export default function ForumPage(){
       <div className="container mx-auto px-4 max-w-7xl py-10">
         {pendingBanner && (
           <div className="mb-4 rounded-2xl p-4 border border-white/10 bg-white/5">
-            Тема отправлена на модерацию. Она появится в списке после одобрения.
+            {t("forum_page.pending_banner", "Тема отправлена на модерацию. Она появится в списке после одобрения.")}
           </div>
         )}
 
         <div className="flex items-start justify-between gap-4 mb-6">
           <div>
-            <h1 className="h1 mb-2">Форум</h1>
-            <p className="opacity-80">Обсуждения по ИИ-Таро, Матрице, кофе, ладони и гороскопам.</p>
+            <h1 className="h1 mb-2">{t("forum_page.forum", "Форум")}</h1>
+            <p className="opacity-80">
+              {t("forum_page.subtitle", "Обсуждения по ИИ-Таро, Матрице, кофе, ладони и гороскопам.")}
+            </p>
           </div>
           {user ? (
-            <Link to="/forum/new" className="btn-primary rounded-2xl px-4 py-2 text-sm">+ Создать тему</Link>
+            <Link to="/forum/new" className="btn-primary rounded-2xl px-4 py-2 text-sm">
+              {t("forum_page.new_thread", "+ Создать тему")}
+            </Link>
           ) : (
-            <Link to="/login?next=/forum/new" className="btn-primary rounded-2xl px-4 py-2 text-sm">+ Создать тему</Link>
+            <Link to="/login?next=/forum/new" className="btn-primary rounded-2xl px-4 py-2 text-sm">
+              {t("forum_page.new_thread", "+ Создать тему")}
+            </Link>
           )}
         </div>
 
@@ -95,7 +105,7 @@ export default function ForumPage(){
           <input
             value={q}
             onChange={e=>{ setQ(e.target.value); setPage(1); }}
-            placeholder="Поиск по темам…"
+            placeholder={t("forum_page.search_placeholder", "Поиск по темам…")}
             className="btn-ghost rounded-2xl px-4 py-3 text-sm w-full sm:w-96"
           />
           <div className="rounded-2xl p-1 bg-white/5 border border-white/10 flex flex-wrap gap-1">
@@ -107,7 +117,7 @@ export default function ForumPage(){
                   cat===c ? 'bg-[var(--primary)] text-white' : 'text-[var(--text)]/80 hover:bg-white/10'
                 }`}
               >
-                {c}
+                {t(`forum_page.cat.${c}`, c)}
               </button>
             ))}
           </div>
@@ -115,40 +125,39 @@ export default function ForumPage(){
 
         {/* Список тем */}
         <div className="rounded-2xl border border-white/10 overflow-hidden">
-          {loading && <div className="p-6 bg-white/5 animate-pulse">Загрузка…</div>}
-          {!loading && data.results.map(t=>(
+          {loading && <div className="p-6 bg-white/5 animate-pulse">{t("forum_page.loading", "Загрузка…")}</div>}
+          {!loading && data.results.map(thread=>(
             <Link
-              key={t.id}
-              to={`/forum/${t.slug}`}
+              key={thread.id}
+              to={`/forum/${thread.slug}`}
               className="block border-b border-white/10 bg-white/5 hover:bg-white/10 transition"
             >
               <div className="px-5 py-4 flex items-center justify-between gap-4">
                 <div>
-                  <div className="font-semibold" style={{color:'var(--text)'}}>{t.title}</div>
-                  {/* DRF: author_name */}
-                  <div className="text-xs opacity-70">{t.category} • Автор: {t.author_name || 'Гость'}</div>
+                  <div className="font-semibold" style={{color:'var(--text)'}}>{thread.title}</div>
+                  <div className="text-xs opacity-70">
+                    {thread.category} • {thread.author_name ? `${t("forum_page.author", "Автор")}: ${thread.author_name}` : t("forum_page.guest", "Гость")}
+                  </div>
                 </div>
                 <div className="text-sm opacity-80 text-right">
-                  <div>{t.replies ?? 0} ответов</div>
-                  {/* DRF: updated_at */}
-                  <div className="opacity-70">обновлено: {fmtDate(t.updated_at)}</div>
+                  <div>{thread.replies ?? 0} {t("forum_page.replies", "ответов")}</div>
+                  <div className="opacity-70">
+                    {t("forum_page.updated", "обновлено")}: {fmtDate(thread.updated_at, i18n.language)}
+                  </div>
                 </div>
               </div>
             </Link>
           ))}
           {!loading && (data.results?.length===0) && (
-            <div className="px-5 py-6 text-sm opacity-70">Ничего не найдено.</div>
+            <div className="px-5 py-6 text-sm opacity-70">
+              {t("forum_page.nothing_found", "Ничего не найдено.")}
+            </div>
           )}
         </div>
 
-        {/* Пагинация */}
         <div className="mt-6">
           <Pagination page={page} pages={totalPages} onPage={onPage} />
         </div>
-
-        <p className="opacity-60 text-xs mt-6">
-          DRF: <code>/api/forum/threads/?page=&page_size=&search=&category=</code> (в списке — только одобренные темы).
-        </p>
       </div>
     </main>
   );

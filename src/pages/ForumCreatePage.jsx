@@ -1,3 +1,4 @@
+// src/pages/ForumCreatePage.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
