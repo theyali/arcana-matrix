@@ -75,7 +75,7 @@ export default function LanguageSwitcher({ className = "" }) {
   const currentLang = LANGS.find((l) => l.code === cur) || LANGS[0];
 
   return (
-    <details ref={detailsRef} className={`relative ${className}`}>
+    <details ref={detailsRef} className={`mobile-d-none relative ${className}`}>
       <summary
         className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-muted cursor-pointer select-none hover:bg-muted/40"
         style={{ color: "var(--text)" }}
@@ -91,7 +91,7 @@ export default function LanguageSwitcher({ className = "" }) {
       </summary>
 
       <ul
-        className="absolute right-0 mt-2 w-44 p-1 rounded-xl border border-muted shadow-xl z-50 backdrop-blur-sm menu-popover"
+        className="absolute right-0 mt-2 w-44 p-1 rounded-xl border border-muted shadow-xl z-50 backdrop-blur-sm menu-popover "
         role="menu"
         aria-label="Select language"
       >

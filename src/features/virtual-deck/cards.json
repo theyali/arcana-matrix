@@ -1,0 +1,3830 @@
+[
+  {
+    "id": "major_00_the_fool",
+    "slug": "major/00_the_fool",
+    "suit": "major",
+    "rank": 0,
+    "en": "The Fool",
+    "ru": "Шут",
+    "uk": "Блазень",
+    "keywords": {
+      "en": [
+        "innocence",
+        "new path",
+        "risk",
+        "faith",
+        "spontaneity"
+      ],
+      "ru": [
+        "невинность",
+        "новый путь",
+        "риск",
+        "вера",
+        "спонтанность"
+      ],
+      "uk": [
+        "невинність",
+        "новий шлях",
+        "ризик",
+        "віра",
+        "спонтанність"
+      ]
+    },
+    "meaning_short": {
+      "en": "A fresh start.",
+      "ru": "Свежий старт.",
+      "uk": "Свіжий старт."
+    },
+    "meaning": {
+      "en": "A fresh start. Trust the journey even if the map is blank. Leap with curiosity, not fear.",
+      "ru": "Свежий старт. Доверься пути, даже если карты нет. Прыгай с любопытством, а не со страхом.",
+      "uk": "Свіжий старт. Довірся шляху, навіть якщо карти немає. Стрибай із цікавістю, а не зі страхом."
+    },
+    "reversed_meaning_short": {
+      "en": "Reckless naivety, ignoring consequences, running from responsibility.",
+      "ru": "Безрассудная наивность, игнор последствий, бегство от ответственности.",
+      "uk": "Безрозсудна наївність, ігнор наслідків, втеча від відповідальності."
+    },
+    "reversed_meaning": {
+      "en": "Reckless naivety, ignoring consequences, running from responsibility.",
+      "ru": "Безрассудная наивность, игнор последствий, бегство от ответственности.",
+      "uk": "Безрозсудна наївність, ігнор наслідків, втеча від відповідальності."
+    }
+  },
+  {
+    "id": "major_01_the_magician",
+    "slug": "major/01_the_magician",
+    "suit": "major",
+    "rank": 1,
+    "en": "The Magician",
+    "ru": "Маг",
+    "uk": "Маг",
+    "keywords": {
+      "en": [
+        "will",
+        "focus",
+        "skill",
+        "manifestation",
+        "action"
+      ],
+      "ru": [
+        "воля",
+        "фокус",
+        "мастерство",
+        "проявление",
+        "действие"
+      ],
+      "uk": [
+        "воля",
+        "фокус",
+        "майстерність",
+        "втілення",
+        "дія"
+      ]
+    },
+    "meaning_short": {
+      "en": "You have the tools.",
+      "ru": "У тебя есть инструменты.",
+      "uk": "У тебе є інструменти."
+    },
+    "meaning": {
+      "en": "You have the tools. Align intention, attention, and action to make ideas real.",
+      "ru": "У тебя есть инструменты. Соедини намерение, внимание и действие, чтобы воплотить идеи.",
+      "uk": "У тебе є інструменти. Поєднай намір, увагу і дію, щоб втілити ідеї."
+    },
+    "reversed_meaning_short": {
+      "en": "Scattered energy, manipulation, unused potential.",
+      "ru": "Рассеиваешь энергию, манипулируешь, не используешь потенциал.",
+      "uk": "Розсіюєш енергію, маніпулюєш, не використовуєш потенціал."
+    },
+    "reversed_meaning": {
+      "en": "Scattered energy, manipulation, unused potential.",
+      "ru": "Рассеиваешь энергию, манипулируешь, не используешь потенциал.",
+      "uk": "Розсіюєш енергію, маніпулюєш, не використовуєш потенціал."
+    }
+  },
+  {
+    "id": "major_02_the_high_priestess",
+    "slug": "major/02_the_high_priestess",
+    "suit": "major",
+    "rank": 2,
+    "en": "The High Priestess",
+    "ru": "Верховная Жрица",
+    "uk": "Верховна Жриця",
+    "keywords": {
+      "en": [
+        "intuition",
+        "mystery",
+        "inner voice",
+        "silence",
+        "depth"
+      ],
+      "ru": [
+        "интуиция",
+        "тайна",
+        "внутренний голос",
+        "тишина",
+        "глубина"
+      ],
+      "uk": [
+        "інтуїція",
+        "таємниця",
+        "внутрішній голос",
+        "тиша",
+        "глибина"
+      ]
+    },
+    "meaning_short": {
+      "en": "Listen before you act.",
+      "ru": "Сначала слушай.",
+      "uk": "Спершу слухай."
+    },
+    "meaning": {
+      "en": "Listen before you act. Knowledge lies behind the veil; trust your inner moon.",
+      "ru": "Сначала слушай. Знание спрятано за вуалью; доверься внутренней луне.",
+      "uk": "Спершу слухай. Знання за вуаллю; довірся внутрішньому місяцю."
+    },
+    "reversed_meaning_short": {
+      "en": "Secrets withheld, blocked intuition, overthinking drowns the whisper.",
+      "ru": "Секреты скрыты, интуиция заблокирована, мысли заглушают шёпот.",
+      "uk": "Таємниці приховані, інтуїція заблокована, думки глушать шепіт."
+    },
+    "reversed_meaning": {
+      "en": "Secrets withheld, blocked intuition, overthinking drowns the whisper.",
+      "ru": "Секреты скрыты, интуиция заблокирована, мысли заглушают шёпот.",
+      "uk": "Таємниці приховані, інтуїція заблокована, думки глушать шепіт."
+    }
+  },
+  {
+    "id": "major_03_the_empress",
+    "slug": "major/03_the_empress",
+    "suit": "major",
+    "rank": 3,
+    "en": "The Empress",
+    "ru": "Императрица",
+    "uk": "Імператриця",
+    "keywords": {
+      "en": [
+        "fertility",
+        "abundance",
+        "care",
+        "beauty",
+        "creation"
+      ],
+      "ru": [
+        "плодородие",
+        "изобилие",
+        "забота",
+        "красота",
+        "творение"
+      ],
+      "uk": [
+        "плідність",
+        "достаток",
+        "піклування",
+        "краса",
+        "творення"
+      ]
+    },
+    "meaning_short": {
+      "en": "Grow what you love.",
+      "ru": "Взращивай то, что любишь.",
+      "uk": "Плекай те, що любиш."
+    },
+    "meaning": {
+      "en": "Grow what you love. Soft power, comfort, and creativity bear fruit.",
+      "ru": "Взращивай то, что любишь. Мягкая сила, комфорт и творчество приносят плоды.",
+      "uk": "Плекай те, що любиш. М’яка сила, комфорт і творчість приносять плоди."
+    },
+    "reversed_meaning_short": {
+      "en": "Smothering, stagnation, creative blocks, indulgence without growth.",
+      "ru": "Задушливая опека, застой, творческие блоки, баловство без роста.",
+      "uk": "Задушлива опіка, застій, творчі блоки, балування без зростання."
+    },
+    "reversed_meaning": {
+      "en": "Smothering, stagnation, creative blocks, indulgence without growth.",
+      "ru": "Задушливая опека, застой, творческие блоки, баловство без роста.",
+      "uk": "Задушлива опіка, застій, творчі блоки, балування без зростання."
+    }
+  },
+  {
+    "id": "major_04_the_emperor",
+    "slug": "major/04_the_emperor",
+    "suit": "major",
+    "rank": 4,
+    "en": "The Emperor",
+    "ru": "Император",
+    "uk": "Імператор",
+    "keywords": {
+      "en": [
+        "structure",
+        "authority",
+        "order",
+        "protection",
+        "strategy"
+      ],
+      "ru": [
+        "структура",
+        "власть",
+        "порядок",
+        "защита",
+        "стратегия"
+      ],
+      "uk": [
+        "структура",
+        "влада",
+        "порядок",
+        "захист",
+        "стратегія"
+      ]
+    },
+    "meaning_short": {
+      "en": "Lead with clarity.",
+      "ru": "Лидерствуй ясно.",
+      "uk": "Лідерствуй чітко."
+    },
+    "meaning": {
+      "en": "Lead with clarity. Set boundaries, build systems, and commit to long-term vision.",
+      "ru": "Лидерствуй ясно. Ставь границы, строй системы и держи долгую стратегию.",
+      "uk": "Лідерствуй чітко. Став межі, будуй системи і тримай довгу стратегію."
+    },
+    "reversed_meaning_short": {
+      "en": "Rigidity, control issues, domination for its own sake.",
+      "ru": "Жёсткость, тяга к контролю, доминирование ради доминирования.",
+      "uk": "Жорсткість, потяг до контролю, домінування заради домінування."
+    },
+    "reversed_meaning": {
+      "en": "Rigidity, control issues, domination for its own sake.",
+      "ru": "Жёсткость, тяга к контролю, доминирование ради доминирования.",
+      "uk": "Жорсткість, потяг до контролю, домінування заради домінування."
+    }
+  },
+  {
+    "id": "major_05_the_hierophant",
+    "slug": "major/05_the_hierophant",
+    "suit": "major",
+    "rank": 5,
+    "en": "The Hierophant",
+    "ru": "Иерофант",
+    "uk": "Ієрофант",
+    "keywords": {
+      "en": [
+        "tradition",
+        "teaching",
+        "ritual",
+        "values",
+        "community"
+      ],
+      "ru": [
+        "традиция",
+        "учение",
+        "ритуал",
+        "ценности",
+        "сообщество"
+      ],
+      "uk": [
+        "традиція",
+        "вчення",
+        "ритуал",
+        "цінності",
+        "спільнота"
+      ]
+    },
+    "meaning_short": {
+      "en": "Learn the canon, then choose your path.",
+      "ru": "Изучи канон и выбери свой путь.",
+      "uk": "Вивчи канон і обери свій шлях."
+    },
+    "meaning": {
+      "en": "Learn the canon, then choose your path. Guidance from institutions or mentors.",
+      "ru": "Изучи канон и выбери свой путь. Наставники и институты помогают.",
+      "uk": "Вивчи канон і обери свій шлях. Наставники та інституції допомагають."
+    },
+    "reversed_meaning_short": {
+      "en": "Dogma, empty rules, rebellion without wisdom.",
+      "ru": "Догматизм, пустые правила, бунт без мудрости.",
+      "uk": "Догматизм, порожні правила, бунт без мудрості."
+    },
+    "reversed_meaning": {
+      "en": "Dogma, empty rules, rebellion without wisdom.",
+      "ru": "Догматизм, пустые правила, бунт без мудрости.",
+      "uk": "Догматизм, порожні правила, бунт без мудрості."
+    }
+  },
+  {
+    "id": "major_06_the_lovers",
+    "slug": "major/06_the_lovers",
+    "suit": "major",
+    "rank": 6,
+    "en": "The Lovers",
+    "ru": "Влюблённые",
+    "uk": "Закохані",
+    "keywords": {
+      "en": [
+        "union",
+        "choice",
+        "alignment",
+        "love",
+        "values"
+      ],
+      "ru": [
+        "союз",
+        "выбор",
+        "согласие",
+        "любовь",
+        "ценности"
+      ],
+      "uk": [
+        "союз",
+        "вибір",
+        "узгодженість",
+        "любов",
+        "цінності"
+      ]
+    },
+    "meaning_short": {
+      "en": "A meaningful choice of the heart.",
+      "ru": "Значимый выбор сердца.",
+      "uk": "Значущий вибір серця."
+    },
+    "meaning": {
+      "en": "A meaningful choice of the heart. Align actions with your values and commitments.",
+      "ru": "Значимый выбор сердца. Согласуй действия с ценностями и обязательствами.",
+      "uk": "Значущий вибір серця. Узгодь дії зі своїми цінностями та зобов’язаннями."
+    },
+    "reversed_meaning_short": {
+      "en": "Misalignment, temptation, indecision, relationship tests.",
+      "ru": "Несогласие, искушение, нерешительность, испытания в отношениях.",
+      "uk": "Невідповідність, спокуса, нерішучість, випробування стосунків."
+    },
+    "reversed_meaning": {
+      "en": "Misalignment, temptation, indecision, relationship tests.",
+      "ru": "Несогласие, искушение, нерешительность, испытания в отношениях.",
+      "uk": "Невідповідність, спокуса, нерішучість, випробування стосунків."
+    }
+  },
+  {
+    "id": "major_07_the_chariot",
+    "slug": "major/07_the_chariot",
+    "suit": "major",
+    "rank": 7,
+    "en": "The Chariot",
+    "ru": "Колесница",
+    "uk": "Колісниця",
+    "keywords": {
+      "en": [
+        "drive",
+        "victory",
+        "control",
+        "direction",
+        "willpower"
+      ],
+      "ru": [
+        "движение",
+        "победа",
+        "контроль",
+        "направление",
+        "воля"
+      ],
+      "uk": [
+        "рух",
+        "перемога",
+        "контроль",
+        "напрям",
+        "воля"
+      ]
+    },
+    "meaning_short": {
+      "en": "Take the reins.",
+      "ru": "Возьми поводья.",
+      "uk": "Візьми поводи."
+    },
+    "meaning": {
+      "en": "Take the reins. Discipline and focus turn momentum into victory.",
+      "ru": "Возьми поводья. Дисциплина и фокус превращают инерцию в победу.",
+      "uk": "Візьми поводи. Дисципліна і фокус перетворюють інерцію на перемогу."
+    },
+    "reversed_meaning_short": {
+      "en": "Lack of control, aggression, going nowhere fast.",
+      "ru": "Потеря контроля, агрессия, бег на месте.",
+      "uk": "Втрата контролю, агресія, біг на місці."
+    },
+    "reversed_meaning": {
+      "en": "Lack of control, aggression, going nowhere fast.",
+      "ru": "Потеря контроля, агрессия, бег на месте.",
+      "uk": "Втрата контролю, агресія, біг на місці."
+    }
+  },
+  {
+    "id": "major_08_strength",
+    "slug": "major/08_strength",
+    "suit": "major",
+    "rank": 8,
+    "en": "Strength",
+    "ru": "Сила",
+    "uk": "Сила",
+    "keywords": {
+      "en": [
+        "courage",
+        "compassion",
+        "taming",
+        "inner power",
+        "patience"
+      ],
+      "ru": [
+        "мужество",
+        "сострадание",
+        "укрощение",
+        "внутренняя сила",
+        "терпение"
+      ],
+      "uk": [
+        "відвага",
+        "співчуття",
+        "втихомирення",
+        "внутрішня сила",
+        "терпіння"
+      ]
+    },
+    "meaning_short": {
+      "en": "Gentle courage.",
+      "ru": "Мягкая смелость.",
+      "uk": "М’яка сміливість."
+    },
+    "meaning": {
+      "en": "Gentle courage. Heal the beast within through patience and care.",
+      "ru": "Мягкая смелость. Исцели внутреннего зверя терпением и заботой.",
+      "uk": "М’яка сміливість. Зціли внутрішнього звіра терпінням і турботою."
+    },
+    "reversed_meaning_short": {
+      "en": "Self-doubt, forcefulness, courage leaking into anger.",
+      "ru": "Самосомнение, силовое давление, смелость превращается в злость.",
+      "uk": "Самосумнів, силовий тиск, відвага перетворюється на злість."
+    },
+    "reversed_meaning": {
+      "en": "Self-doubt, forcefulness, courage leaking into anger.",
+      "ru": "Самосомнение, силовое давление, смелость превращается в злость.",
+      "uk": "Самосумнів, силовий тиск, відвага перетворюється на злість."
+    }
+  },
+  {
+    "id": "major_09_the_hermit",
+    "slug": "major/09_the_hermit",
+    "suit": "major",
+    "rank": 9,
+    "en": "The Hermit",
+    "ru": "Отшельник",
+    "uk": "Відлюдник",
+    "keywords": {
+      "en": [
+        "solitude",
+        "wisdom",
+        "search",
+        "lantern",
+        "inner guidance"
+      ],
+      "ru": [
+        "одиночество",
+        "мудрость",
+        "поиск",
+        "фонарь",
+        "внутренний путеводитель"
+      ],
+      "uk": [
+        "самота",
+        "мудрість",
+        "пошук",
+        "ліхтар",
+        "внутрішній провідник"
+      ]
+    },
+    "meaning_short": {
+      "en": "Step back to see clearly.",
+      "ru": "Отойди, чтобы увидеть ясно.",
+      "uk": "Відійди, щоб побачити ясно."
+    },
+    "meaning": {
+      "en": "Step back to see clearly. Reflection and study reveal the next step.",
+      "ru": "Отойди, чтобы увидеть ясно. Размышление и учеба показывают следующий шаг.",
+      "uk": "Відійди, щоб побачити ясно. Роздуми і навчання показують наступний крок."
+    },
+    "reversed_meaning_short": {
+      "en": "Isolation, refusing help, getting lost in analysis.",
+      "ru": "Изоляция, отказ от помощи, застревание в анализе.",
+      "uk": "Ізоляція, відмова від допомоги, застрягання в аналізі."
+    },
+    "reversed_meaning": {
+      "en": "Isolation, refusing help, getting lost in analysis.",
+      "ru": "Изоляция, отказ от помощи, застревание в анализе.",
+      "uk": "Ізоляція, відмова від допомоги, застрягання в аналізі."
+    }
+  },
+  {
+    "id": "major_10_wheel_of_fortune",
+    "slug": "major/10_wheel_of_fortune",
+    "suit": "major",
+    "rank": 10,
+    "en": "Wheel of Fortune",
+    "ru": "Колесо Фортуны",
+    "uk": "Колесо Фортуни",
+    "keywords": {
+      "en": [
+        "cycles",
+        "luck",
+        "change",
+        "destiny",
+        "timing"
+      ],
+      "ru": [
+        "циклы",
+        "удача",
+        "перемена",
+        "судьба",
+        "время"
+      ],
+      "uk": [
+        "цикли",
+        "вдача",
+        "зміна",
+        "доля",
+        "час"
+      ]
+    },
+    "meaning_short": {
+      "en": "The wheel turns.",
+      "ru": "Колесо вращается.",
+      "uk": "Колесо крутиться."
+    },
+    "meaning": {
+      "en": "The wheel turns. Accept change; align with timing to ride the wave.",
+      "ru": "Колесо вращается. Прими перемены; лови момент, чтобы ехать на волне.",
+      "uk": "Колесо крутиться. Прийми зміни; ловись момент, щоб їхати на хвилі."
+    },
+    "reversed_meaning_short": {
+      "en": "Resistance to change, victim mindset, random chaos.",
+      "ru": "Сопротивление переменам, позиция жертвы, случайный хаос.",
+      "uk": "Опір змінам, позиція жертви, випадковий хаос."
+    },
+    "reversed_meaning": {
+      "en": "Resistance to change, victim mindset, random chaos.",
+      "ru": "Сопротивление переменам, позиция жертвы, случайный хаос.",
+      "uk": "Опір змінам, позиція жертви, випадковий хаос."
+    }
+  },
+  {
+    "id": "major_11_justice",
+    "slug": "major/11_justice",
+    "suit": "major",
+    "rank": 11,
+    "en": "Justice",
+    "ru": "Справедливость",
+    "uk": "Справедливість",
+    "keywords": {
+      "en": [
+        "fairness",
+        "truth",
+        "law",
+        "balance",
+        "accountability"
+      ],
+      "ru": [
+        "справедливость",
+        "истина",
+        "закон",
+        "баланс",
+        "ответственность"
+      ],
+      "uk": [
+        "справедливість",
+        "істина",
+        "закон",
+        "баланс",
+        "відповідальність"
+      ]
+    },
+    "meaning_short": {
+      "en": "Decisions require facts and balance.",
+      "ru": "Решения требуют фактов и баланса.",
+      "uk": "Рішення потребують фактів і балансу."
+    },
+    "meaning": {
+      "en": "Decisions require facts and balance. Own your choices and make amends.",
+      "ru": "Решения требуют фактов и баланса. Прими ответственность и исправь ошибки.",
+      "uk": "Рішення потребують фактів і балансу. Прийми відповідальність і виправ помилки."
+    },
+    "reversed_meaning_short": {
+      "en": "Bias, unfair outcomes, loopholes, avoidance of responsibility.",
+      "ru": "Предвзятость, несправедливый исход, уход от ответственности.",
+      "uk": "Упередженість, несправедливий результат, уникнення відповідальності."
+    },
+    "reversed_meaning": {
+      "en": "Bias, unfair outcomes, loopholes, avoidance of responsibility.",
+      "ru": "Предвзятость, несправедливый исход, уход от ответственности.",
+      "uk": "Упередженість, несправедливий результат, уникнення відповідальності."
+    }
+  },
+  {
+    "id": "major_12_the_hanged_man",
+    "slug": "major/12_the_hanged_man",
+    "suit": "major",
+    "rank": 12,
+    "en": "The Hanged Man",
+    "ru": "Повешенный",
+    "uk": "Повішений",
+    "keywords": {
+      "en": [
+        "surrender",
+        "pause",
+        "new view",
+        "sacrifice",
+        "patience"
+      ],
+      "ru": [
+        "сдача",
+        "пауза",
+        "новый взгляд",
+        "жертва",
+        "терпение"
+      ],
+      "uk": [
+        "впущення",
+        "пауза",
+        "новий погляд",
+        "жертва",
+        "терпіння"
+      ]
+    },
+    "meaning_short": {
+      "en": "Let go to see differently.",
+      "ru": "Отпусти, чтобы увидеть иначе.",
+      "uk": "Відпусти, щоб побачити інакше."
+    },
+    "meaning": {
+      "en": "Let go to see differently. In stillness, a new perspective is born.",
+      "ru": "Отпусти, чтобы увидеть иначе. В неподвижности рождается новый взгляд.",
+      "uk": "Відпусти, щоб побачити інакше. У нерухомості народжується новий погляд."
+    },
+    "reversed_meaning_short": {
+      "en": "Stagnation without insight, martyrdom, needless delay.",
+      "ru": "Застой без прозрения, мученичество, бессмысленная задержка.",
+      "uk": "Застій без прозріння, мучеництво, безглузда затримка."
+    },
+    "reversed_meaning": {
+      "en": "Stagnation without insight, martyrdom, needless delay.",
+      "ru": "Застой без прозрения, мученичество, бессмысленная задержка.",
+      "uk": "Застій без прозріння, мучеництво, безглузда затримка."
+    }
+  },
+  {
+    "id": "major_13_death",
+    "slug": "major/13_death",
+    "suit": "major",
+    "rank": 13,
+    "en": "Death",
+    "ru": "Смерть",
+    "uk": "Смерть",
+    "keywords": {
+      "en": [
+        "ending",
+        "transition",
+        "clearance",
+        "rebirth",
+        "inevitability"
+      ],
+      "ru": [
+        "конец",
+        "переход",
+        "очистка",
+        "возрождение",
+        "неизбежность"
+      ],
+      "uk": [
+        "кінець",
+        "перехід",
+        "очищення",
+        "відродження",
+        "неминучість"
+      ]
+    },
+    "meaning_short": {
+      "en": "A chapter closes so a new one can open.",
+      "ru": "Глава закрывается, чтобы открылась новая.",
+      "uk": "Розділ закривається, щоб відкрився новий."
+    },
+    "meaning": {
+      "en": "A chapter closes so a new one can open. Release what is finished.",
+      "ru": "Глава закрывается, чтобы открылась новая. Отпусти завершённое.",
+      "uk": "Розділ закривається, щоб відкрився новий. Відпусти завершене."
+    },
+    "reversed_meaning_short": {
+      "en": "Clinging to the old, fear of change, prolonged decay.",
+      "ru": "Цепляние за старое, страх перемен, затянувшееся увядание.",
+      "uk": "Чіпляння за старе, страх змін, затягнутий занепад."
+    },
+    "reversed_meaning": {
+      "en": "Clinging to the old, fear of change, prolonged decay.",
+      "ru": "Цепляние за старое, страх перемен, затянувшееся увядание.",
+      "uk": "Чіпляння за старе, страх змін, затягнутий занепад."
+    }
+  },
+  {
+    "id": "major_14_temperance",
+    "slug": "major/14_temperance",
+    "suit": "major",
+    "rank": 14,
+    "en": "Temperance",
+    "ru": "Умеренность",
+    "uk": "Поміркованість",
+    "keywords": {
+      "en": [
+        "balance",
+        "alchemy",
+        "moderation",
+        "healing",
+        "flow"
+      ],
+      "ru": [
+        "баланс",
+        "алхимия",
+        "умеренность",
+        "исцеление",
+        "поток"
+      ],
+      "uk": [
+        "баланс",
+        "алхімія",
+        "поміркованість",
+        "зцілення",
+        "потік"
+      ]
+    },
+    "meaning_short": {
+      "en": "Blend opposites.",
+      "ru": "Смешивай противоположности.",
+      "uk": "Змішуй протилежності."
+    },
+    "meaning": {
+      "en": "Blend opposites. Pace yourself and create steady, sustainable progress.",
+      "ru": "Смешивай противоположности. Двигайся в ровном темпе и создай устойчивый прогресс.",
+      "uk": "Змішуй протилежності. Рухайся рівним темпом і створюй сталий поступ."
+    },
+    "reversed_meaning_short": {
+      "en": "Excess, extremes, impatience disrupting harmony.",
+      "ru": "Излишества, крайности, нетерпение рушит гармонию.",
+      "uk": "Надмірність, крайнощі, нетерплячість руйнує гармонію."
+    },
+    "reversed_meaning": {
+      "en": "Excess, extremes, impatience disrupting harmony.",
+      "ru": "Излишества, крайности, нетерпение рушит гармонию.",
+      "uk": "Надмірність, крайнощі, нетерплячість руйнує гармонію."
+    }
+  },
+  {
+    "id": "major_15_the_devil",
+    "slug": "major/15_the_devil",
+    "suit": "major",
+    "rank": 15,
+    "en": "The Devil",
+    "ru": "Дьявол",
+    "uk": "Диявол",
+    "keywords": {
+      "en": [
+        "attachment",
+        "temptation",
+        "shadow",
+        "bondage",
+        "materialism"
+      ],
+      "ru": [
+        "привязанность",
+        "искушение",
+        "тень",
+        "зависимость",
+        "материализм"
+      ],
+      "uk": [
+        "прив'язаність",
+        "спокуса",
+        "тінь",
+        "залежність",
+        "матеріалізм"
+      ]
+    },
+    "meaning_short": {
+      "en": "Face the chains you chose.",
+      "ru": "Посмотри на цепи, которые выбрал.",
+      "uk": "Подивись на ланцюги, які обрав."
+    },
+    "meaning": {
+      "en": "Face the chains you chose. Name the addiction or fear to break it.",
+      "ru": "Посмотри на цепи, которые выбрал. Назови зависимость или страх, чтобы разрушить их.",
+      "uk": "Подивись на ланцюги, які обрав. Назви залежність чи страх, щоб зруйнувати їх."
+    },
+    "reversed_meaning_short": {
+      "en": "Denial, giving away power, repeating harmful patterns.",
+      "ru": "Отрицание, отдача силы, повтор вредных паттернов.",
+      "uk": "Заперечення, віддання сили, повтор шкідливих патернів."
+    },
+    "reversed_meaning": {
+      "en": "Denial, giving away power, repeating harmful patterns.",
+      "ru": "Отрицание, отдача силы, повтор вредных паттернов.",
+      "uk": "Заперечення, віддання сили, повтор шкідливих патернів."
+    }
+  },
+  {
+    "id": "major_16_the_tower",
+    "slug": "major/16_the_tower",
+    "suit": "major",
+    "rank": 16,
+    "en": "The Tower",
+    "ru": "Башня",
+    "uk": "Вежа",
+    "keywords": {
+      "en": [
+        "upheaval",
+        "revelation",
+        "collapse",
+        "truth",
+        "liberation"
+      ],
+      "ru": [
+        "переворот",
+        "озарение",
+        "крах",
+        "истина",
+        "освобождение"
+      ],
+      "uk": [
+        "переворот",
+        "осяяння",
+        "крах",
+        "істина",
+        "звільнення"
+      ]
+    },
+    "meaning_short": {
+      "en": "False structures fall.",
+      "ru": "Ложные конструкции рушатся.",
+      "uk": "Фальшиві конструкції падають."
+    },
+    "meaning": {
+      "en": "False structures fall. The shock clears space for what is real.",
+      "ru": "Ложные конструкции рушатся. Удар освобождает место для настоящего.",
+      "uk": "Фальшиві конструкції падають. Удар звільняє місце для справжнього."
+    },
+    "reversed_meaning_short": {
+      "en": "Avoidable disaster, stubborn denial, refusing to rebuild.",
+      "ru": "Избежная катастрофа, упрямое отрицание, отказ строить заново.",
+      "uk": "Уникальна катастрофа, вперте заперечення, відмова будувати наново."
+    },
+    "reversed_meaning": {
+      "en": "Avoidable disaster, stubborn denial, refusing to rebuild.",
+      "ru": "Избежная катастрофа, упрямое отрицание, отказ строить заново.",
+      "uk": "Уникальна катастрофа, вперте заперечення, відмова будувати наново."
+    }
+  },
+  {
+    "id": "major_17_the_star",
+    "slug": "major/17_the_star",
+    "suit": "major",
+    "rank": 17,
+    "en": "The Star",
+    "ru": "Звезда",
+    "uk": "Зоря",
+    "keywords": {
+      "en": [
+        "hope",
+        "guidance",
+        "healing",
+        "inspiration",
+        "calm"
+      ],
+      "ru": [
+        "надежда",
+        "путеводность",
+        "исцеление",
+        "вдохновение",
+        "спокойствие"
+      ],
+      "uk": [
+        "надія",
+        "напрямок",
+        "зцілення",
+        "натхнення",
+        "спокій"
+      ]
+    },
+    "meaning_short": {
+      "en": "Recovery and hope.",
+      "ru": "Выздоровление и надежда.",
+      "uk": "Одужання і надія."
+    },
+    "meaning": {
+      "en": "Recovery and hope. Let your inner star guide gentle, authentic progress.",
+      "ru": "Выздоровление и надежда. Пусть внутренняя звезда ведёт мягкий, подлинный прогресс.",
+      "uk": "Одужання і надія. Нехай внутрішня зоря веде м’який, правдивий поступ."
+    },
+    "reversed_meaning_short": {
+      "en": "Cynicism, loss of faith, dimming your light.",
+      "ru": "Цинизм, утрата веры, прячешь свой свет.",
+      "uk": "Цинізм, втрата віри, ховаєш своє світло."
+    },
+    "reversed_meaning": {
+      "en": "Cynicism, loss of faith, dimming your light.",
+      "ru": "Цинизм, утрата веры, прячешь свой свет.",
+      "uk": "Цинізм, втрата віри, ховаєш своє світло."
+    }
+  },
+  {
+    "id": "major_18_the_moon",
+    "slug": "major/18_the_moon",
+    "suit": "major",
+    "rank": 18,
+    "en": "The Moon",
+    "ru": "Луна",
+    "uk": "Місяць",
+    "keywords": {
+      "en": [
+        "dreams",
+        "uncertainty",
+        "subconscious",
+        "illusion",
+        "cycle"
+      ],
+      "ru": [
+        "сны",
+        "неопределенность",
+        "подсознание",
+        "иллюзия",
+        "цикл"
+      ],
+      "uk": [
+        "сни",
+        "невизначеність",
+        "підсвідоме",
+        "ілюзія",
+        "цикл"
+      ]
+    },
+    "meaning_short": {
+      "en": "Move carefully through fog.",
+      "ru": "Иди осторожно сквозь туман.",
+      "uk": "Йди обережно крізь туман."
+    },
+    "meaning": {
+      "en": "Move carefully through fog. Trust intuition but verify; not all is as it seems.",
+      "ru": "Иди осторожно сквозь туман. Доверься интуиции, но проверяй; не всё так, как кажется.",
+      "uk": "Йди обережно крізь туман. Довіряй інтуїції, але перевіряй; не все так, як здається."
+    },
+    "reversed_meaning_short": {
+      "en": "Paranoia, confusion, being led by fear or fantasy.",
+      "ru": "Паранойя, путаница, тебя ведёт страх или фантазия.",
+      "uk": "Параноя, плутанина, тобою керує страх або фантазія."
+    },
+    "reversed_meaning": {
+      "en": "Paranoia, confusion, being led by fear or fantasy.",
+      "ru": "Паранойя, путаница, тебя ведёт страх или фантазия.",
+      "uk": "Параноя, плутанина, тобою керує страх або фантазія."
+    }
+  },
+  {
+    "id": "major_19_the_sun",
+    "slug": "major/19_the_sun",
+    "suit": "major",
+    "rank": 19,
+    "en": "The Sun",
+    "ru": "Солнце",
+    "uk": "Сонце",
+    "keywords": {
+      "en": [
+        "joy",
+        "success",
+        "vitality",
+        "clarity",
+        "warmth"
+      ],
+      "ru": [
+        "радость",
+        "успех",
+        "жизненная сила",
+        "ясность",
+        "тепло"
+      ],
+      "uk": [
+        "радість",
+        "успіх",
+        "життєва сила",
+        "ясність",
+        "тепло"
+      ]
+    },
+    "meaning_short": {
+      "en": "Shine freely.",
+      "ru": "Свети свободно.",
+      "uk": "Сяй вільно."
+    },
+    "meaning": {
+      "en": "Shine freely. Confidence and clarity bring success and generous energy.",
+      "ru": "Свети свободно. Уверенность и ясность приносят успех и щедрую энергию.",
+      "uk": "Сяй вільно. Впевненість і ясність приносять успіх і щедру енергію."
+    },
+    "reversed_meaning_short": {
+      "en": "Burnout, overexposure, ego or toxic positivity.",
+      "ru": "Выгорание, переизбыток, эго или токсичная позитивность.",
+      "uk": "Вигорання, перенасичення, его чи токсична позитивність."
+    },
+    "reversed_meaning": {
+      "en": "Burnout, overexposure, ego or toxic positivity.",
+      "ru": "Выгорание, переизбыток, эго или токсичная позитивность.",
+      "uk": "Вигорання, перенасичення, его чи токсична позитивність."
+    }
+  },
+  {
+    "id": "major_20_judgement",
+    "slug": "major/20_judgement",
+    "suit": "major",
+    "rank": 20,
+    "en": "Judgement",
+    "ru": "Суд",
+    "uk": "Суд",
+    "keywords": {
+      "en": [
+        "awakening",
+        "call",
+        "forgiveness",
+        "rebirth",
+        "assessment"
+      ],
+      "ru": [
+        "пробуждение",
+        "призыв",
+        "прощение",
+        "возрождение",
+        "оценка"
+      ],
+      "uk": [
+        "пробудження",
+        "поклик",
+        "прощення",
+        "відродження",
+        "оцінка"
+      ]
+    },
+    "meaning_short": {
+      "en": "Answer the call.",
+      "ru": "Ответь на призыв.",
+      "uk": "Відповідай на поклик."
+    },
+    "meaning": {
+      "en": "Answer the call. Make peace with the past and step into a larger life.",
+      "ru": "Ответь на призыв. Помирись с прошлым и войди в большую жизнь.",
+      "uk": "Відповідай на поклик. Примирись із минулим і ввійди у більше життя."
+    },
+    "reversed_meaning_short": {
+      "en": "Avoiding accountability, self-judgement without action, clinging to old scripts.",
+      "ru": "Избегаешь ответственности, самосуд без действий, цепляешься за старые сценарии.",
+      "uk": "Уникаєш відповідальності, самосуд без дій, чіпляєшся за старі сценарії."
+    },
+    "reversed_meaning": {
+      "en": "Avoiding accountability, self-judgement without action, clinging to old scripts.",
+      "ru": "Избегаешь ответственности, самосуд без действий, цепляешься за старые сценарии.",
+      "uk": "Уникаєш відповідальності, самосуд без дій, чіпляєшся за старі сценарії."
+    }
+  },
+  {
+    "id": "major_21_the_world",
+    "slug": "major/21_the_world",
+    "suit": "major",
+    "rank": 21,
+    "en": "The World",
+    "ru": "Мир",
+    "uk": "Світ",
+    "keywords": {
+      "en": [
+        "completion",
+        "integration",
+        "wholeness",
+        "travel",
+        "graduation"
+      ],
+      "ru": [
+        "завершение",
+        "интеграция",
+        "целостность",
+        "путешествие",
+        "выпуск"
+      ],
+      "uk": [
+        "завершення",
+        "інтеграція",
+        "цілісність",
+        "подорож",
+        "випуск"
+      ]
+    },
+    "meaning_short": {
+      "en": "A cycle completes.",
+      "ru": "Цикл завершён.",
+      "uk": "Цикл завершено."
+    },
+    "meaning": {
+      "en": "A cycle completes. Celebrate mastery and integrate lessons; a new cycle beckons.",
+      "ru": "Цикл завершён. Отпразднуй мастерство и интегрируй уроки; зовёт новый круг.",
+      "uk": "Цикл завершено. Відсвяткуй майстерність і інтегруй уроки; кличе новий коло."
+    },
+    "reversed_meaning_short": {
+      "en": "Loose ends, delays, almost-there fatigue.",
+      "ru": "Незакрытые концы, задержки, усталость на финише.",
+      "uk": "Незакриті кінці, затримки, втома на фініші."
+    },
+    "reversed_meaning": {
+      "en": "Loose ends, delays, almost-there fatigue.",
+      "ru": "Незакрытые концы, задержки, усталость на финише.",
+      "uk": "Незакриті кінці, затримки, втома на фініші."
+    }
+  },
+  {
+    "id": "wands_ace",
+    "slug": "wands/ace",
+    "suit": "wands",
+    "rank": 1,
+    "en": "Ace of Wands",
+    "ru": "Туз Жезлы",
+    "uk": "Туз Жезли",
+    "keywords": {
+      "en": [
+        "seed",
+        "spark",
+        "potential",
+        "new start"
+      ],
+      "ru": [
+        "семя",
+        "искра",
+        "потенциал",
+        "новый старт"
+      ],
+      "uk": [
+        "насінина",
+        "іскра",
+        "потенціал",
+        "новий старт"
+      ]
+    },
+    "meaning_short": {
+      "en": "The seed of action, creativity, will.",
+      "ru": "Семя действие, творчество, воля.",
+      "uk": "Насіння дія, творчість, воля."
+    },
+    "meaning": {
+      "en": "The seed of action, creativity, will. A raw surge of action, creativity, will invites initiative.",
+      "ru": "Семя действие, творчество, воля. Сырой импульс действие, творчество, воля зовёт к инициативе.",
+      "uk": "Насіння дія, творчість, воля. Сирий імпульс дія, творчість, воля кличе до ініціативи."
+    },
+    "reversed_meaning_short": {
+      "en": "Blocked start, wasted spark, fear of the first step.",
+      "ru": "Блок старта, растраченная искра, страх первого шага.",
+      "uk": "Блок старту, змарнована іскра, страх першого кроку."
+    },
+    "reversed_meaning": {
+      "en": "Blocked start, wasted spark, fear of the first step.",
+      "ru": "Блок старта, растраченная искра, страх первого шага.",
+      "uk": "Блок старту, змарнована іскра, страх першого кроку."
+    }
+  },
+  {
+    "id": "wands_02",
+    "slug": "wands/02",
+    "suit": "wands",
+    "rank": 2,
+    "en": "Two of Wands",
+    "ru": "Двойка Жезлы",
+    "uk": "Двійка Жезли",
+    "keywords": {
+      "en": [
+        "choice",
+        "planning",
+        "duality",
+        "balance"
+      ],
+      "ru": [
+        "выбор",
+        "планирование",
+        "двойственность",
+        "баланс"
+      ],
+      "uk": [
+        "вибір",
+        "планування",
+        "двійковість",
+        "баланс"
+      ]
+    },
+    "meaning_short": {
+      "en": "Choice and planning.",
+      "ru": "Выбор и план.",
+      "uk": "Вибір і план."
+    },
+    "meaning": {
+      "en": "Choice and planning. Align options before moving.",
+      "ru": "Выбор и план. Сопоставь варианты перед движением.",
+      "uk": "Вибір і план. Зістав варіанти перед рухом."
+    },
+    "reversed_meaning_short": {
+      "en": "Indecision, procrastination, split focus.",
+      "ru": "Нерешительность, прокрастинация, распыление внимания.",
+      "uk": "Нерішучість, прокрастинація, розпорошення уваги."
+    },
+    "reversed_meaning": {
+      "en": "Indecision, procrastination, split focus.",
+      "ru": "Нерешительность, прокрастинация, распыление внимания.",
+      "uk": "Нерішучість, прокрастинація, розпорошення уваги."
+    }
+  },
+  {
+    "id": "wands_03",
+    "slug": "wands/03",
+    "suit": "wands",
+    "rank": 3,
+    "en": "Three of Wands",
+    "ru": "Тройка Жезлы",
+    "uk": "Трійка Жезли",
+    "keywords": {
+      "en": [
+        "expansion",
+        "foresight",
+        "teamwork"
+      ],
+      "ru": [
+        "расширение",
+        "предвидение",
+        "сотрудничество"
+      ],
+      "uk": [
+        "розширення",
+        "передбачення",
+        "співпраця"
+      ]
+    },
+    "meaning_short": {
+      "en": "Expansion begins.",
+      "ru": "Начало расширения.",
+      "uk": "Початок розширення."
+    },
+    "meaning": {
+      "en": "Expansion begins. Look ahead and coordinate support.",
+      "ru": "Начало расширения. Смотри вперёд и согласуй поддержку.",
+      "uk": "Початок розширення. Дивись уперед і узгодь підтримку."
+    },
+    "reversed_meaning_short": {
+      "en": "Delays, poor coordination, short-sighted aims.",
+      "ru": "Задержки, слабая координация, близорукость целей.",
+      "uk": "Затримки, слабка координація, короткозорі цілі."
+    },
+    "reversed_meaning": {
+      "en": "Delays, poor coordination, short-sighted aims.",
+      "ru": "Задержки, слабая координация, близорукость целей.",
+      "uk": "Затримки, слабка координація, короткозорі цілі."
+    }
+  },
+  {
+    "id": "wands_04",
+    "slug": "wands/04",
+    "suit": "wands",
+    "rank": 4,
+    "en": "Four of Wands",
+    "ru": "Четвёрка Жезлы",
+    "uk": "Четвірка Жезли",
+    "keywords": {
+      "en": [
+        "stability",
+        "home",
+        "foundation",
+        "rest"
+      ],
+      "ru": [
+        "стабильность",
+        "дом",
+        "фундамент",
+        "передышка"
+      ],
+      "uk": [
+        "стабільність",
+        "дім",
+        "фундамент",
+        "перепочинок"
+      ]
+    },
+    "meaning_short": {
+      "en": "A stable base and a milestone worth celebrating.",
+      "ru": "Стабильная база и рубеж, достойный праздника.",
+      "uk": "Стабільна база і рубіж, вартий свята."
+    },
+    "meaning": {
+      "en": "A stable base and a milestone worth celebrating.",
+      "ru": "Стабильная база и рубеж, достойный праздника.",
+      "uk": "Стабільна база і рубіж, вартий свята."
+    },
+    "reversed_meaning_short": {
+      "en": "Stagnation, clinging to comfort, fear of change.",
+      "ru": "Застой, привязанность к комфорту, страх перемен.",
+      "uk": "Застій, прив’язаність до комфорту, страх змін."
+    },
+    "reversed_meaning": {
+      "en": "Stagnation, clinging to comfort, fear of change.",
+      "ru": "Застой, привязанность к комфорту, страх перемен.",
+      "uk": "Застій, прив’язаність до комфорту, страх змін."
+    }
+  },
+  {
+    "id": "wands_05",
+    "slug": "wands/05",
+    "suit": "wands",
+    "rank": 5,
+    "en": "Five of Wands",
+    "ru": "Пятёрка Жезлы",
+    "uk": "П’ятірка Жезли",
+    "keywords": {
+      "en": [
+        "conflict",
+        "challenge",
+        "competition",
+        "loss"
+      ],
+      "ru": [
+        "конфликт",
+        "вызов",
+        "соревнование",
+        "потери"
+      ],
+      "uk": [
+        "конфлікт",
+        "виклик",
+        "змагання",
+        "втрати"
+      ]
+    },
+    "meaning_short": {
+      "en": "Tension and challenge forge skill; choose your battles.",
+      "ru": "Напряжение и вызов закаляют; выбирай свои битвы.",
+      "uk": "Напруга і виклик загартовують; обирай свої битви."
+    },
+    "meaning": {
+      "en": "Tension and challenge forge skill; choose your battles.",
+      "ru": "Напряжение и вызов закаляют; выбирай свои битвы.",
+      "uk": "Напруга і виклик загартовують; обирай свої битви."
+    },
+    "reversed_meaning_short": {
+      "en": "Pointless fights, pride, wasting energy.",
+      "ru": "Пустые споры, гордыня, трата энергии.",
+      "uk": "Порожні сварки, гординя, марнування енергії."
+    },
+    "reversed_meaning": {
+      "en": "Pointless fights, pride, wasting energy.",
+      "ru": "Пустые споры, гордыня, трата энергии.",
+      "uk": "Порожні сварки, гординя, марнування енергії."
+    }
+  },
+  {
+    "id": "wands_06",
+    "slug": "wands/06",
+    "suit": "wands",
+    "rank": 6,
+    "en": "Six of Wands",
+    "ru": "Шестёрка Жезлы",
+    "uk": "Шістка Жезли",
+    "keywords": {
+      "en": [
+        "victory",
+        "support",
+        "recognition",
+        "progress"
+      ],
+      "ru": [
+        "победа",
+        "поддержка",
+        "признание",
+        "прогресс"
+      ],
+      "uk": [
+        "перемога",
+        "підтримка",
+        "визнання",
+        "поступ"
+      ]
+    },
+    "meaning_short": {
+      "en": "Visible progress and recognition.",
+      "ru": "Зримый прогресс и признание.",
+      "uk": "Видимий поступ і визнання."
+    },
+    "meaning": {
+      "en": "Visible progress and recognition. Share the win with your circle.",
+      "ru": "Зримый прогресс и признание. Поделись победой с окружением.",
+      "uk": "Видимий поступ і визнання. Поділи перемогу з оточенням."
+    },
+    "reversed_meaning_short": {
+      "en": "Empty applause, arrogance, success without substance.",
+      "ru": "Пустые аплодисменты, высокомерие, успех без содержания.",
+      "uk": "Порожні оплески, зверхність, успіх без змісту."
+    },
+    "reversed_meaning": {
+      "en": "Empty applause, arrogance, success without substance.",
+      "ru": "Пустые аплодисменты, высокомерие, успех без содержания.",
+      "uk": "Порожні оплески, зверхність, успіх без змісту."
+    }
+  },
+  {
+    "id": "wands_07",
+    "slug": "wands/07",
+    "suit": "wands",
+    "rank": 7,
+    "en": "Seven of Wands",
+    "ru": "Семёрка Жезлы",
+    "uk": "Сімка Жезли",
+    "keywords": {
+      "en": [
+        "defense",
+        "conviction",
+        "perseverance"
+      ],
+      "ru": [
+        "оборона",
+        "убеждённость",
+        "настойчивость"
+      ],
+      "uk": [
+        "оборона",
+        "переконаність",
+        "наполегливість"
+      ]
+    },
+    "meaning_short": {
+      "en": "Hold your ground.",
+      "ru": "Держи позицию.",
+      "uk": "Тримай позицію."
+    },
+    "meaning": {
+      "en": "Hold your ground. Clarify your position and defend it.",
+      "ru": "Держи позицию. Проясни свою позицию и защищай её.",
+      "uk": "Тримай позицію. Проясни свою позицію і захищай її."
+    },
+    "reversed_meaning_short": {
+      "en": "Exhaustion, defensiveness without cause, poor boundaries.",
+      "ru": "Истощение, оборона без причины, слабые границы.",
+      "uk": "Виснаження, оборона без причини, слабкі межі."
+    },
+    "reversed_meaning": {
+      "en": "Exhaustion, defensiveness without cause, poor boundaries.",
+      "ru": "Истощение, оборона без причины, слабые границы.",
+      "uk": "Виснаження, оборона без причини, слабкі межі."
+    }
+  },
+  {
+    "id": "wands_08",
+    "slug": "wands/08",
+    "suit": "wands",
+    "rank": 8,
+    "en": "Eight of Wands",
+    "ru": "Восьмёрка Жезлы",
+    "uk": "Вісімка Жезли",
+    "keywords": {
+      "en": [
+        "speed",
+        "news",
+        "movement"
+      ],
+      "ru": [
+        "скорость",
+        "новости",
+        "движение"
+      ],
+      "uk": [
+        "швидкість",
+        "новини",
+        "рух"
+      ]
+    },
+    "meaning_short": {
+      "en": "Fast movement and messages.",
+      "ru": "Быстрое движение и вести.",
+      "uk": "Швидкий рух і вісті."
+    },
+    "meaning": {
+      "en": "Fast movement and messages. Momentum carries you forward.",
+      "ru": "Быстрое движение и вести. Инерция несёт тебя вперёд.",
+      "uk": "Швидкий рух і вісті. Інерція несе тебе вперед."
+    },
+    "reversed_meaning_short": {
+      "en": "Delays, mixed signals, scattering effort.",
+      "ru": "Задержки, смешанные сигналы, распыление усилий.",
+      "uk": "Затримки, змішані сигнали, розпорошення зусиль."
+    },
+    "reversed_meaning": {
+      "en": "Delays, mixed signals, scattering effort.",
+      "ru": "Задержки, смешанные сигналы, распыление усилий.",
+      "uk": "Затримки, змішані сигнали, розпорошення зусиль."
+    }
+  },
+  {
+    "id": "wands_09",
+    "slug": "wands/09",
+    "suit": "wands",
+    "rank": 9,
+    "en": "Nine of Wands",
+    "ru": "Девятка Жезлы",
+    "uk": "Дев’ятка Жезли",
+    "keywords": {
+      "en": [
+        "resilience",
+        "boundaries",
+        "last push"
+      ],
+      "ru": [
+        "стойкость",
+        "границы",
+        "последний рывок"
+      ],
+      "uk": [
+        "стійкість",
+        "межі",
+        "останній ривок"
+      ]
+    },
+    "meaning_short": {
+      "en": "Wounded but standing.",
+      "ru": "Ранен, но стоишь.",
+      "uk": "Поранений, але стоїш."
+    },
+    "meaning": {
+      "en": "Wounded but standing. Guard energy and prepare the final push.",
+      "ru": "Ранен, но стоишь. Береги энергию и готовь финальный рывок.",
+      "uk": "Поранений, але стоїш. Бережи енергію і готуй фінальний ривок."
+    },
+    "reversed_meaning_short": {
+      "en": "Paranoia, refusing rest, living in constant defense.",
+      "ru": "Паранойя, отказ от отдыха, вечная оборона.",
+      "uk": "Параноя, відмова від відпочинку, вічна оборона."
+    },
+    "reversed_meaning": {
+      "en": "Paranoia, refusing rest, living in constant defense.",
+      "ru": "Паранойя, отказ от отдыха, вечная оборона.",
+      "uk": "Параноя, відмова від відпочинку, вічна оборона."
+    }
+  },
+  {
+    "id": "wands_10",
+    "slug": "wands/10",
+    "suit": "wands",
+    "rank": 10,
+    "en": "Ten of Wands",
+    "ru": "Десятка Жезлы",
+    "uk": "Десятка Жезли",
+    "keywords": {
+      "en": [
+        "burden",
+        "completion",
+        "overload"
+      ],
+      "ru": [
+        "бремя",
+        "завершение",
+        "перегруз"
+      ],
+      "uk": [
+        "тягар",
+        "завершення",
+        "перевантаження"
+      ]
+    },
+    "meaning_short": {
+      "en": "Heavy load at the finish.",
+      "ru": "Тяжёлая ноша на финише.",
+      "uk": "Важка ноша на фініші."
+    },
+    "meaning": {
+      "en": "Heavy load at the finish. Delegate and set down what isn’t yours.",
+      "ru": "Тяжёлая ноша на финише. Делегируй и сними чужой груз.",
+      "uk": "Важка ноша на фініші. Делегуй і зніми чужий тягар."
+    },
+    "reversed_meaning_short": {
+      "en": "Burnout, carrying others’ responsibilities, mission creep.",
+      "ru": "Выгорание, чужая ответственность на плечах, расползание задач.",
+      "uk": "Вигорання, чужа відповідальність на плечах, розповзання задач."
+    },
+    "reversed_meaning": {
+      "en": "Burnout, carrying others’ responsibilities, mission creep.",
+      "ru": "Выгорание, чужая ответственность на плечах, расползание задач.",
+      "uk": "Вигорання, чужа відповідальність на плечах, розповзання задач."
+    }
+  },
+  {
+    "id": "wands_page",
+    "slug": "wands/page",
+    "suit": "wands",
+    "rank": 11,
+    "en": "Page of Wands",
+    "ru": "Паж Жезлы",
+    "uk": "Паж Жезли",
+    "keywords": {
+      "en": [
+        "curiosity",
+        "study",
+        "message",
+        "beginner"
+      ],
+      "ru": [
+        "любопытство",
+        "учёба",
+        "вестник",
+        "новичок"
+      ],
+      "uk": [
+        "цікавість",
+        "наука",
+        "вістовий",
+        "новачок"
+      ]
+    },
+    "meaning_short": {
+      "en": "Beginner’s mind.",
+      "ru": "Ум новичка.",
+      "uk": "Розум початківця."
+    },
+    "meaning": {
+      "en": "Beginner’s mind. Learn, explore, bring fresh news.",
+      "ru": "Ум новичка. Учись, исследуй, приноси свежие вести.",
+      "uk": "Розум початківця. Вчися, досліджуй, принось свіжі вісті."
+    },
+    "reversed_meaning_short": {
+      "en": "Immaturity, gossip, unfocused study.",
+      "ru": "Инфантильность, сплетни, рассеянная учёба.",
+      "uk": "Інфантильність, плітки, розсіяне навчання."
+    },
+    "reversed_meaning": {
+      "en": "Immaturity, gossip, unfocused study.",
+      "ru": "Инфантильность, сплетни, рассеянная учёба.",
+      "uk": "Інфантильність, плітки, розсіяне навчання."
+    }
+  },
+  {
+    "id": "wands_knight",
+    "slug": "wands/knight",
+    "suit": "wands",
+    "rank": 12,
+    "en": "Knight of Wands",
+    "ru": "Рыцарь Жезлы",
+    "uk": "Лицар Жезли",
+    "keywords": {
+      "en": [
+        "drive",
+        "mission",
+        "action",
+        "pursuit"
+      ],
+      "ru": [
+        "натиск",
+        "миссия",
+        "действие",
+        "преследование"
+      ],
+      "uk": [
+        "натиск",
+        "місія",
+        "дія",
+        "переслідування"
+      ]
+    },
+    "meaning_short": {
+      "en": "Bold pursuit.",
+      "ru": "Смелое преследование.",
+      "uk": "Сміливе переслідування."
+    },
+    "meaning": {
+      "en": "Bold pursuit. Channel momentum toward a clear aim.",
+      "ru": "Смелое преследование. Направь инерцию на ясную цель.",
+      "uk": "Сміливе переслідування. Спрямуй інерцію на чітку ціль."
+    },
+    "reversed_meaning_short": {
+      "en": "Impulsiveness, recklessness, reacting before thinking.",
+      "ru": "Импульсивность, безрассудство, реакция раньше мысли.",
+      "uk": "Імпульсивність, безрозсудність, реакція раніше думки."
+    },
+    "reversed_meaning": {
+      "en": "Impulsiveness, recklessness, reacting before thinking.",
+      "ru": "Импульсивность, безрассудство, реакция раньше мысли.",
+      "uk": "Імпульсивність, безрозсудність, реакція раніше думки."
+    }
+  },
+  {
+    "id": "wands_queen",
+    "slug": "wands/queen",
+    "suit": "wands",
+    "rank": 13,
+    "en": "Queen of Wands",
+    "ru": "Королева Жезлы",
+    "uk": "Королева Жезли",
+    "keywords": {
+      "en": [
+        "maturity",
+        "influence",
+        "care",
+        "magnetism"
+      ],
+      "ru": [
+        "зрелость",
+        "влияние",
+        "забота",
+        "магнетизм"
+      ],
+      "uk": [
+        "зрілість",
+        "вплив",
+        "піклування",
+        "магнетизм"
+      ]
+    },
+    "meaning_short": {
+      "en": "Magnetic mastery.",
+      "ru": "Магнетическое мастерство.",
+      "uk": "Магнетична майстерність."
+    },
+    "meaning": {
+      "en": "Magnetic mastery. Nurture people and channel the suit’s power wisely.",
+      "ru": "Магнетическое мастерство. Заботься о людях и мудро направляй силу масти.",
+      "uk": "Магнетична майстерність. Піклуйся про людей і мудро спрямовуй силу масті."
+    },
+    "reversed_meaning_short": {
+      "en": "Jealousy, manipulation, smothering leadership.",
+      "ru": "Ревность, манипуляции, удушающее лидерство.",
+      "uk": "Ревнощі, маніпуляції, задушливе лідерство."
+    },
+    "reversed_meaning": {
+      "en": "Jealousy, manipulation, smothering leadership.",
+      "ru": "Ревность, манипуляции, удушающее лидерство.",
+      "uk": "Ревнощі, маніпуляції, задушливе лідерство."
+    }
+  },
+  {
+    "id": "wands_king",
+    "slug": "wands/king",
+    "suit": "wands",
+    "rank": 14,
+    "en": "King of Wands",
+    "ru": "Король Жезлы",
+    "uk": "Король Жезли",
+    "keywords": {
+      "en": [
+        "authority",
+        "vision",
+        "structure",
+        "command"
+      ],
+      "ru": [
+        "авторитет",
+        "видение",
+        "структура",
+        "команда"
+      ],
+      "uk": [
+        "авторитет",
+        "бачення",
+        "структура",
+        "команда"
+      ]
+    },
+    "meaning_short": {
+      "en": "Strategic authority.",
+      "ru": "Стратегический авторитет.",
+      "uk": "Стратегічний авторитет."
+    },
+    "meaning": {
+      "en": "Strategic authority. Set direction and take responsibility.",
+      "ru": "Стратегический авторитет. Задай направление и возьми ответственность.",
+      "uk": "Стратегічний авторитет. Задай напрям і візьми відповідальність."
+    },
+    "reversed_meaning_short": {
+      "en": "Tyranny, rigidity, ruling for ego not purpose.",
+      "ru": "Тирания, жёсткость, власть ради эго, а не цели.",
+      "uk": "Тиранія, жорсткість, влада заради его, а не мети."
+    },
+    "reversed_meaning": {
+      "en": "Tyranny, rigidity, ruling for ego not purpose.",
+      "ru": "Тирания, жёсткость, власть ради эго, а не цели.",
+      "uk": "Тиранія, жорсткість, влада заради его, а не мети."
+    }
+  },
+  {
+    "id": "cups_ace",
+    "slug": "cups/ace",
+    "suit": "cups",
+    "rank": 1,
+    "en": "Ace of Cups",
+    "ru": "Туз Кубки",
+    "uk": "Туз Келихи",
+    "keywords": {
+      "en": [
+        "seed",
+        "spark",
+        "potential",
+        "new start"
+      ],
+      "ru": [
+        "семя",
+        "искра",
+        "потенциал",
+        "новый старт"
+      ],
+      "uk": [
+        "насінина",
+        "іскра",
+        "потенціал",
+        "новий старт"
+      ]
+    },
+    "meaning_short": {
+      "en": "The seed of emotion, relationships, intuition.",
+      "ru": "Семя эмоции, отношения, интуиция.",
+      "uk": "Насіння емоції, стосунки, інтуїція."
+    },
+    "meaning": {
+      "en": "The seed of emotion, relationships, intuition. A raw surge of emotion, relationships, intuition invites initiative.",
+      "ru": "Семя эмоции, отношения, интуиция. Сырой импульс эмоции, отношения, интуиция зовёт к инициативе.",
+      "uk": "Насіння емоції, стосунки, інтуїція. Сирий імпульс емоції, стосунки, інтуїція кличе до ініціативи."
+    },
+    "reversed_meaning_short": {
+      "en": "Blocked start, wasted spark, fear of the first step.",
+      "ru": "Блок старта, растраченная искра, страх первого шага.",
+      "uk": "Блок старту, змарнована іскра, страх першого кроку."
+    },
+    "reversed_meaning": {
+      "en": "Blocked start, wasted spark, fear of the first step.",
+      "ru": "Блок старта, растраченная искра, страх первого шага.",
+      "uk": "Блок старту, змарнована іскра, страх першого кроку."
+    }
+  },
+  {
+    "id": "cups_02",
+    "slug": "cups/02",
+    "suit": "cups",
+    "rank": 2,
+    "en": "Two of Cups",
+    "ru": "Двойка Кубки",
+    "uk": "Двійка Келихи",
+    "keywords": {
+      "en": [
+        "choice",
+        "planning",
+        "duality",
+        "balance"
+      ],
+      "ru": [
+        "выбор",
+        "планирование",
+        "двойственность",
+        "баланс"
+      ],
+      "uk": [
+        "вибір",
+        "планування",
+        "двійковість",
+        "баланс"
+      ]
+    },
+    "meaning_short": {
+      "en": "Choice and planning.",
+      "ru": "Выбор и план.",
+      "uk": "Вибір і план."
+    },
+    "meaning": {
+      "en": "Choice and planning. Align options before moving.",
+      "ru": "Выбор и план. Сопоставь варианты перед движением.",
+      "uk": "Вибір і план. Зістав варіанти перед рухом."
+    },
+    "reversed_meaning_short": {
+      "en": "Indecision, procrastination, split focus.",
+      "ru": "Нерешительность, прокрастинация, распыление внимания.",
+      "uk": "Нерішучість, прокрастинація, розпорошення уваги."
+    },
+    "reversed_meaning": {
+      "en": "Indecision, procrastination, split focus.",
+      "ru": "Нерешительность, прокрастинация, распыление внимания.",
+      "uk": "Нерішучість, прокрастинація, розпорошення уваги."
+    }
+  },
+  {
+    "id": "cups_03",
+    "slug": "cups/03",
+    "suit": "cups",
+    "rank": 3,
+    "en": "Three of Cups",
+    "ru": "Тройка Кубки",
+    "uk": "Трійка Келихи",
+    "keywords": {
+      "en": [
+        "expansion",
+        "foresight",
+        "teamwork"
+      ],
+      "ru": [
+        "расширение",
+        "предвидение",
+        "сотрудничество"
+      ],
+      "uk": [
+        "розширення",
+        "передбачення",
+        "співпраця"
+      ]
+    },
+    "meaning_short": {
+      "en": "Expansion begins.",
+      "ru": "Начало расширения.",
+      "uk": "Початок розширення."
+    },
+    "meaning": {
+      "en": "Expansion begins. Look ahead and coordinate support.",
+      "ru": "Начало расширения. Смотри вперёд и согласуй поддержку.",
+      "uk": "Початок розширення. Дивись уперед і узгодь підтримку."
+    },
+    "reversed_meaning_short": {
+      "en": "Delays, poor coordination, short-sighted aims.",
+      "ru": "Задержки, слабая координация, близорукость целей.",
+      "uk": "Затримки, слабка координація, короткозорі цілі."
+    },
+    "reversed_meaning": {
+      "en": "Delays, poor coordination, short-sighted aims.",
+      "ru": "Задержки, слабая координация, близорукость целей.",
+      "uk": "Затримки, слабка координація, короткозорі цілі."
+    }
+  },
+  {
+    "id": "cups_04",
+    "slug": "cups/04",
+    "suit": "cups",
+    "rank": 4,
+    "en": "Four of Cups",
+    "ru": "Четвёрка Кубки",
+    "uk": "Четвірка Келихи",
+    "keywords": {
+      "en": [
+        "stability",
+        "home",
+        "foundation",
+        "rest"
+      ],
+      "ru": [
+        "стабильность",
+        "дом",
+        "фундамент",
+        "передышка"
+      ],
+      "uk": [
+        "стабільність",
+        "дім",
+        "фундамент",
+        "перепочинок"
+      ]
+    },
+    "meaning_short": {
+      "en": "A stable base and a milestone worth celebrating.",
+      "ru": "Стабильная база и рубеж, достойный праздника.",
+      "uk": "Стабільна база і рубіж, вартий свята."
+    },
+    "meaning": {
+      "en": "A stable base and a milestone worth celebrating.",
+      "ru": "Стабильная база и рубеж, достойный праздника.",
+      "uk": "Стабільна база і рубіж, вартий свята."
+    },
+    "reversed_meaning_short": {
+      "en": "Stagnation, clinging to comfort, fear of change.",
+      "ru": "Застой, привязанность к комфорту, страх перемен.",
+      "uk": "Застій, прив’язаність до комфорту, страх змін."
+    },
+    "reversed_meaning": {
+      "en": "Stagnation, clinging to comfort, fear of change.",
+      "ru": "Застой, привязанность к комфорту, страх перемен.",
+      "uk": "Застій, прив’язаність до комфорту, страх змін."
+    }
+  },
+  {
+    "id": "cups_05",
+    "slug": "cups/05",
+    "suit": "cups",
+    "rank": 5,
+    "en": "Five of Cups",
+    "ru": "Пятёрка Кубки",
+    "uk": "П’ятірка Келихи",
+    "keywords": {
+      "en": [
+        "conflict",
+        "challenge",
+        "competition",
+        "loss"
+      ],
+      "ru": [
+        "конфликт",
+        "вызов",
+        "соревнование",
+        "потери"
+      ],
+      "uk": [
+        "конфлікт",
+        "виклик",
+        "змагання",
+        "втрати"
+      ]
+    },
+    "meaning_short": {
+      "en": "Tension and challenge forge skill; choose your battles.",
+      "ru": "Напряжение и вызов закаляют; выбирай свои битвы.",
+      "uk": "Напруга і виклик загартовують; обирай свої битви."
+    },
+    "meaning": {
+      "en": "Tension and challenge forge skill; choose your battles.",
+      "ru": "Напряжение и вызов закаляют; выбирай свои битвы.",
+      "uk": "Напруга і виклик загартовують; обирай свої битви."
+    },
+    "reversed_meaning_short": {
+      "en": "Pointless fights, pride, wasting energy.",
+      "ru": "Пустые споры, гордыня, трата энергии.",
+      "uk": "Порожні сварки, гординя, марнування енергії."
+    },
+    "reversed_meaning": {
+      "en": "Pointless fights, pride, wasting energy.",
+      "ru": "Пустые споры, гордыня, трата энергии.",
+      "uk": "Порожні сварки, гординя, марнування енергії."
+    }
+  },
+  {
+    "id": "cups_06",
+    "slug": "cups/06",
+    "suit": "cups",
+    "rank": 6,
+    "en": "Six of Cups",
+    "ru": "Шестёрка Кубки",
+    "uk": "Шістка Келихи",
+    "keywords": {
+      "en": [
+        "victory",
+        "support",
+        "recognition",
+        "progress"
+      ],
+      "ru": [
+        "победа",
+        "поддержка",
+        "признание",
+        "прогресс"
+      ],
+      "uk": [
+        "перемога",
+        "підтримка",
+        "визнання",
+        "поступ"
+      ]
+    },
+    "meaning_short": {
+      "en": "Visible progress and recognition.",
+      "ru": "Зримый прогресс и признание.",
+      "uk": "Видимий поступ і визнання."
+    },
+    "meaning": {
+      "en": "Visible progress and recognition. Share the win with your circle.",
+      "ru": "Зримый прогресс и признание. Поделись победой с окружением.",
+      "uk": "Видимий поступ і визнання. Поділи перемогу з оточенням."
+    },
+    "reversed_meaning_short": {
+      "en": "Empty applause, arrogance, success without substance.",
+      "ru": "Пустые аплодисменты, высокомерие, успех без содержания.",
+      "uk": "Порожні оплески, зверхність, успіх без змісту."
+    },
+    "reversed_meaning": {
+      "en": "Empty applause, arrogance, success without substance.",
+      "ru": "Пустые аплодисменты, высокомерие, успех без содержания.",
+      "uk": "Порожні оплески, зверхність, успіх без змісту."
+    }
+  },
+  {
+    "id": "cups_07",
+    "slug": "cups/07",
+    "suit": "cups",
+    "rank": 7,
+    "en": "Seven of Cups",
+    "ru": "Семёрка Кубки",
+    "uk": "Сімка Келихи",
+    "keywords": {
+      "en": [
+        "defense",
+        "conviction",
+        "perseverance"
+      ],
+      "ru": [
+        "оборона",
+        "убеждённость",
+        "настойчивость"
+      ],
+      "uk": [
+        "оборона",
+        "переконаність",
+        "наполегливість"
+      ]
+    },
+    "meaning_short": {
+      "en": "Hold your ground.",
+      "ru": "Держи позицию.",
+      "uk": "Тримай позицію."
+    },
+    "meaning": {
+      "en": "Hold your ground. Clarify your position and defend it.",
+      "ru": "Держи позицию. Проясни свою позицию и защищай её.",
+      "uk": "Тримай позицію. Проясни свою позицію і захищай її."
+    },
+    "reversed_meaning_short": {
+      "en": "Exhaustion, defensiveness without cause, poor boundaries.",
+      "ru": "Истощение, оборона без причины, слабые границы.",
+      "uk": "Виснаження, оборона без причини, слабкі межі."
+    },
+    "reversed_meaning": {
+      "en": "Exhaustion, defensiveness without cause, poor boundaries.",
+      "ru": "Истощение, оборона без причины, слабые границы.",
+      "uk": "Виснаження, оборона без причини, слабкі межі."
+    }
+  },
+  {
+    "id": "cups_08",
+    "slug": "cups/08",
+    "suit": "cups",
+    "rank": 8,
+    "en": "Eight of Cups",
+    "ru": "Восьмёрка Кубки",
+    "uk": "Вісімка Келихи",
+    "keywords": {
+      "en": [
+        "speed",
+        "news",
+        "movement"
+      ],
+      "ru": [
+        "скорость",
+        "новости",
+        "движение"
+      ],
+      "uk": [
+        "швидкість",
+        "новини",
+        "рух"
+      ]
+    },
+    "meaning_short": {
+      "en": "Fast movement and messages.",
+      "ru": "Быстрое движение и вести.",
+      "uk": "Швидкий рух і вісті."
+    },
+    "meaning": {
+      "en": "Fast movement and messages. Momentum carries you forward.",
+      "ru": "Быстрое движение и вести. Инерция несёт тебя вперёд.",
+      "uk": "Швидкий рух і вісті. Інерція несе тебе вперед."
+    },
+    "reversed_meaning_short": {
+      "en": "Delays, mixed signals, scattering effort.",
+      "ru": "Задержки, смешанные сигналы, распыление усилий.",
+      "uk": "Затримки, змішані сигнали, розпорошення зусиль."
+    },
+    "reversed_meaning": {
+      "en": "Delays, mixed signals, scattering effort.",
+      "ru": "Задержки, смешанные сигналы, распыление усилий.",
+      "uk": "Затримки, змішані сигнали, розпорошення зусиль."
+    }
+  },
+  {
+    "id": "cups_09",
+    "slug": "cups/09",
+    "suit": "cups",
+    "rank": 9,
+    "en": "Nine of Cups",
+    "ru": "Девятка Кубки",
+    "uk": "Дев’ятка Келихи",
+    "keywords": {
+      "en": [
+        "resilience",
+        "boundaries",
+        "last push"
+      ],
+      "ru": [
+        "стойкость",
+        "границы",
+        "последний рывок"
+      ],
+      "uk": [
+        "стійкість",
+        "межі",
+        "останній ривок"
+      ]
+    },
+    "meaning_short": {
+      "en": "Wounded but standing.",
+      "ru": "Ранен, но стоишь.",
+      "uk": "Поранений, але стоїш."
+    },
+    "meaning": {
+      "en": "Wounded but standing. Guard energy and prepare the final push.",
+      "ru": "Ранен, но стоишь. Береги энергию и готовь финальный рывок.",
+      "uk": "Поранений, але стоїш. Бережи енергію і готуй фінальний ривок."
+    },
+    "reversed_meaning_short": {
+      "en": "Paranoia, refusing rest, living in constant defense.",
+      "ru": "Паранойя, отказ от отдыха, вечная оборона.",
+      "uk": "Параноя, відмова від відпочинку, вічна оборона."
+    },
+    "reversed_meaning": {
+      "en": "Paranoia, refusing rest, living in constant defense.",
+      "ru": "Паранойя, отказ от отдыха, вечная оборона.",
+      "uk": "Параноя, відмова від відпочинку, вічна оборона."
+    }
+  },
+  {
+    "id": "cups_10",
+    "slug": "cups/10",
+    "suit": "cups",
+    "rank": 10,
+    "en": "Ten of Cups",
+    "ru": "Десятка Кубки",
+    "uk": "Десятка Келихи",
+    "keywords": {
+      "en": [
+        "burden",
+        "completion",
+        "overload"
+      ],
+      "ru": [
+        "бремя",
+        "завершение",
+        "перегруз"
+      ],
+      "uk": [
+        "тягар",
+        "завершення",
+        "перевантаження"
+      ]
+    },
+    "meaning_short": {
+      "en": "Heavy load at the finish.",
+      "ru": "Тяжёлая ноша на финише.",
+      "uk": "Важка ноша на фініші."
+    },
+    "meaning": {
+      "en": "Heavy load at the finish. Delegate and set down what isn’t yours.",
+      "ru": "Тяжёлая ноша на финише. Делегируй и сними чужой груз.",
+      "uk": "Важка ноша на фініші. Делегуй і зніми чужий тягар."
+    },
+    "reversed_meaning_short": {
+      "en": "Burnout, carrying others’ responsibilities, mission creep.",
+      "ru": "Выгорание, чужая ответственность на плечах, расползание задач.",
+      "uk": "Вигорання, чужа відповідальність на плечах, розповзання задач."
+    },
+    "reversed_meaning": {
+      "en": "Burnout, carrying others’ responsibilities, mission creep.",
+      "ru": "Выгорание, чужая ответственность на плечах, расползание задач.",
+      "uk": "Вигорання, чужа відповідальність на плечах, розповзання задач."
+    }
+  },
+  {
+    "id": "cups_page",
+    "slug": "cups/page",
+    "suit": "cups",
+    "rank": 11,
+    "en": "Page of Cups",
+    "ru": "Паж Кубки",
+    "uk": "Паж Келихи",
+    "keywords": {
+      "en": [
+        "curiosity",
+        "study",
+        "message",
+        "beginner"
+      ],
+      "ru": [
+        "любопытство",
+        "учёба",
+        "вестник",
+        "новичок"
+      ],
+      "uk": [
+        "цікавість",
+        "наука",
+        "вістовий",
+        "новачок"
+      ]
+    },
+    "meaning_short": {
+      "en": "Beginner’s mind.",
+      "ru": "Ум новичка.",
+      "uk": "Розум початківця."
+    },
+    "meaning": {
+      "en": "Beginner’s mind. Learn, explore, bring fresh news.",
+      "ru": "Ум новичка. Учись, исследуй, приноси свежие вести.",
+      "uk": "Розум початківця. Вчися, досліджуй, принось свіжі вісті."
+    },
+    "reversed_meaning_short": {
+      "en": "Immaturity, gossip, unfocused study.",
+      "ru": "Инфантильность, сплетни, рассеянная учёба.",
+      "uk": "Інфантильність, плітки, розсіяне навчання."
+    },
+    "reversed_meaning": {
+      "en": "Immaturity, gossip, unfocused study.",
+      "ru": "Инфантильность, сплетни, рассеянная учёба.",
+      "uk": "Інфантильність, плітки, розсіяне навчання."
+    }
+  },
+  {
+    "id": "cups_knight",
+    "slug": "cups/knight",
+    "suit": "cups",
+    "rank": 12,
+    "en": "Knight of Cups",
+    "ru": "Рыцарь Кубки",
+    "uk": "Лицар Келихи",
+    "keywords": {
+      "en": [
+        "drive",
+        "mission",
+        "action",
+        "pursuit"
+      ],
+      "ru": [
+        "натиск",
+        "миссия",
+        "действие",
+        "преследование"
+      ],
+      "uk": [
+        "натиск",
+        "місія",
+        "дія",
+        "переслідування"
+      ]
+    },
+    "meaning_short": {
+      "en": "Bold pursuit.",
+      "ru": "Смелое преследование.",
+      "uk": "Сміливе переслідування."
+    },
+    "meaning": {
+      "en": "Bold pursuit. Channel momentum toward a clear aim.",
+      "ru": "Смелое преследование. Направь инерцию на ясную цель.",
+      "uk": "Сміливе переслідування. Спрямуй інерцію на чітку ціль."
+    },
+    "reversed_meaning_short": {
+      "en": "Impulsiveness, recklessness, reacting before thinking.",
+      "ru": "Импульсивность, безрассудство, реакция раньше мысли.",
+      "uk": "Імпульсивність, безрозсудність, реакція раніше думки."
+    },
+    "reversed_meaning": {
+      "en": "Impulsiveness, recklessness, reacting before thinking.",
+      "ru": "Импульсивность, безрассудство, реакция раньше мысли.",
+      "uk": "Імпульсивність, безрозсудність, реакція раніше думки."
+    }
+  },
+  {
+    "id": "cups_queen",
+    "slug": "cups/queen",
+    "suit": "cups",
+    "rank": 13,
+    "en": "Queen of Cups",
+    "ru": "Королева Кубки",
+    "uk": "Королева Келихи",
+    "keywords": {
+      "en": [
+        "maturity",
+        "influence",
+        "care",
+        "magnetism"
+      ],
+      "ru": [
+        "зрелость",
+        "влияние",
+        "забота",
+        "магнетизм"
+      ],
+      "uk": [
+        "зрілість",
+        "вплив",
+        "піклування",
+        "магнетизм"
+      ]
+    },
+    "meaning_short": {
+      "en": "Magnetic mastery.",
+      "ru": "Магнетическое мастерство.",
+      "uk": "Магнетична майстерність."
+    },
+    "meaning": {
+      "en": "Magnetic mastery. Nurture people and channel the suit’s power wisely.",
+      "ru": "Магнетическое мастерство. Заботься о людях и мудро направляй силу масти.",
+      "uk": "Магнетична майстерність. Піклуйся про людей і мудро спрямовуй силу масті."
+    },
+    "reversed_meaning_short": {
+      "en": "Jealousy, manipulation, smothering leadership.",
+      "ru": "Ревность, манипуляции, удушающее лидерство.",
+      "uk": "Ревнощі, маніпуляції, задушливе лідерство."
+    },
+    "reversed_meaning": {
+      "en": "Jealousy, manipulation, smothering leadership.",
+      "ru": "Ревность, манипуляции, удушающее лидерство.",
+      "uk": "Ревнощі, маніпуляції, задушливе лідерство."
+    }
+  },
+  {
+    "id": "cups_king",
+    "slug": "cups/king",
+    "suit": "cups",
+    "rank": 14,
+    "en": "King of Cups",
+    "ru": "Король Кубки",
+    "uk": "Король Келихи",
+    "keywords": {
+      "en": [
+        "authority",
+        "vision",
+        "structure",
+        "command"
+      ],
+      "ru": [
+        "авторитет",
+        "видение",
+        "структура",
+        "команда"
+      ],
+      "uk": [
+        "авторитет",
+        "бачення",
+        "структура",
+        "команда"
+      ]
+    },
+    "meaning_short": {
+      "en": "Strategic authority.",
+      "ru": "Стратегический авторитет.",
+      "uk": "Стратегічний авторитет."
+    },
+    "meaning": {
+      "en": "Strategic authority. Set direction and take responsibility.",
+      "ru": "Стратегический авторитет. Задай направление и возьми ответственность.",
+      "uk": "Стратегічний авторитет. Задай напрям і візьми відповідальність."
+    },
+    "reversed_meaning_short": {
+      "en": "Tyranny, rigidity, ruling for ego not purpose.",
+      "ru": "Тирания, жёсткость, власть ради эго, а не цели.",
+      "uk": "Тиранія, жорсткість, влада заради его, а не мети."
+    },
+    "reversed_meaning": {
+      "en": "Tyranny, rigidity, ruling for ego not purpose.",
+      "ru": "Тирания, жёсткость, власть ради эго, а не цели.",
+      "uk": "Тиранія, жорсткість, влада заради его, а не мети."
+    }
+  },
+  {
+    "id": "swords_ace",
+    "slug": "swords/ace",
+    "suit": "swords",
+    "rank": 1,
+    "en": "Ace of Swords",
+    "ru": "Туз Мечи",
+    "uk": "Туз Мечі",
+    "keywords": {
+      "en": [
+        "seed",
+        "spark",
+        "potential",
+        "new start"
+      ],
+      "ru": [
+        "семя",
+        "искра",
+        "потенциал",
+        "новый старт"
+      ],
+      "uk": [
+        "насінина",
+        "іскра",
+        "потенціал",
+        "новий старт"
+      ]
+    },
+    "meaning_short": {
+      "en": "The seed of mind, truth, conflict.",
+      "ru": "Семя ум, истина, конфликт.",
+      "uk": "Насіння розум, істина, конфлікт."
+    },
+    "meaning": {
+      "en": "The seed of mind, truth, conflict. A raw surge of mind, truth, conflict invites initiative.",
+      "ru": "Семя ум, истина, конфликт. Сырой импульс ум, истина, конфликт зовёт к инициативе.",
+      "uk": "Насіння розум, істина, конфлікт. Сирий імпульс розум, істина, конфлікт кличе до ініціативи."
+    },
+    "reversed_meaning_short": {
+      "en": "Blocked start, wasted spark, fear of the first step.",
+      "ru": "Блок старта, растраченная искра, страх первого шага.",
+      "uk": "Блок старту, змарнована іскра, страх першого кроку."
+    },
+    "reversed_meaning": {
+      "en": "Blocked start, wasted spark, fear of the first step.",
+      "ru": "Блок старта, растраченная искра, страх первого шага.",
+      "uk": "Блок старту, змарнована іскра, страх першого кроку."
+    }
+  },
+  {
+    "id": "swords_02",
+    "slug": "swords/02",
+    "suit": "swords",
+    "rank": 2,
+    "en": "Two of Swords",
+    "ru": "Двойка Мечи",
+    "uk": "Двійка Мечі",
+    "keywords": {
+      "en": [
+        "choice",
+        "planning",
+        "duality",
+        "balance"
+      ],
+      "ru": [
+        "выбор",
+        "планирование",
+        "двойственность",
+        "баланс"
+      ],
+      "uk": [
+        "вибір",
+        "планування",
+        "двійковість",
+        "баланс"
+      ]
+    },
+    "meaning_short": {
+      "en": "Choice and planning.",
+      "ru": "Выбор и план.",
+      "uk": "Вибір і план."
+    },
+    "meaning": {
+      "en": "Choice and planning. Align options before moving.",
+      "ru": "Выбор и план. Сопоставь варианты перед движением.",
+      "uk": "Вибір і план. Зістав варіанти перед рухом."
+    },
+    "reversed_meaning_short": {
+      "en": "Indecision, procrastination, split focus.",
+      "ru": "Нерешительность, прокрастинация, распыление внимания.",
+      "uk": "Нерішучість, прокрастинація, розпорошення уваги."
+    },
+    "reversed_meaning": {
+      "en": "Indecision, procrastination, split focus.",
+      "ru": "Нерешительность, прокрастинация, распыление внимания.",
+      "uk": "Нерішучість, прокрастинація, розпорошення уваги."
+    }
+  },
+  {
+    "id": "swords_03",
+    "slug": "swords/03",
+    "suit": "swords",
+    "rank": 3,
+    "en": "Three of Swords",
+    "ru": "Тройка Мечи",
+    "uk": "Трійка Мечі",
+    "keywords": {
+      "en": [
+        "expansion",
+        "foresight",
+        "teamwork"
+      ],
+      "ru": [
+        "расширение",
+        "предвидение",
+        "сотрудничество"
+      ],
+      "uk": [
+        "розширення",
+        "передбачення",
+        "співпраця"
+      ]
+    },
+    "meaning_short": {
+      "en": "Expansion begins.",
+      "ru": "Начало расширения.",
+      "uk": "Початок розширення."
+    },
+    "meaning": {
+      "en": "Expansion begins. Look ahead and coordinate support.",
+      "ru": "Начало расширения. Смотри вперёд и согласуй поддержку.",
+      "uk": "Початок розширення. Дивись уперед і узгодь підтримку."
+    },
+    "reversed_meaning_short": {
+      "en": "Delays, poor coordination, short-sighted aims.",
+      "ru": "Задержки, слабая координация, близорукость целей.",
+      "uk": "Затримки, слабка координація, короткозорі цілі."
+    },
+    "reversed_meaning": {
+      "en": "Delays, poor coordination, short-sighted aims.",
+      "ru": "Задержки, слабая координация, близорукость целей.",
+      "uk": "Затримки, слабка координація, короткозорі цілі."
+    }
+  },
+  {
+    "id": "swords_04",
+    "slug": "swords/04",
+    "suit": "swords",
+    "rank": 4,
+    "en": "Four of Swords",
+    "ru": "Четвёрка Мечи",
+    "uk": "Четвірка Мечі",
+    "keywords": {
+      "en": [
+        "stability",
+        "home",
+        "foundation",
+        "rest"
+      ],
+      "ru": [
+        "стабильность",
+        "дом",
+        "фундамент",
+        "передышка"
+      ],
+      "uk": [
+        "стабільність",
+        "дім",
+        "фундамент",
+        "перепочинок"
+      ]
+    },
+    "meaning_short": {
+      "en": "A stable base and a milestone worth celebrating.",
+      "ru": "Стабильная база и рубеж, достойный праздника.",
+      "uk": "Стабільна база і рубіж, вартий свята."
+    },
+    "meaning": {
+      "en": "A stable base and a milestone worth celebrating.",
+      "ru": "Стабильная база и рубеж, достойный праздника.",
+      "uk": "Стабільна база і рубіж, вартий свята."
+    },
+    "reversed_meaning_short": {
+      "en": "Stagnation, clinging to comfort, fear of change.",
+      "ru": "Застой, привязанность к комфорту, страх перемен.",
+      "uk": "Застій, прив’язаність до комфорту, страх змін."
+    },
+    "reversed_meaning": {
+      "en": "Stagnation, clinging to comfort, fear of change.",
+      "ru": "Застой, привязанность к комфорту, страх перемен.",
+      "uk": "Застій, прив’язаність до комфорту, страх змін."
+    }
+  },
+  {
+    "id": "swords_05",
+    "slug": "swords/05",
+    "suit": "swords",
+    "rank": 5,
+    "en": "Five of Swords",
+    "ru": "Пятёрка Мечи",
+    "uk": "П’ятірка Мечі",
+    "keywords": {
+      "en": [
+        "conflict",
+        "challenge",
+        "competition",
+        "loss"
+      ],
+      "ru": [
+        "конфликт",
+        "вызов",
+        "соревнование",
+        "потери"
+      ],
+      "uk": [
+        "конфлікт",
+        "виклик",
+        "змагання",
+        "втрати"
+      ]
+    },
+    "meaning_short": {
+      "en": "Tension and challenge forge skill; choose your battles.",
+      "ru": "Напряжение и вызов закаляют; выбирай свои битвы.",
+      "uk": "Напруга і виклик загартовують; обирай свої битви."
+    },
+    "meaning": {
+      "en": "Tension and challenge forge skill; choose your battles.",
+      "ru": "Напряжение и вызов закаляют; выбирай свои битвы.",
+      "uk": "Напруга і виклик загартовують; обирай свої битви."
+    },
+    "reversed_meaning_short": {
+      "en": "Pointless fights, pride, wasting energy.",
+      "ru": "Пустые споры, гордыня, трата энергии.",
+      "uk": "Порожні сварки, гординя, марнування енергії."
+    },
+    "reversed_meaning": {
+      "en": "Pointless fights, pride, wasting energy.",
+      "ru": "Пустые споры, гордыня, трата энергии.",
+      "uk": "Порожні сварки, гординя, марнування енергії."
+    }
+  },
+  {
+    "id": "swords_06",
+    "slug": "swords/06",
+    "suit": "swords",
+    "rank": 6,
+    "en": "Six of Swords",
+    "ru": "Шестёрка Мечи",
+    "uk": "Шістка Мечі",
+    "keywords": {
+      "en": [
+        "victory",
+        "support",
+        "recognition",
+        "progress"
+      ],
+      "ru": [
+        "победа",
+        "поддержка",
+        "признание",
+        "прогресс"
+      ],
+      "uk": [
+        "перемога",
+        "підтримка",
+        "визнання",
+        "поступ"
+      ]
+    },
+    "meaning_short": {
+      "en": "Visible progress and recognition.",
+      "ru": "Зримый прогресс и признание.",
+      "uk": "Видимий поступ і визнання."
+    },
+    "meaning": {
+      "en": "Visible progress and recognition. Share the win with your circle.",
+      "ru": "Зримый прогресс и признание. Поделись победой с окружением.",
+      "uk": "Видимий поступ і визнання. Поділи перемогу з оточенням."
+    },
+    "reversed_meaning_short": {
+      "en": "Empty applause, arrogance, success without substance.",
+      "ru": "Пустые аплодисменты, высокомерие, успех без содержания.",
+      "uk": "Порожні оплески, зверхність, успіх без змісту."
+    },
+    "reversed_meaning": {
+      "en": "Empty applause, arrogance, success without substance.",
+      "ru": "Пустые аплодисменты, высокомерие, успех без содержания.",
+      "uk": "Порожні оплески, зверхність, успіх без змісту."
+    }
+  },
+  {
+    "id": "swords_07",
+    "slug": "swords/07",
+    "suit": "swords",
+    "rank": 7,
+    "en": "Seven of Swords",
+    "ru": "Семёрка Мечи",
+    "uk": "Сімка Мечі",
+    "keywords": {
+      "en": [
+        "defense",
+        "conviction",
+        "perseverance"
+      ],
+      "ru": [
+        "оборона",
+        "убеждённость",
+        "настойчивость"
+      ],
+      "uk": [
+        "оборона",
+        "переконаність",
+        "наполегливість"
+      ]
+    },
+    "meaning_short": {
+      "en": "Hold your ground.",
+      "ru": "Держи позицию.",
+      "uk": "Тримай позицію."
+    },
+    "meaning": {
+      "en": "Hold your ground. Clarify your position and defend it.",
+      "ru": "Держи позицию. Проясни свою позицию и защищай её.",
+      "uk": "Тримай позицію. Проясни свою позицію і захищай її."
+    },
+    "reversed_meaning_short": {
+      "en": "Exhaustion, defensiveness without cause, poor boundaries.",
+      "ru": "Истощение, оборона без причины, слабые границы.",
+      "uk": "Виснаження, оборона без причини, слабкі межі."
+    },
+    "reversed_meaning": {
+      "en": "Exhaustion, defensiveness without cause, poor boundaries.",
+      "ru": "Истощение, оборона без причины, слабые границы.",
+      "uk": "Виснаження, оборона без причини, слабкі межі."
+    }
+  },
+  {
+    "id": "swords_08",
+    "slug": "swords/08",
+    "suit": "swords",
+    "rank": 8,
+    "en": "Eight of Swords",
+    "ru": "Восьмёрка Мечи",
+    "uk": "Вісімка Мечі",
+    "keywords": {
+      "en": [
+        "speed",
+        "news",
+        "movement"
+      ],
+      "ru": [
+        "скорость",
+        "новости",
+        "движение"
+      ],
+      "uk": [
+        "швидкість",
+        "новини",
+        "рух"
+      ]
+    },
+    "meaning_short": {
+      "en": "Fast movement and messages.",
+      "ru": "Быстрое движение и вести.",
+      "uk": "Швидкий рух і вісті."
+    },
+    "meaning": {
+      "en": "Fast movement and messages. Momentum carries you forward.",
+      "ru": "Быстрое движение и вести. Инерция несёт тебя вперёд.",
+      "uk": "Швидкий рух і вісті. Інерція несе тебе вперед."
+    },
+    "reversed_meaning_short": {
+      "en": "Delays, mixed signals, scattering effort.",
+      "ru": "Задержки, смешанные сигналы, распыление усилий.",
+      "uk": "Затримки, змішані сигнали, розпорошення зусиль."
+    },
+    "reversed_meaning": {
+      "en": "Delays, mixed signals, scattering effort.",
+      "ru": "Задержки, смешанные сигналы, распыление усилий.",
+      "uk": "Затримки, змішані сигнали, розпорошення зусиль."
+    }
+  },
+  {
+    "id": "swords_09",
+    "slug": "swords/09",
+    "suit": "swords",
+    "rank": 9,
+    "en": "Nine of Swords",
+    "ru": "Девятка Мечи",
+    "uk": "Дев’ятка Мечі",
+    "keywords": {
+      "en": [
+        "resilience",
+        "boundaries",
+        "last push"
+      ],
+      "ru": [
+        "стойкость",
+        "границы",
+        "последний рывок"
+      ],
+      "uk": [
+        "стійкість",
+        "межі",
+        "останній ривок"
+      ]
+    },
+    "meaning_short": {
+      "en": "Wounded but standing.",
+      "ru": "Ранен, но стоишь.",
+      "uk": "Поранений, але стоїш."
+    },
+    "meaning": {
+      "en": "Wounded but standing. Guard energy and prepare the final push.",
+      "ru": "Ранен, но стоишь. Береги энергию и готовь финальный рывок.",
+      "uk": "Поранений, але стоїш. Бережи енергію і готуй фінальний ривок."
+    },
+    "reversed_meaning_short": {
+      "en": "Paranoia, refusing rest, living in constant defense.",
+      "ru": "Паранойя, отказ от отдыха, вечная оборона.",
+      "uk": "Параноя, відмова від відпочинку, вічна оборона."
+    },
+    "reversed_meaning": {
+      "en": "Paranoia, refusing rest, living in constant defense.",
+      "ru": "Паранойя, отказ от отдыха, вечная оборона.",
+      "uk": "Параноя, відмова від відпочинку, вічна оборона."
+    }
+  },
+  {
+    "id": "swords_10",
+    "slug": "swords/10",
+    "suit": "swords",
+    "rank": 10,
+    "en": "Ten of Swords",
+    "ru": "Десятка Мечи",
+    "uk": "Десятка Мечі",
+    "keywords": {
+      "en": [
+        "burden",
+        "completion",
+        "overload"
+      ],
+      "ru": [
+        "бремя",
+        "завершение",
+        "перегруз"
+      ],
+      "uk": [
+        "тягар",
+        "завершення",
+        "перевантаження"
+      ]
+    },
+    "meaning_short": {
+      "en": "Heavy load at the finish.",
+      "ru": "Тяжёлая ноша на финише.",
+      "uk": "Важка ноша на фініші."
+    },
+    "meaning": {
+      "en": "Heavy load at the finish. Delegate and set down what isn’t yours.",
+      "ru": "Тяжёлая ноша на финише. Делегируй и сними чужой груз.",
+      "uk": "Важка ноша на фініші. Делегуй і зніми чужий тягар."
+    },
+    "reversed_meaning_short": {
+      "en": "Burnout, carrying others’ responsibilities, mission creep.",
+      "ru": "Выгорание, чужая ответственность на плечах, расползание задач.",
+      "uk": "Вигорання, чужа відповідальність на плечах, розповзання задач."
+    },
+    "reversed_meaning": {
+      "en": "Burnout, carrying others’ responsibilities, mission creep.",
+      "ru": "Выгорание, чужая ответственность на плечах, расползание задач.",
+      "uk": "Вигорання, чужа відповідальність на плечах, розповзання задач."
+    }
+  },
+  {
+    "id": "swords_page",
+    "slug": "swords/page",
+    "suit": "swords",
+    "rank": 11,
+    "en": "Page of Swords",
+    "ru": "Паж Мечи",
+    "uk": "Паж Мечі",
+    "keywords": {
+      "en": [
+        "curiosity",
+        "study",
+        "message",
+        "beginner"
+      ],
+      "ru": [
+        "любопытство",
+        "учёба",
+        "вестник",
+        "новичок"
+      ],
+      "uk": [
+        "цікавість",
+        "наука",
+        "вістовий",
+        "новачок"
+      ]
+    },
+    "meaning_short": {
+      "en": "Beginner’s mind.",
+      "ru": "Ум новичка.",
+      "uk": "Розум початківця."
+    },
+    "meaning": {
+      "en": "Beginner’s mind. Learn, explore, bring fresh news.",
+      "ru": "Ум новичка. Учись, исследуй, приноси свежие вести.",
+      "uk": "Розум початківця. Вчися, досліджуй, принось свіжі вісті."
+    },
+    "reversed_meaning_short": {
+      "en": "Immaturity, gossip, unfocused study.",
+      "ru": "Инфантильность, сплетни, рассеянная учёба.",
+      "uk": "Інфантильність, плітки, розсіяне навчання."
+    },
+    "reversed_meaning": {
+      "en": "Immaturity, gossip, unfocused study.",
+      "ru": "Инфантильность, сплетни, рассеянная учёба.",
+      "uk": "Інфантильність, плітки, розсіяне навчання."
+    }
+  },
+  {
+    "id": "swords_knight",
+    "slug": "swords/knight",
+    "suit": "swords",
+    "rank": 12,
+    "en": "Knight of Swords",
+    "ru": "Рыцарь Мечи",
+    "uk": "Лицар Мечі",
+    "keywords": {
+      "en": [
+        "drive",
+        "mission",
+        "action",
+        "pursuit"
+      ],
+      "ru": [
+        "натиск",
+        "миссия",
+        "действие",
+        "преследование"
+      ],
+      "uk": [
+        "натиск",
+        "місія",
+        "дія",
+        "переслідування"
+      ]
+    },
+    "meaning_short": {
+      "en": "Bold pursuit.",
+      "ru": "Смелое преследование.",
+      "uk": "Сміливе переслідування."
+    },
+    "meaning": {
+      "en": "Bold pursuit. Channel momentum toward a clear aim.",
+      "ru": "Смелое преследование. Направь инерцию на ясную цель.",
+      "uk": "Сміливе переслідування. Спрямуй інерцію на чітку ціль."
+    },
+    "reversed_meaning_short": {
+      "en": "Impulsiveness, recklessness, reacting before thinking.",
+      "ru": "Импульсивность, безрассудство, реакция раньше мысли.",
+      "uk": "Імпульсивність, безрозсудність, реакція раніше думки."
+    },
+    "reversed_meaning": {
+      "en": "Impulsiveness, recklessness, reacting before thinking.",
+      "ru": "Импульсивность, безрассудство, реакция раньше мысли.",
+      "uk": "Імпульсивність, безрозсудність, реакція раніше думки."
+    }
+  },
+  {
+    "id": "swords_queen",
+    "slug": "swords/queen",
+    "suit": "swords",
+    "rank": 13,
+    "en": "Queen of Swords",
+    "ru": "Королева Мечи",
+    "uk": "Королева Мечі",
+    "keywords": {
+      "en": [
+        "maturity",
+        "influence",
+        "care",
+        "magnetism"
+      ],
+      "ru": [
+        "зрелость",
+        "влияние",
+        "забота",
+        "магнетизм"
+      ],
+      "uk": [
+        "зрілість",
+        "вплив",
+        "піклування",
+        "магнетизм"
+      ]
+    },
+    "meaning_short": {
+      "en": "Magnetic mastery.",
+      "ru": "Магнетическое мастерство.",
+      "uk": "Магнетична майстерність."
+    },
+    "meaning": {
+      "en": "Magnetic mastery. Nurture people and channel the suit’s power wisely.",
+      "ru": "Магнетическое мастерство. Заботься о людях и мудро направляй силу масти.",
+      "uk": "Магнетична майстерність. Піклуйся про людей і мудро спрямовуй силу масті."
+    },
+    "reversed_meaning_short": {
+      "en": "Jealousy, manipulation, smothering leadership.",
+      "ru": "Ревность, манипуляции, удушающее лидерство.",
+      "uk": "Ревнощі, маніпуляції, задушливе лідерство."
+    },
+    "reversed_meaning": {
+      "en": "Jealousy, manipulation, smothering leadership.",
+      "ru": "Ревность, манипуляции, удушающее лидерство.",
+      "uk": "Ревнощі, маніпуляції, задушливе лідерство."
+    }
+  },
+  {
+    "id": "swords_king",
+    "slug": "swords/king",
+    "suit": "swords",
+    "rank": 14,
+    "en": "King of Swords",
+    "ru": "Король Мечи",
+    "uk": "Король Мечі",
+    "keywords": {
+      "en": [
+        "authority",
+        "vision",
+        "structure",
+        "command"
+      ],
+      "ru": [
+        "авторитет",
+        "видение",
+        "структура",
+        "команда"
+      ],
+      "uk": [
+        "авторитет",
+        "бачення",
+        "структура",
+        "команда"
+      ]
+    },
+    "meaning_short": {
+      "en": "Strategic authority.",
+      "ru": "Стратегический авторитет.",
+      "uk": "Стратегічний авторитет."
+    },
+    "meaning": {
+      "en": "Strategic authority. Set direction and take responsibility.",
+      "ru": "Стратегический авторитет. Задай направление и возьми ответственность.",
+      "uk": "Стратегічний авторитет. Задай напрям і візьми відповідальність."
+    },
+    "reversed_meaning_short": {
+      "en": "Tyranny, rigidity, ruling for ego not purpose.",
+      "ru": "Тирания, жёсткость, власть ради эго, а не цели.",
+      "uk": "Тиранія, жорсткість, влада заради его, а не мети."
+    },
+    "reversed_meaning": {
+      "en": "Tyranny, rigidity, ruling for ego not purpose.",
+      "ru": "Тирания, жёсткость, власть ради эго, а не цели.",
+      "uk": "Тиранія, жорсткість, влада заради его, а не мети."
+    }
+  },
+  {
+    "id": "pentacles_ace",
+    "slug": "pentacles/ace",
+    "suit": "pentacles",
+    "rank": 1,
+    "en": "Ace of Pentacles",
+    "ru": "Туз Пентакли",
+    "uk": "Туз Пентаклі",
+    "keywords": {
+      "en": [
+        "seed",
+        "spark",
+        "potential",
+        "new start"
+      ],
+      "ru": [
+        "семя",
+        "искра",
+        "потенциал",
+        "новый старт"
+      ],
+      "uk": [
+        "насінина",
+        "іскра",
+        "потенціал",
+        "новий старт"
+      ]
+    },
+    "meaning_short": {
+      "en": "The seed of material, work, body.",
+      "ru": "Семя материальное, работа, тело.",
+      "uk": "Насіння матеріальне, праця, тіло."
+    },
+    "meaning": {
+      "en": "The seed of material, work, body. A raw surge of material, work, body invites initiative.",
+      "ru": "Семя материальное, работа, тело. Сырой импульс материальное, работа, тело зовёт к инициативе.",
+      "uk": "Насіння матеріальне, праця, тіло. Сирий імпульс матеріальне, праця, тіло кличе до ініціативи."
+    },
+    "reversed_meaning_short": {
+      "en": "Blocked start, wasted spark, fear of the first step.",
+      "ru": "Блок старта, растраченная искра, страх первого шага.",
+      "uk": "Блок старту, змарнована іскра, страх першого кроку."
+    },
+    "reversed_meaning": {
+      "en": "Blocked start, wasted spark, fear of the first step.",
+      "ru": "Блок старта, растраченная искра, страх первого шага.",
+      "uk": "Блок старту, змарнована іскра, страх першого кроку."
+    }
+  },
+  {
+    "id": "pentacles_02",
+    "slug": "pentacles/02",
+    "suit": "pentacles",
+    "rank": 2,
+    "en": "Two of Pentacles",
+    "ru": "Двойка Пентакли",
+    "uk": "Двійка Пентаклі",
+    "keywords": {
+      "en": [
+        "choice",
+        "planning",
+        "duality",
+        "balance"
+      ],
+      "ru": [
+        "выбор",
+        "планирование",
+        "двойственность",
+        "баланс"
+      ],
+      "uk": [
+        "вибір",
+        "планування",
+        "двійковість",
+        "баланс"
+      ]
+    },
+    "meaning_short": {
+      "en": "Choice and planning.",
+      "ru": "Выбор и план.",
+      "uk": "Вибір і план."
+    },
+    "meaning": {
+      "en": "Choice and planning. Align options before moving.",
+      "ru": "Выбор и план. Сопоставь варианты перед движением.",
+      "uk": "Вибір і план. Зістав варіанти перед рухом."
+    },
+    "reversed_meaning_short": {
+      "en": "Indecision, procrastination, split focus.",
+      "ru": "Нерешительность, прокрастинация, распыление внимания.",
+      "uk": "Нерішучість, прокрастинація, розпорошення уваги."
+    },
+    "reversed_meaning": {
+      "en": "Indecision, procrastination, split focus.",
+      "ru": "Нерешительность, прокрастинация, распыление внимания.",
+      "uk": "Нерішучість, прокрастинація, розпорошення уваги."
+    }
+  },
+  {
+    "id": "pentacles_03",
+    "slug": "pentacles/03",
+    "suit": "pentacles",
+    "rank": 3,
+    "en": "Three of Pentacles",
+    "ru": "Тройка Пентакли",
+    "uk": "Трійка Пентаклі",
+    "keywords": {
+      "en": [
+        "expansion",
+        "foresight",
+        "teamwork"
+      ],
+      "ru": [
+        "расширение",
+        "предвидение",
+        "сотрудничество"
+      ],
+      "uk": [
+        "розширення",
+        "передбачення",
+        "співпраця"
+      ]
+    },
+    "meaning_short": {
+      "en": "Expansion begins.",
+      "ru": "Начало расширения.",
+      "uk": "Початок розширення."
+    },
+    "meaning": {
+      "en": "Expansion begins. Look ahead and coordinate support.",
+      "ru": "Начало расширения. Смотри вперёд и согласуй поддержку.",
+      "uk": "Початок розширення. Дивись уперед і узгодь підтримку."
+    },
+    "reversed_meaning_short": {
+      "en": "Delays, poor coordination, short-sighted aims.",
+      "ru": "Задержки, слабая координация, близорукость целей.",
+      "uk": "Затримки, слабка координація, короткозорі цілі."
+    },
+    "reversed_meaning": {
+      "en": "Delays, poor coordination, short-sighted aims.",
+      "ru": "Задержки, слабая координация, близорукость целей.",
+      "uk": "Затримки, слабка координація, короткозорі цілі."
+    }
+  },
+  {
+    "id": "pentacles_04",
+    "slug": "pentacles/04",
+    "suit": "pentacles",
+    "rank": 4,
+    "en": "Four of Pentacles",
+    "ru": "Четвёрка Пентакли",
+    "uk": "Четвірка Пентаклі",
+    "keywords": {
+      "en": [
+        "stability",
+        "home",
+        "foundation",
+        "rest"
+      ],
+      "ru": [
+        "стабильность",
+        "дом",
+        "фундамент",
+        "передышка"
+      ],
+      "uk": [
+        "стабільність",
+        "дім",
+        "фундамент",
+        "перепочинок"
+      ]
+    },
+    "meaning_short": {
+      "en": "A stable base and a milestone worth celebrating.",
+      "ru": "Стабильная база и рубеж, достойный праздника.",
+      "uk": "Стабільна база і рубіж, вартий свята."
+    },
+    "meaning": {
+      "en": "A stable base and a milestone worth celebrating.",
+      "ru": "Стабильная база и рубеж, достойный праздника.",
+      "uk": "Стабільна база і рубіж, вартий свята."
+    },
+    "reversed_meaning_short": {
+      "en": "Stagnation, clinging to comfort, fear of change.",
+      "ru": "Застой, привязанность к комфорту, страх перемен.",
+      "uk": "Застій, прив’язаність до комфорту, страх змін."
+    },
+    "reversed_meaning": {
+      "en": "Stagnation, clinging to comfort, fear of change.",
+      "ru": "Застой, привязанность к комфорту, страх перемен.",
+      "uk": "Застій, прив’язаність до комфорту, страх змін."
+    }
+  },
+  {
+    "id": "pentacles_05",
+    "slug": "pentacles/05",
+    "suit": "pentacles",
+    "rank": 5,
+    "en": "Five of Pentacles",
+    "ru": "Пятёрка Пентакли",
+    "uk": "П’ятірка Пентаклі",
+    "keywords": {
+      "en": [
+        "conflict",
+        "challenge",
+        "competition",
+        "loss"
+      ],
+      "ru": [
+        "конфликт",
+        "вызов",
+        "соревнование",
+        "потери"
+      ],
+      "uk": [
+        "конфлікт",
+        "виклик",
+        "змагання",
+        "втрати"
+      ]
+    },
+    "meaning_short": {
+      "en": "Tension and challenge forge skill; choose your battles.",
+      "ru": "Напряжение и вызов закаляют; выбирай свои битвы.",
+      "uk": "Напруга і виклик загартовують; обирай свої битви."
+    },
+    "meaning": {
+      "en": "Tension and challenge forge skill; choose your battles.",
+      "ru": "Напряжение и вызов закаляют; выбирай свои битвы.",
+      "uk": "Напруга і виклик загартовують; обирай свої битви."
+    },
+    "reversed_meaning_short": {
+      "en": "Pointless fights, pride, wasting energy.",
+      "ru": "Пустые споры, гордыня, трата энергии.",
+      "uk": "Порожні сварки, гординя, марнування енергії."
+    },
+    "reversed_meaning": {
+      "en": "Pointless fights, pride, wasting energy.",
+      "ru": "Пустые споры, гордыня, трата энергии.",
+      "uk": "Порожні сварки, гординя, марнування енергії."
+    }
+  },
+  {
+    "id": "pentacles_06",
+    "slug": "pentacles/06",
+    "suit": "pentacles",
+    "rank": 6,
+    "en": "Six of Pentacles",
+    "ru": "Шестёрка Пентакли",
+    "uk": "Шістка Пентаклі",
+    "keywords": {
+      "en": [
+        "victory",
+        "support",
+        "recognition",
+        "progress"
+      ],
+      "ru": [
+        "победа",
+        "поддержка",
+        "признание",
+        "прогресс"
+      ],
+      "uk": [
+        "перемога",
+        "підтримка",
+        "визнання",
+        "поступ"
+      ]
+    },
+    "meaning_short": {
+      "en": "Visible progress and recognition.",
+      "ru": "Зримый прогресс и признание.",
+      "uk": "Видимий поступ і визнання."
+    },
+    "meaning": {
+      "en": "Visible progress and recognition. Share the win with your circle.",
+      "ru": "Зримый прогресс и признание. Поделись победой с окружением.",
+      "uk": "Видимий поступ і визнання. Поділи перемогу з оточенням."
+    },
+    "reversed_meaning_short": {
+      "en": "Empty applause, arrogance, success without substance.",
+      "ru": "Пустые аплодисменты, высокомерие, успех без содержания.",
+      "uk": "Порожні оплески, зверхність, успіх без змісту."
+    },
+    "reversed_meaning": {
+      "en": "Empty applause, arrogance, success without substance.",
+      "ru": "Пустые аплодисменты, высокомерие, успех без содержания.",
+      "uk": "Порожні оплески, зверхність, успіх без змісту."
+    }
+  },
+  {
+    "id": "pentacles_07",
+    "slug": "pentacles/07",
+    "suit": "pentacles",
+    "rank": 7,
+    "en": "Seven of Pentacles",
+    "ru": "Семёрка Пентакли",
+    "uk": "Сімка Пентаклі",
+    "keywords": {
+      "en": [
+        "defense",
+        "conviction",
+        "perseverance"
+      ],
+      "ru": [
+        "оборона",
+        "убеждённость",
+        "настойчивость"
+      ],
+      "uk": [
+        "оборона",
+        "переконаність",
+        "наполегливість"
+      ]
+    },
+    "meaning_short": {
+      "en": "Hold your ground.",
+      "ru": "Держи позицию.",
+      "uk": "Тримай позицію."
+    },
+    "meaning": {
+      "en": "Hold your ground. Clarify your position and defend it.",
+      "ru": "Держи позицию. Проясни свою позицию и защищай её.",
+      "uk": "Тримай позицію. Проясни свою позицію і захищай її."
+    },
+    "reversed_meaning_short": {
+      "en": "Exhaustion, defensiveness without cause, poor boundaries.",
+      "ru": "Истощение, оборона без причины, слабые границы.",
+      "uk": "Виснаження, оборона без причини, слабкі межі."
+    },
+    "reversed_meaning": {
+      "en": "Exhaustion, defensiveness without cause, poor boundaries.",
+      "ru": "Истощение, оборона без причины, слабые границы.",
+      "uk": "Виснаження, оборона без причини, слабкі межі."
+    }
+  },
+  {
+    "id": "pentacles_08",
+    "slug": "pentacles/08",
+    "suit": "pentacles",
+    "rank": 8,
+    "en": "Eight of Pentacles",
+    "ru": "Восьмёрка Пентакли",
+    "uk": "Вісімка Пентаклі",
+    "keywords": {
+      "en": [
+        "speed",
+        "news",
+        "movement"
+      ],
+      "ru": [
+        "скорость",
+        "новости",
+        "движение"
+      ],
+      "uk": [
+        "швидкість",
+        "новини",
+        "рух"
+      ]
+    },
+    "meaning_short": {
+      "en": "Fast movement and messages.",
+      "ru": "Быстрое движение и вести.",
+      "uk": "Швидкий рух і вісті."
+    },
+    "meaning": {
+      "en": "Fast movement and messages. Momentum carries you forward.",
+      "ru": "Быстрое движение и вести. Инерция несёт тебя вперёд.",
+      "uk": "Швидкий рух і вісті. Інерція несе тебе вперед."
+    },
+    "reversed_meaning_short": {
+      "en": "Delays, mixed signals, scattering effort.",
+      "ru": "Задержки, смешанные сигналы, распыление усилий.",
+      "uk": "Затримки, змішані сигнали, розпорошення зусиль."
+    },
+    "reversed_meaning": {
+      "en": "Delays, mixed signals, scattering effort.",
+      "ru": "Задержки, смешанные сигналы, распыление усилий.",
+      "uk": "Затримки, змішані сигнали, розпорошення зусиль."
+    }
+  },
+  {
+    "id": "pentacles_09",
+    "slug": "pentacles/09",
+    "suit": "pentacles",
+    "rank": 9,
+    "en": "Nine of Pentacles",
+    "ru": "Девятка Пентакли",
+    "uk": "Дев’ятка Пентаклі",
+    "keywords": {
+      "en": [
+        "resilience",
+        "boundaries",
+        "last push"
+      ],
+      "ru": [
+        "стойкость",
+        "границы",
+        "последний рывок"
+      ],
+      "uk": [
+        "стійкість",
+        "межі",
+        "останній ривок"
+      ]
+    },
+    "meaning_short": {
+      "en": "Wounded but standing.",
+      "ru": "Ранен, но стоишь.",
+      "uk": "Поранений, але стоїш."
+    },
+    "meaning": {
+      "en": "Wounded but standing. Guard energy and prepare the final push.",
+      "ru": "Ранен, но стоишь. Береги энергию и готовь финальный рывок.",
+      "uk": "Поранений, але стоїш. Бережи енергію і готуй фінальний ривок."
+    },
+    "reversed_meaning_short": {
+      "en": "Paranoia, refusing rest, living in constant defense.",
+      "ru": "Паранойя, отказ от отдыха, вечная оборона.",
+      "uk": "Параноя, відмова від відпочинку, вічна оборона."
+    },
+    "reversed_meaning": {
+      "en": "Paranoia, refusing rest, living in constant defense.",
+      "ru": "Паранойя, отказ от отдыха, вечная оборона.",
+      "uk": "Параноя, відмова від відпочинку, вічна оборона."
+    }
+  },
+  {
+    "id": "pentacles_10",
+    "slug": "pentacles/10",
+    "suit": "pentacles",
+    "rank": 10,
+    "en": "Ten of Pentacles",
+    "ru": "Десятка Пентакли",
+    "uk": "Десятка Пентаклі",
+    "keywords": {
+      "en": [
+        "burden",
+        "completion",
+        "overload"
+      ],
+      "ru": [
+        "бремя",
+        "завершение",
+        "перегруз"
+      ],
+      "uk": [
+        "тягар",
+        "завершення",
+        "перевантаження"
+      ]
+    },
+    "meaning_short": {
+      "en": "Heavy load at the finish.",
+      "ru": "Тяжёлая ноша на финише.",
+      "uk": "Важка ноша на фініші."
+    },
+    "meaning": {
+      "en": "Heavy load at the finish. Delegate and set down what isn’t yours.",
+      "ru": "Тяжёлая ноша на финише. Делегируй и сними чужой груз.",
+      "uk": "Важка ноша на фініші. Делегуй і зніми чужий тягар."
+    },
+    "reversed_meaning_short": {
+      "en": "Burnout, carrying others’ responsibilities, mission creep.",
+      "ru": "Выгорание, чужая ответственность на плечах, расползание задач.",
+      "uk": "Вигорання, чужа відповідальність на плечах, розповзання задач."
+    },
+    "reversed_meaning": {
+      "en": "Burnout, carrying others’ responsibilities, mission creep.",
+      "ru": "Выгорание, чужая ответственность на плечах, расползание задач.",
+      "uk": "Вигорання, чужа відповідальність на плечах, розповзання задач."
+    }
+  },
+  {
+    "id": "pentacles_page",
+    "slug": "pentacles/page",
+    "suit": "pentacles",
+    "rank": 11,
+    "en": "Page of Pentacles",
+    "ru": "Паж Пентакли",
+    "uk": "Паж Пентаклі",
+    "keywords": {
+      "en": [
+        "curiosity",
+        "study",
+        "message",
+        "beginner"
+      ],
+      "ru": [
+        "любопытство",
+        "учёба",
+        "вестник",
+        "новичок"
+      ],
+      "uk": [
+        "цікавість",
+        "наука",
+        "вістовий",
+        "новачок"
+      ]
+    },
+    "meaning_short": {
+      "en": "Beginner’s mind.",
+      "ru": "Ум новичка.",
+      "uk": "Розум початківця."
+    },
+    "meaning": {
+      "en": "Beginner’s mind. Learn, explore, bring fresh news.",
+      "ru": "Ум новичка. Учись, исследуй, приноси свежие вести.",
+      "uk": "Розум початківця. Вчися, досліджуй, принось свіжі вісті."
+    },
+    "reversed_meaning_short": {
+      "en": "Immaturity, gossip, unfocused study.",
+      "ru": "Инфантильность, сплетни, рассеянная учёба.",
+      "uk": "Інфантильність, плітки, розсіяне навчання."
+    },
+    "reversed_meaning": {
+      "en": "Immaturity, gossip, unfocused study.",
+      "ru": "Инфантильность, сплетни, рассеянная учёба.",
+      "uk": "Інфантильність, плітки, розсіяне навчання."
+    }
+  },
+  {
+    "id": "pentacles_knight",
+    "slug": "pentacles/knight",
+    "suit": "pentacles",
+    "rank": 12,
+    "en": "Knight of Pentacles",
+    "ru": "Рыцарь Пентакли",
+    "uk": "Лицар Пентаклі",
+    "keywords": {
+      "en": [
+        "drive",
+        "mission",
+        "action",
+        "pursuit"
+      ],
+      "ru": [
+        "натиск",
+        "миссия",
+        "действие",
+        "преследование"
+      ],
+      "uk": [
+        "натиск",
+        "місія",
+        "дія",
+        "переслідування"
+      ]
+    },
+    "meaning_short": {
+      "en": "Bold pursuit.",
+      "ru": "Смелое преследование.",
+      "uk": "Сміливе переслідування."
+    },
+    "meaning": {
+      "en": "Bold pursuit. Channel momentum toward a clear aim.",
+      "ru": "Смелое преследование. Направь инерцию на ясную цель.",
+      "uk": "Сміливе переслідування. Спрямуй інерцію на чітку ціль."
+    },
+    "reversed_meaning_short": {
+      "en": "Impulsiveness, recklessness, reacting before thinking.",
+      "ru": "Импульсивность, безрассудство, реакция раньше мысли.",
+      "uk": "Імпульсивність, безрозсудність, реакція раніше думки."
+    },
+    "reversed_meaning": {
+      "en": "Impulsiveness, recklessness, reacting before thinking.",
+      "ru": "Импульсивность, безрассудство, реакция раньше мысли.",
+      "uk": "Імпульсивність, безрозсудність, реакція раніше думки."
+    }
+  },
+  {
+    "id": "pentacles_queen",
+    "slug": "pentacles/queen",
+    "suit": "pentacles",
+    "rank": 13,
+    "en": "Queen of Pentacles",
+    "ru": "Королева Пентакли",
+    "uk": "Королева Пентаклі",
+    "keywords": {
+      "en": [
+        "maturity",
+        "influence",
+        "care",
+        "magnetism"
+      ],
+      "ru": [
+        "зрелость",
+        "влияние",
+        "забота",
+        "магнетизм"
+      ],
+      "uk": [
+        "зрілість",
+        "вплив",
+        "піклування",
+        "магнетизм"
+      ]
+    },
+    "meaning_short": {
+      "en": "Magnetic mastery.",
+      "ru": "Магнетическое мастерство.",
+      "uk": "Магнетична майстерність."
+    },
+    "meaning": {
+      "en": "Magnetic mastery. Nurture people and channel the suit’s power wisely.",
+      "ru": "Магнетическое мастерство. Заботься о людях и мудро направляй силу масти.",
+      "uk": "Магнетична майстерність. Піклуйся про людей і мудро спрямовуй силу масті."
+    },
+    "reversed_meaning_short": {
+      "en": "Jealousy, manipulation, smothering leadership.",
+      "ru": "Ревность, манипуляции, удушающее лидерство.",
+      "uk": "Ревнощі, маніпуляції, задушливе лідерство."
+    },
+    "reversed_meaning": {
+      "en": "Jealousy, manipulation, smothering leadership.",
+      "ru": "Ревность, манипуляции, удушающее лидерство.",
+      "uk": "Ревнощі, маніпуляції, задушливе лідерство."
+    }
+  },
+  {
+    "id": "pentacles_king",
+    "slug": "pentacles/king",
+    "suit": "pentacles",
+    "rank": 14,
+    "en": "King of Pentacles",
+    "ru": "Король Пентакли",
+    "uk": "Король Пентаклі",
+    "keywords": {
+      "en": [
+        "authority",
+        "vision",
+        "structure",
+        "command"
+      ],
+      "ru": [
+        "авторитет",
+        "видение",
+        "структура",
+        "команда"
+      ],
+      "uk": [
+        "авторитет",
+        "бачення",
+        "структура",
+        "команда"
+      ]
+    },
+    "meaning_short": {
+      "en": "Strategic authority.",
+      "ru": "Стратегический авторитет.",
+      "uk": "Стратегічний авторитет."
+    },
+    "meaning": {
+      "en": "Strategic authority. Set direction and take responsibility.",
+      "ru": "Стратегический авторитет. Задай направление и возьми ответственность.",
+      "uk": "Стратегічний авторитет. Задай напрям і візьми відповідальність."
+    },
+    "reversed_meaning_short": {
+      "en": "Tyranny, rigidity, ruling for ego not purpose.",
+      "ru": "Тирания, жёсткость, власть ради эго, а не цели.",
+      "uk": "Тиранія, жорсткість, влада заради его, а не мети."
+    },
+    "reversed_meaning": {
+      "en": "Tyranny, rigidity, ruling for ego not purpose.",
+      "ru": "Тирания, жёсткость, власть ради эго, а не цели.",
+      "uk": "Тиранія, жорсткість, влада заради его, а не мети."
+    }
+  }
+]

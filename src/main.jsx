@@ -11,7 +11,6 @@ import './i18n';
 import { Sparkles, Loader2 } from 'lucide-react';
 import LangGate from './app/LangGate.jsx';
 import EnGate from './app/EnGate.jsx';
-
 // ⬇️ новый импорт
 import RouteErrorBoundary from './components/RouteErrorBoundary.jsx';
 
@@ -45,6 +44,7 @@ function FullScreenLoader() {
 
 // --- ленивые страницы ---
 const Home = React.lazy(() => import('./app/Home.jsx'));
+const VirtualDeckPage = React.lazy(() => import('./features/virtual-deck/VirtualDeckPage.jsx'));
 
 // Auth
 const Login = React.lazy(() => import('./pages/Login.jsx'));
@@ -128,6 +128,9 @@ createRoot(document.getElementById('root')).render(
                 <Route path="register" element={<Register />} />
                 <Route path="forgot" element={<Forgot />} />
 
+                {/* VIRTUAL DECKS */}
+                <Route path="virtual-decks" element={<VirtualDeckPage />} />
+
                 {/* PROTECTED */}
                 <Route
                   path="cabinet"
@@ -189,6 +192,9 @@ createRoot(document.getElementById('root')).render(
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
                 <Route path="forgot" element={<Forgot />} />
+
+                {/* VIRTUAL DECKS */}
+                <Route path="virtual-decks" element={<VirtualDeckPage />} />
 
                 {/* PROTECTED */}
                 <Route

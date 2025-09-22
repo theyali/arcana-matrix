@@ -55,6 +55,8 @@ export default function Breadcrumbs(){
       if (accNoLang === '/analysis') label = 'Анализ';
       if (accNoLang === '/analysis/handwriting') label = 'Анализ почерка';
       if (accNoLang === '/analysis/face') label = 'ИИ анализ';
+      if (accNoLang === '/virtual-decks') label = 'Виртуальные колоды';
+      if (accNoLang === '/experts') label = 'Эксперты';
 
       // Динамический знак: /predictions/horoscope/:sign
       const prev = parts[idx - 1];

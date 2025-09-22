@@ -220,6 +220,9 @@ export default function Navbar() {
               </div>
             )}
           </div>
+          <NavLink to={withLang("/virtual-decks")} className={navLinkClass}>
+            {t("nav.virtual_decks", "Колода")}
+          </NavLink>
 
           <NavLink to={withLang("/experts")} className={navLinkClass}>
             {t("nav.experts", "Эксперты")}

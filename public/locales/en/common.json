@@ -5,6 +5,7 @@
     "tarot": "AI Tarot",
     "matrix": "Destiny Matrix",
     "experts": "Experts",
+    "virtual_decks": "Virtual Decks",
     "forum": "Forum",
     "pricing": "Pricing",
     "login": "Log in",
@@ -158,6 +159,83 @@
       "flash": { "title": "Flash", "hint": "harsh glare" },
       "blurry": { "title": "Blurry", "hint": "no sharpness" },
       "far": { "title": "Too far", "hint": "few details" }
+    }
+  },
+  "vd": {
+    "title": "Virtual Tarot Deck",
+    "subtitle": "Shuffle, draw, and lay out tarot cards right in your browser — for quick practice, demos, and full readings.",
+    "sidebar": {
+      "title": "Card meanings",
+      "empty": "No cards on the table yet.",
+      "closed": "Click the card to reveal",
+      "ai": "Get AI interpretation",
+      "reversed": "Reversed",
+      "show": "Show",
+      "hide": "Hide",
+      "zoom": "Zoom"
+    },
+    "board": {
+      "zoom_title": "{{name}} — Double-click to zoom",
+      "click_to_flip": "Click to flip"
+    },
+    "topbar": {
+      "spread_label": "Choose spread",
+      "spread": {
+        "single": "1 card",
+        "three": "3 cards",
+        "subpersonalities": "Subpersonalities (4)",
+        "alchemist": "Alchemist (6)",
+        "grid9": "Random Grid (9)",
+        "celtic": "Celtic Cross (10)",
+        "partnership": "Partnership (7)"
+      },
+      "take": "Draw a card",
+      "flip_all": "Reveal all",
+      "hide_all": "Hide all",
+      "undo_last": "Undo last",
+      "shuffle_left": "Shuffle remaining",
+      "auto_flip": "Auto-flip on deal",
+      "anim_speed": "Animation speed",
+      "toggle_deck": "Switch deck: {{deck}}",
+      "clear_table": "Clear table",
+      "reset": "Reset spread"
+    },
+    "deck": {
+      "take_aria": "Draw a card",
+      "take_title_available": "Click — draw a card",
+      "take_title_unavailable": "No available slots",
+      "in_deck": "In deck: {{n}}"
+    },
+    "help": {
+      "title": "How to use the virtual deck",
+      "icons_title": "Top bar actions",
+      "quota_note": "You've reached your free weekly limit. Upgrade your plan to keep drawing cards.",
+      "actions": {
+        "single_click": "Single click on a card: flip it (show/hide face).",
+        "double_click": "Double-click on a card: zoom in; click outside to return.",
+        "sidebar_click": "Click an item in the right sidebar: select the card and flip it with animation.",
+        "sidebar_zoom": "Click the magnifier next to a card in the sidebar: open zoom (same as double-click).",
+        "ai_button": "Press “Get AI interpretation” to generate a reading based on opened cards."
+      },
+      "icons": {
+        "take": "Draw a card from the deck.",
+        "flip_all": "Flip all cards face up.",
+        "hide_all": "Hide all card faces.",
+        "undo": "Undo the last drawn card (return it to the deck).",
+        "shuffle": "Shuffle the remaining cards in the deck.",
+        "auto_flip": "Auto-flip new cards when dealing.",
+        "anim_speed": "Adjust animation speed.",
+        "toggle_deck": "Switch card deck.",
+        "clear": "Clear the table (keep the deck).",
+        "reset": "Full reset (shuffle and clear)."
+      }
+    },
+    "quota": {
+      "badge": "{{remaining}} / {{limit}} free this {{period}}"
+    },
+    "auth": {
+      "title": "Log in to use the Virtual Deck",
+      "desc": "This feature is available to authorized users only."
     }
   },
   "footer": {

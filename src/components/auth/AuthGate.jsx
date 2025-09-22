@@ -2,6 +2,7 @@
 import * as React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../auth/useAuth";
+import { useTranslation } from "react-i18next";
 
 /**
  * Обёртка для любого блока/страницы, требующего авторизацию.
@@ -18,6 +19,7 @@ export default function AuthGate({
   description = "Эта функция доступна только авторизованным пользователям.",
   lock = "🔒",
 }) {
+  const { t } = useTranslation();
   const { isAuthed, loading } = useAuth();
   const loc = useLocation();
   const next = encodeURIComponent(loc.pathname + loc.search);
@@ -42,7 +44,7 @@ export default function AuthGate({
               to={`${loginPath}?next=${next}`}
               className="btn-primary rounded-2xl px-5 py-2 font-semibold inline-block"
             >
-              Войти
+              {t("nav.login", "Log in")}
             </Link>
           </div>
         </div>

@@ -265,7 +265,17 @@ footer{
  color-mix(in srgb, var(--bg-end) 30%, transparent),
  color-mix(in srgb, var(--bg-end) 12%, transparent));
 }
-
+.virtual-deck{
+  min-height: 80vh;
+}
+@media (max-width: 765px){
+    .mobile-d-none{
+        display: none;
+    }
+  .virtual-deck{
+    min-height: 125vh;
+  }
+}
 .matrix-diagram {
     position: relative;
     font-size: 4px;
