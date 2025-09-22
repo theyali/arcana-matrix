@@ -18,9 +18,9 @@ export default function MobileTabBar() {
     }`;
   return (
     <div className="md:hidden fixed bottom-0 inset-x-0 z-40">
-      <div className="mx-auto max-w-8xl px-3">
+      <div className="mx-auto max-w-8xl">
         <nav
-          className="relative rounded-3xl border border-muted shadow-xl backdrop-blur-md"
+          className="relative rounded-3xl border border-muted shadow-xl backdrop-blur-md mobile-bottom-nav"
           style={{
             background:
               "color-mix(in srgb, var(--bg, #0b0b0f) 96%, black 4%)",

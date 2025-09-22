@@ -529,3 +529,6 @@ footer{
   /* резервы под высоту, чтобы не дёргалось (3 ряда) */
   contain-intrinsic-size: 900px 1000px;
 }
+.mobile-bottom-nav {
+    border-radius: 22px 22px 0 0;
+}
