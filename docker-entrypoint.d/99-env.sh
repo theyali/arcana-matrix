@@ -1,5 +1,6 @@
 #!/bin/sh
 # Создаёт /usr/share/nginx/html/env.js при старте контейнера
+#docker-entrypoint.d/99-env.sh
 set -e
 cat > /usr/share/nginx/html/env.js <<EOF
 window.__ENV = Object.assign({}, window.__ENV, {

@@ -5,7 +5,7 @@ services:
       context: .
     environment:
       DEFAULT_THEME: theme-mindful-04   # меняй тему без ребилда
-      API_URL: http://localhost:8000
+      API_URL: ${API_URL}
     ports:
       - "8081:80"
     restart: unless-stopped
@@ -16,7 +16,7 @@ services:
     working_dir: /app
     command: sh -c "npm i && npm run dev -- --host"
     environment:
-      VITE_API_URL: http://localhost:8000
+      VITE_API_URL: ${VITE_API_URL}
     volumes:
       - .:/app
       - /app/node_modules     # чтобы не затирать node_modules хостом
