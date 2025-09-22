@@ -490,3 +490,42 @@ footer{
     left: 50%;
     transform: translate(-50%, 0);
 }
+
+/* cards-grid.css */
+.amx-card {
+  background: color-mix(in srgb, var(--text) 4%, transparent);
+  /* ВАЖНО: Больше НЕ клиппим контейнер */
+  /* overflow: hidden;  <-- убрать */
+  /* border-radius остаётся для рамки, но контент не клиппим */
+  border-radius: 1rem; /* ~rounded-2xl */
+  contain: layout paint size;
+  /* content-visibility убираем с карточки, перенесём на грид */
+}
+
+.amx-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Скругляем САМО изображение, чтобы «углы» были ровные */
+  border-radius: 1rem;
+}
+
+.amx-overlay {
+  will-change: opacity;
+  border-radius: 1rem; /* чтобы совпало со слоем ниже */
+}
+
+/* Лёгкий плейсхолдер */
+.amx-skel {
+  background: color-mix(in srgb, var(--text) 6%, transparent);
+  border-radius: 1rem;
+}
+
+/* Контейнер грида получает content-visibility целиком */
+.amx-grid {
+  content-visibility: auto;
+  contain: layout paint size;
+  /* резервы под высоту, чтобы не дёргалось (3 ряда) */
+  contain-intrinsic-size: 900px 1000px;
+}

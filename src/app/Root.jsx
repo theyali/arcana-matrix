@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Starfield from '../components/Starfield';
 import PageTransition from '../components/PageTransition';
+import MobileTabBar from '../components/MobileTabBar';
 
 // маленький лоадер в области контента
 function RouteLoader() {
@@ -25,11 +26,11 @@ function RouteLoader() {
 export default function Root(){
   return (
     <div className="app-bg">
-      <Starfield maxStars={380} />
+      <Starfield maxStars={180} />
       <div className="relative z-10 min-h-[100svh] flex flex-col">
         <Navbar/>
         <Breadcrumbs/>
-        <main className="flex-1">
+        <main className="flex-1 pb-[84px] md:pb-0">
           <Suspense fallback={<RouteLoader />}>
             <PageTransition>
               <Outlet/>
@@ -37,6 +38,7 @@ export default function Root(){
           </Suspense>
         </main>
         <Footer/>
+        <MobileTabBar />
       </div>
     </div>
   );

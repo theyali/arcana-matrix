@@ -1,14 +1,14 @@
-// src/components/Navbar.jsx
 import React from "react";
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
-import { LogIn, UserPlus, User, Settings as SettingsIcon, LogOut, ChevronDown } from "lucide-react";
 import { applyTheme } from "../theme/themes";
 import { api } from "../api/client";
 import { useAuthStatus } from "../auth/useAuthStatus";
 import { getAvatarUrl } from "../api/profile";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeSwitch from "../components/ThemeSwitch";
-import { useTranslation } from "react-i18next"; // ⟵ добавлено
+import { useTranslation } from "react-i18next";
+import { LogIn, UserPlus, User, Settings as SettingsIcon, LogOut, ChevronDown, Menu } from "lucide-react";
+import MobileDrawer from "./MobileDrawer";
 
 export default function Navbar() {
   const { isAuthed, profile } = useAuthStatus();
@@ -16,31 +16,25 @@ export default function Navbar() {
     localStorage.getItem("arcana_theme") || (import.meta.env.VITE_DEFAULT_THEME || "theme-mindful-05")
   );
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  // отдельные стейты для двух дропдаунов
   const [predOpen, setPredOpen] = React.useState(false);
   const [analysisOpen, setAnalysisOpen] = React.useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
-  const { t } = useTranslation("common"); // ⟵ добавлено
+  const { t } = useTranslation("common");
 
-  // текущий язык из URL и префикс для ссылок
-  const LANGS = ["en", "ru", "uk"]; // ⟵ добавлено
-  const rawParts = location.pathname.split("/").filter(Boolean); // ⟵ добавлено
-  const currentLng = rawParts[0] && LANGS.includes(rawParts[0]) ? rawParts[0] : "en"; // ⟵ добавлено
-  const langPrefix = currentLng !== "en" ? `/${currentLng}` : ""; // ⟵ добавлено
-  const withLang = (path) => `${langPrefix}${path}`; // ⟵ добавлено
+  const LANGS = ["en", "ru", "uk"];
+  const rawParts = location.pathname.split("/").filter(Boolean);
+  const currentLng = rawParts[0] && LANGS.includes(rawParts[0]) ? rawParts[0] : "en";
+  const langPrefix = currentLng !== "en" ? `/${currentLng}` : "";
+  const withLang = (path) => `${langPrefix}${path}`;
 
-  // рефы для аккаунт-меню
   const btnRef = React.useRef(null);
   const menuRef = React.useRef(null);
-
-  // рефы для "Предсказания"
   const predBtnRef = React.useRef(null);
   const predMenuRef = React.useRef(null);
-
-  // рефы для "Анализ"
   const analysisBtnRef = React.useRef(null);
   const analysisMenuRef = React.useRef(null);
 
@@ -75,6 +69,7 @@ export default function Navbar() {
         setMenuOpen(false);
         setPredOpen(false);
         setAnalysisOpen(false);
+        setMobileOpen(false);
       }
     };
     document.addEventListener("click", onDoc);
@@ -85,10 +80,14 @@ export default function Navbar() {
     };
   }, [menuOpen, predOpen, analysisOpen]);
 
+  React.useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
   const doLogout = () => {
     api.logout();
     setMenuOpen(false);
-    navigate(langPrefix || "/"); // ⟵ чтобы остаться в текущем языке
+    navigate(langPrefix || "/");
   };
 
   const closePred = () => setPredOpen(false);
@@ -97,30 +96,28 @@ export default function Navbar() {
   const displayName =
     profile?.username ||
     (profile?.email ? profile.email.split("@")[0] : null) ||
-    t("nav.cabinet", "Кабинет"); // ⟵ безопасный дефолт
+    t("nav.cabinet", "Кабинет");
 
   const avatarUrl = getAvatarUrl(profile?.profile?.avatar) || profile?.profile?.avatarUrl;
 
-  // ---- Подсветка активных групп ----
   const predRoutes = [
     "/predictions/tarot",
     "/predictions/matrix",
     "/predictions/palm",
     "/predictions/coffee",
     "/predictions/horoscope",
-  ].map(withLang); // ⟵ учитывать префикс
+  ].map(withLang);
 
   const analysisRoutes = [
     "/analysis/face",
     "/analysis/handwriting",
     "/analysis/dreams",
-  ].map(withLang); // ⟵ учитывать префикс
+  ].map(withLang);
 
   const isGroupActive = (routes) => routes.some((p) => location.pathname.startsWith(p));
   const predGroupActive = isGroupActive(predRoutes);
   const analysisGroupActive = isGroupActive(analysisRoutes);
 
-  // классы для обычных ссылок и пунктов меню
   const navLinkClass = ({ isActive }) => `nav-link ${isActive ? "active" : ""}`;
   const menuItemClass = ({ isActive }) => `menu-item ${isActive ? "active" : ""}`;
 
@@ -128,7 +125,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 navbar">
       <div className="container mx-auto px-4 max-w-8xl h-16 flex items-center justify-between">
         <Link
-          to={langPrefix || "/"} // ⟵ логотип ведёт на корень текущего языка
+          to={langPrefix || "/"}
           className="flex items-center gap-3 font-bold text-lg"
           style={{ color: "var(--text)" }}
         >
@@ -138,13 +135,14 @@ export default function Navbar() {
           >
             <img
               src="/img/logo.svg"
-              alt={t("brand", "Tarion")} // ⟵ перевод бренда (на случай отличий)
+              alt={t("brand", "Tarion")}
               className="h-5 w-5 object-contain"
             />
           </div>
           {t("brand", "Tarion")}
         </Link>
 
+        {/* desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
           {/* --- Предсказания --- */}
           <div className="relative">
@@ -239,27 +237,17 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeSwitch className="ml-2" />
 
+          {/* Auth кнопки и аккаунт скрыты на мобилке (перенесены в offcanvas) */}
           {!isAuthed ? (
-            <>
-              <NavLink
-                to={withLang("/login")}
-                className={({ isActive }) =>
-                  `btn-ghost inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold ${isActive ? "active" : ""}`
-                }
-              >
-                <LogIn size={18} /> {t("nav.login", "Войти")}
-              </NavLink>
-              <NavLink
-                to={withLang("/register")}
-                className={({ isActive }) =>
-                  `btn-primary inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold ${isActive ? "active" : ""}`
-                }
-              >
-                <UserPlus size={18} /> {t("nav.register", "Регистрация")}
-              </NavLink>
-            </>
+            <button
+              className="md:hidden inline-flex items-center justify-center p-2 rounded-xl border border-muted"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu size={20} />
+            </button>
           ) : (
-            <div className="relative">
+            <div className="relative hidden md:block">
               <button
                 ref={btnRef}
                 onClick={() => setMenuOpen((o) => !o)}
@@ -294,12 +282,38 @@ export default function Navbar() {
                   </button>
                 </div>
               )}
-
             </div>
           )}
-          <LanguageSwitcher />
+
+          {/* Бургер для авторизованного пользователя — только на мобилке */}
+          {isAuthed && (
+            <button
+              className="md:hidden inline-flex items-center justify-center p-2 rounded-xl border border-muted"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu size={20} />
+            </button>
+          )}
+
+          {/* Перенесли LanguageSwitcher в дровер, поэтому на мобилке скрыт */}
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
+
+      {/* mobile offcanvas */}
+      <MobileDrawer
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        withLang={withLang}
+        t={t}
+        isAuthed={isAuthed}
+        avatarUrl={avatarUrl}
+        displayName={displayName}
+        doLogout={doLogout}
+      />
     </header>
   );
 }

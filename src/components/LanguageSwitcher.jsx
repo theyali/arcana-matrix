@@ -1,4 +1,3 @@
-// src/components/LanguageSwitcher.jsx
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -11,7 +10,6 @@ const LANGS = [
 ];
 
 function CircleFlag({ code, size = 16 }) {
-  // Берём SVG из public/img/lang/{en|ru|uk}.svg
   const safe = ["en", "ru", "uk"].includes(code) ? code : "en";
   const base = import.meta.env.BASE_URL || "/";
   const src = `${base}img/lang/${safe}.svg`;
@@ -32,12 +30,17 @@ function CircleFlag({ code, size = 16 }) {
   );
 }
 
-export default function LanguageSwitcher({ className = "" }) {
+/**
+ * LanguageSwitcher
+ * - Работает и на десктопе, и внутри offcanvas
+ * - onChanged() вызывается после смены языка (удобно, чтобы закрыть дровер)
+ */
+export default function LanguageSwitcher({ className = "", onChanged }) {
   const { i18n } = useTranslation();
 
   const raw = i18n.resolvedLanguage || i18n.language || "en";
   const baseLang = String(raw).split("-")[0];
-  const cur = ["en", "ru", "uk"].includes(baseLang) ? baseLang : "en"; // дефолт EN
+  const cur = ["en", "ru", "uk"].includes(baseLang) ? baseLang : "en";
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -70,14 +73,15 @@ export default function LanguageSwitcher({ className = "" }) {
     navigate(next, { replace: true });
 
     detailsRef.current?.removeAttribute("open");
+    onChanged?.(); // оповестим родителя (например, закрыть дровер)
   }
 
   const currentLang = LANGS.find((l) => l.code === cur) || LANGS[0];
 
   return (
-    <details ref={detailsRef} className={`mobile-d-none relative ${className}`}>
+    <details ref={detailsRef} className={`relative ${className}`}>
       <summary
-        className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-muted cursor-pointer select-none hover:bg-muted/40"
+        className="inline-flex items-center gap-2 w-full px-3 py-2 rounded-xl border border-muted cursor-pointer select-none hover:bg-muted/40"
         style={{ color: "var(--text)" }}
         aria-label="Change language"
       >
@@ -87,11 +91,11 @@ export default function LanguageSwitcher({ className = "" }) {
           </span>
           <span className="text-sm font-semibold">{currentLang.label}</span>
         </span>
-        <ChevronDown size={16} className="opacity-70" aria-hidden="true" />
+        <ChevronDown size={16} className="opacity-70 ml-auto" aria-hidden="true" />
       </summary>
 
       <ul
-        className="absolute right-0 mt-2 w-44 p-1 rounded-xl border border-muted shadow-xl z-50 backdrop-blur-sm menu-popover "
+        className="absolute right-0 mt-2 w-44 p-1 rounded-xl border border-muted shadow-xl z-50 backdrop-blur-sm menu-popover bg-[color-mix(in_srgb,var(--text)_4%,transparent)]"
         role="menu"
         aria-label="Select language"
       >
