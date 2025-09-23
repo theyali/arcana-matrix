@@ -117,14 +117,12 @@ export default function MobileDrawer({
 
       {/* panel */}
       <aside
-        className={`fixed right-0 top-0 z-[60] w-80 max-w-[90vw] border-l border-muted shadow-2xl rounded-l-2xl overflow-hidden
+        className={`mobile-aside-menu fixed right-0 top-0 z-[60] w-80 max-w-[90vw] border-l border-muted shadow-2xl rounded-l-2xl overflow-hidden
                     transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"} flex flex-col`}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
         style={{
-          background:
-            "linear-gradient(180deg, color-mix(in srgb, var(--bg,#0b0b0f) 97%, black 3%), color-mix(in srgb, var(--bg,#0b0b0f) 97%, black 3%))",
           color: "var(--text)",
           height: "100dvh",           // ВСЯ высота экрана (с учётом мобильных адресных строк)
           maxHeight: "100dvh",

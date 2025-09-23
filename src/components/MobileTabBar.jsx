@@ -22,8 +22,7 @@ export default function MobileTabBar() {
         <nav
           className="relative rounded-3xl border border-muted shadow-xl backdrop-blur-md mobile-bottom-nav"
           style={{
-            background:
-              "color-mix(in srgb, var(--bg, #0b0b0f) 96%, black 4%)",
+            background:"#051625ff",
             paddingBottom: "max(env(safe-area-inset-bottom), 10px)",
           }}
           aria-label="Bottom navigation"

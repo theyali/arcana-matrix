@@ -13,16 +13,16 @@ export default function Hero(){
   const { t } = useTranslation();
 
   return (
-    <Section id='hero' className='pt-20 md:pt-10'>
+    <Section id='hero' className='pt-10 md:pt-10'>
       <div className='grid lg:grid-cols-2 gap-10'>
         <div>
           <div className="first-block-hero">
-            <h1 className='text-4xl md:text-6xl font-extrabold leading-tight' style={{color:'var(--text)'}}>
+            <h1 className='text-4xl md:text-6xl font-extrabold leading-tight hero-title' style={{color:'var(--text)'}}>
               {t('hero.title.1')}
               <span className='gradient-text'>{t('hero.title.2')}</span>
               {t('hero.title.3')}
             </h1>
-            <p className='mt-5 text-lg md:text-xl max-w-xl' style={{color:'var(--text)', opacity:.8}}>
+            <p className='mt-5 text-lg md:text-xl max-w-xl hero-subtitle' style={{color:'var(--text)', opacity:.8}}>
               {t('hero.subtitle')}
             </p>
             <div className='mt-6 flex flex-wrap items-center gap-3'>
@@ -31,10 +31,10 @@ export default function Hero(){
               <Pill icon={Users}>{t('hero.pill.forum')}</Pill>
             </div>
             <div className='mt-8 flex flex-wrap gap-3'>
-              <PrimaryButton onClick={() => document.getElementById('ai')?.scrollIntoView({ behavior: 'smooth' })}>
+              <PrimaryButton onClick={() => document.getElementById('ai')?.scrollIntoView({ behavior: 'smooth' })} className="cta-btn-main" >
                 {t('hero.cta.try')} <ChevronRight size={18} />
               </PrimaryButton>
-              <GhostButton onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
+              <GhostButton onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="cta-btn-main" >
                 {t('nav.pricing')} <CreditCard size={18} />
               </GhostButton>
             </div>
