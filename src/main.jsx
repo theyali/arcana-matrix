@@ -76,6 +76,7 @@ const ForumThreadPage = React.lazy(() => import('./pages/ForumThreadPage.jsx'));
 const ForumCreatePage = React.lazy(() => import('./pages/ForumCreatePage.jsx'));
 const ExpertsPage = React.lazy(() => import('./pages/ExpertsPage.jsx'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage.jsx'));
+const LunarCalendarPage = React.lazy(() => import('./pages/predictions/LunarCalendarPage.jsx'));
 
 initTheme();
 
@@ -105,7 +106,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path="predictions/coffee" element={<CoffeePage />} />
                 <Route path="predictions/horoscope" element={<HoroscopePage />} />
                 <Route path="predictions/horoscope/:sign" element={<HoroscopeDetailPage />} />
-                <Route path="predictions" element={<Navigate to="predictions/tarot" replace />} />
+                <Route path="predictions/lunar" element={<LunarCalendarPage />} />
 
                 {/* PRICING */}
                 <Route path="pricing" element={<PricingPage />} />
@@ -170,7 +171,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path="predictions/coffee" element={<CoffeePage />} />
                 <Route path="predictions/horoscope" element={<HoroscopePage />} />
                 <Route path="predictions/horoscope/:sign" element={<HoroscopeDetailPage />} />
-                <Route path="predictions" element={<Navigate to="predictions/tarot" replace />} />
+                <Route path="predictions/lunar" element={<LunarCalendarPage />} />
 
                 {/* PRICING */}
                 <Route path="pricing" element={<PricingPage />} />

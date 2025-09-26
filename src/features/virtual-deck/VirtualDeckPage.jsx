@@ -34,6 +34,8 @@ import {
   completeSpreadBeacon,
 } from "../../api/virtualDeck";
 
+const SHUFFLE_VIGNETTE_MS = 950;
+
 export default function VirtualDeckPage() {
   const { t, i18n } = useTranslation();
   const lng = (i18n.language || "en").slice(0, 2);
@@ -116,10 +118,12 @@ export default function VirtualDeckPage() {
   const boardRef = React.useRef(null);
   const deckRef = React.useRef(null);
   const slotRefs = React.useRef([]);
+  const shuffleTimerRef = React.useRef(null);
 
   // летящая карта при раздаче
   const [fly, setFly] = React.useState(null);
   const [animating, setAnimating] = React.useState(false);
+  const [shuffleCue, setShuffleCue] = React.useState(null);
 
   // single vs double click (делитель)
   const clickDelayApi = useClickDelay(250);
@@ -227,7 +231,7 @@ export default function VirtualDeckPage() {
   const baseCanDraw = stack.length > 0 && drawn.length < spreadLimit && !animating;
   const quotaAllows =
     // если квоты нет (гость/ошибка) — не блокируем, но AuthGate внизу всё равно закроет гостям
-    quota == null ? true : quota.remaining > 0 || sessionStarted;
+  quota == null ? true : quota.remaining > 0 || sessionStarted;
   const canDraw = baseCanDraw && quotaAllows;
 
   const takeFromDeck = async () => {
@@ -255,13 +259,39 @@ export default function VirtualDeckPage() {
     const isReversed = Math.random() * 100 < 50;
 
     const br = boardRef.current?.getBoundingClientRect();
-    const dr = deckRef.current?.getBoundingClientRect();
+    const drRect = deckRef.current?.getBoundingClientRect();
     const targetEl = slotRefs.current[drawn.length];
     const tr = targetEl?.getBoundingClientRect();
-    if (!br || !dr || !tr) return;
 
-    const startRect = { x: dr.left - br.left, y: dr.top - br.top, w: dr.width, h: dr.height };
-    const endRect = { x: tr.left - br.left, y: tr.top - br.top, w: tr.width, h: tr.height };
+    // === ВЕТКА ДЛЯ МОБАЙЛА/СПРЯТАННОЙ КОЛОДЫ: без анимации ===
+    const deckHiddenOrZero =
+      !drRect || drRect.width === 0 || drRect.height === 0;
+
+    if (deckHiddenOrZero || !br || !tr) {
+      // мгновенно кладём карту
+      setStack((prev) => prev.slice(1));
+      setDeckVisualCount((v) => Math.max(0, v - 1));
+      setDrawn((prev) => [
+        ...prev,
+        { id: nextId, faceUp: autoFlip, reversed: isReversed },
+      ]);
+      setSelected(nextId);
+      return;
+    }
+
+    // === Анимация для десктопа ===
+    const startRect = {
+      x: drRect.left - br.left,
+      y: drRect.top - br.top,
+      w: drRect.width,
+      h: drRect.height,
+    };
+    const endRect = {
+      x: tr.left - br.left,
+      y: tr.top - br.top,
+      w: tr.width,
+      h: tr.height,
+    };
     const rotateDeg = (Math.random() * 6 - 3).toFixed(2);
 
     setAnimating(true);
@@ -274,7 +304,10 @@ export default function VirtualDeckPage() {
       rotateDeg,
       onDone: () => {
         setStack((prev) => prev.slice(1));
-        setDrawn((prev) => [...prev, { id: nextId, faceUp: autoFlip, reversed: isReversed }]);
+        setDrawn((prev) => [
+          ...prev,
+          { id: nextId, faceUp: autoFlip, reversed: isReversed },
+        ]);
         setSelected(nextId);
         setFly(null);
         setAnimating(false);
@@ -460,17 +493,18 @@ export default function VirtualDeckPage() {
             )}
 
             {/* ====== КОЛОДА СНИЗУ ====== */}
-            <DeckPile
-              deckCfg={deckCfg}
-              deckW={deckW}
-              deckH={deckH}
-              deckVisualCount={deckVisualCount}
-              stackLen={stack.length}
-              animating={animating}
-              onTake={takeFromDeck}
-              deckRef={deckRef}
-            />
-
+            <div className="hidden md:block">
+              <DeckPile
+                deckCfg={deckCfg}
+                deckW={deckW}
+                deckH={deckH}
+                deckVisualCount={deckVisualCount}
+                stackLen={stack.length}
+                animating={animating}
+                onTake={takeFromDeck}
+                deckRef={deckRef}
+              />
+            </div>
             {/* === Правый сайдбар — внутри стола === */}
             <div
               className="absolute right-3 top-3 bottom-3 z-20 pointer-events-none w-0 min-w-0

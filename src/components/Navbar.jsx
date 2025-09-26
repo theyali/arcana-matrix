@@ -106,6 +106,7 @@ export default function Navbar() {
     "/predictions/palm",
     "/predictions/coffee",
     "/predictions/horoscope",
+    "/predictions/lunar",
   ].map(withLang);
 
   const analysisRoutes = [
@@ -178,6 +179,9 @@ export default function Navbar() {
                 </NavLink>
                 <NavLink to={withLang("/predictions/horoscope")} role="menuitem" className={menuItemClass} onClick={closePred}>
                   {t("nav.horoscopes_ai", "Гороскопы (ИИ)")}
+                </NavLink>
+                <NavLink to={withLang("/predictions/lunar")} role="menuitem" className={menuItemClass} onClick={closePred}>
+                  {t("nav.lunar", "Лунный календарь")}
                 </NavLink>
               </div>
             )}

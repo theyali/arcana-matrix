@@ -82,6 +82,7 @@ export default function MobileDrawer({
     palm:        <Hand size={16} className="opacity-80" />,
     coffee:      <Coffee size={16} className="opacity-80" />,
     horoscope:   <Sparkles size={16} className="opacity-80" />,
+    lunar :      <Moon size={16} className="opacity-80" />,
     analysis:    <Brain size={16} className="opacity-80" />,
     face:        <Smile size={16} className="opacity-80" />,
     handwriting: <PenLine size={16} className="opacity-80" />,
@@ -176,6 +177,7 @@ export default function MobileDrawer({
               {subItem("/predictions/palm", I.palm, t("nav.palm_ai", "Предсказания по ладони (ИИ)"))}
               {subItem("/predictions/coffee", I.coffee, t("nav.coffee_ai", "Предсказания по кофе (ИИ)"))}
               {subItem("/predictions/horoscope", I.horoscope, t("nav.horoscopes_ai", "Гороскопы (ИИ)"))}
+              {subItem("/predictions/lunar", I.lunar, t("nav.lunar", "Лунный календарь"))}
             </div>
           </div>
 

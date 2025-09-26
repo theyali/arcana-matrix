@@ -3,6 +3,7 @@
   "nav": {
     "home": "Головна",
     "tarot": "ШІ-Таро",
+    "lunar": "Місячний календар",
     "matrix": "Матриця долі",
     "experts": "Експерти",
     "virtual_decks": "Колода",
@@ -25,6 +26,63 @@
     "handwriting": "Почерк (аналіз письма)",
     "dreams": "ШІ-толкання сна",
     "compatibility": "Аналіз сумісності (ШІ)"
+  },
+  "loading": "Завантаження…",
+    "lunar": {
+      "title": "Місячний календар",
+      "subtitle": "Фази Місяця за днями, місячна доба та час сходу/заходу Місяця",
+      "moonrise": "Схід Місяця",
+      "moonset": "Захід Місяця",
+      "lunar_day": "місячна доба",
+      "illumination": "освітленість",
+
+      "phase": "Фаза",
+      "phase_label": "Фаза Місяця",
+
+      "highlights": "Події місяця",
+      "dark_nights": "Темні ночі (найкращі для спостережень)",
+
+      "culmination": "Кульмінація",
+      "alt_az_at": "Висота/азимут о {{time}}",
+      "sunrise_sunset": "Схід / Захід Сонця",
+      "lunar_day_bounds": "Межі місячної доби",
+
+      "night_visibility": "Освітленість ночі",
+      "night_alt_max": "Макс. висота Місяця вночі",
+
+      "moon_sign": "Знак Місяця",
+      "zodiac_change": "Зміна знака о",
+      "distance": "Відстань",
+      "angular_size": "Кутовий розмір",
+      "visibility_intervals": "Інтервали видимості",
+
+      "phase_names": "",
+      "phase_values": "",
+      "phase_keys": "",
+      "phase_list": "",
+      "phase_map": ""
+  },
+  "lunar.phase.new_moon": "Молодик",
+  "lunar.phase.waxing_crescent": "Зростаючий серп",
+  "lunar.phase.first_quarter": "Перша чверть",
+  "lunar.phase.waxing_gibbous": "Зростаючий Місяць",
+  "lunar.phase.full_moon": "Повня",
+  "lunar.phase.waning_gibbous": "Спадаючий Місяць",
+  "lunar.phase.last_quarter": "Остання чверть",
+  "lunar.phase.waning_crescent": "Старий серп",
+  "zodiac": {
+    "aries": "Овен",
+    "taurus": "Телець",
+    "gemini": "Близнюки",
+    "cancer": "Рак",
+    "leo": "Лев",
+    "virgo": "Діва",
+    "libra": "Терези",
+    "scorpio": "Скорпіон",
+    "sagittarius": "Стрілець",
+    "capricorn": "Козоріг",
+    "aquarius": "Водолій",
+    "pisces": "Риби"
   },
   "hero": {
     "title.1": "Ваша ",

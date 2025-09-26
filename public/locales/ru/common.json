@@ -3,6 +3,7 @@
   "nav": {
     "home": "Главная",
     "tarot": "ИИ-Таро",
+    "lunar": "Лунный календарь",
     "matrix": "Матрица судьбы",
     "experts": "Эксперты",
     "virtual_decks": "Колода",
@@ -25,6 +26,63 @@
     "handwriting": "Почерк (анализ письма)",
     "dreams": "ИИ-толкование сна",
     "compatibility": "Анализ совместимости (ИИ)"
+  },
+  "loading": "Загрузка…",
+  "lunar": {
+    "title": "Лунный календарь",
+    "subtitle": "Фазы Луны по дням, лунные сутки и время восхода/захода",
+    "moonrise": "Восход Луны",
+    "moonset": "Заход Луны",
+    "lunar_day": "лунные сутки",
+    "illumination": "освещённость",
+
+    "phase": "Фаза",
+    "phase_label": "Фаза Луны",
+
+    "highlights": "События месяца",
+    "dark_nights": "Тёмные ночи (лучшие для наблюдений)",
+
+    "culmination": "Кульминация",
+    "alt_az_at": "Высота/азимут в {{time}}",
+    "sunrise_sunset": "Восход / Заход Солнца",
+    "lunar_day_bounds": "Границы лунных суток",
+
+    "night_visibility": "Освещённость ночи",
+    "night_alt_max": "Макс. высота Луны ночью",
+
+    "moon_sign": "Знак Луны",
+    "zodiac_change": "Смена знака в",
+    "distance": "Расстояние",
+    "angular_size": "Угловой размер",
+    "visibility_intervals": "Интервалы видимости",
+
+    "phase_names": "",
+    "phase_values": "",
+    "phase_keys": "",
+    "phase_list": "",
+    "phase_map": ""
+  },
+  "lunar.phase.new_moon": "Новолуние",
+  "lunar.phase.waxing_crescent": "Растущий серп",
+  "lunar.phase.first_quarter": "Первая четверть",
+  "lunar.phase.waxing_gibbous": "Растущая Луна",
+  "lunar.phase.full_moon": "Полнолуние",
+  "lunar.phase.waning_gibbous": "Убывающая Луна",
+  "lunar.phase.last_quarter": "Последняя четверть",
+  "lunar.phase.waning_crescent": "Старый серп",
+  "zodiac": {
+    "aries": "Овен",
+    "taurus": "Телец",
+    "gemini": "Близнецы",
+    "cancer": "Рак",
+    "leo": "Лев",
+    "virgo": "Дева",
+    "libra": "Весы",
+    "scorpio": "Скорпион",
+    "sagittarius": "Стрелец",
+    "capricorn": "Козерог",
+    "aquarius": "Водолей",
+    "pisces": "Рыбы"
   },
   "hero": {
     "title.1": "Ваша ",

@@ -3,6 +3,7 @@
   "nav": {
     "home": "Home",
     "tarot": "AI Tarot",
+    "lunar": "Lunar Calendar",
     "matrix": "Destiny Matrix",
     "experts": "Experts",
     "virtual_decks": "Virtual Decks",
@@ -25,6 +26,63 @@
     "handwriting": "Handwriting Analysis AI",
     "dreams": "Dreams Analysis AI",
     "compatibility": "Compatibility AI"
+  },
+  "lunar": {
+    "title": "Lunar calendar",
+    "subtitle": "Daily moon phases, lunar day and moonrise/moonset times",
+    "moonrise": "Moonrise",
+    "moonset": "Moonset",
+    "lunar_day": "lunar day",
+    "illumination": "illumination",
+
+    "phase": "Phase",
+    "phase_label": "Moon phase",
+
+    "highlights": "Highlights this month",
+    "dark_nights": "Dark nights (best for stargazing)",
+
+    "culmination": "Culmination",
+    "alt_az_at": "Alt/Az at {{time}}",
+    "sunrise_sunset": "Sunrise / Sunset",
+    "lunar_day_bounds": "Lunar day bounds",
+
+    "night_visibility": "Night visibility",
+    "night_alt_max": "Night max Moon altitude",
+
+    "moon_sign": "Moon sign",
+    "zodiac_change": "Sign change at",
+    "distance": "Distance",
+    "angular_size": "Angular size",
+    "visibility_intervals": "Visibility intervals",
+
+    "phase_names": "",
+    "phase_values": "",
+    "phase_keys": "",
+    "phase_list": "",
+    "phase_map": ""
+  },
+  "lunar.phase.new_moon": "New moon",
+  "lunar.phase.waxing_crescent": "Waxing crescent",
+  "lunar.phase.first_quarter": "First quarter",
+  "lunar.phase.waxing_gibbous": "Waxing gibbous",
+  "lunar.phase.full_moon": "Full moon",
+  "lunar.phase.waning_gibbous": "Waning gibbous",
+  "lunar.phase.last_quarter": "Last quarter",
+  "lunar.phase.waning_crescent": "Waning crescent",
+  "loading": "Loading…",
+  "zodiac": {
+    "aries": "Aries",
+    "taurus": "Taurus",
+    "gemini": "Gemini",
+    "cancer": "Cancer",
+    "leo": "Leo",
+    "virgo": "Virgo",
+    "libra": "Libra",
+    "scorpio": "Scorpio",
+    "sagittarius": "Sagittarius",
+    "capricorn": "Capricorn",
+    "aquarius": "Aquarius",
+    "pisces": "Pisces"
   },
   "hero": {
     "title.1": "Your ",
